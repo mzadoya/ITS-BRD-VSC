@@ -1,0 +1,40 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-executes"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"GSPAF1Tachenrechner.Debug+ITSboard"
+		],
+		"name" : "GSPAF1Tachenrechner.Debug+ITSboard-executes"
+	}
+}

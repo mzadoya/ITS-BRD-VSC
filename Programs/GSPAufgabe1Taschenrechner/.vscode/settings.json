@@ -1,0 +1,6 @@
+{
+    "debug.hideSlowPreLaunchWarning": true,
+    "clangd.arguments": [
+        "--compile-commands-dir=/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAufgabe1Taschenrechner/out/GSPAufgabe1Taschenrechner/ITSboard/Debug"
+    ]
+}

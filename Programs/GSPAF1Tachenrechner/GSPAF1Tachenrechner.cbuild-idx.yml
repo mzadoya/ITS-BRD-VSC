@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.11.0
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: GSPAF1Tachenrechner.csolution.yml
+  cbuild-run: out/GSPAF1Tachenrechner+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: GSPAF1Tachenrechner.cproject.yml
+  cbuilds:
+    - cbuild: out/GSPAF1Tachenrechner/ITSboard/Debug/GSPAF1Tachenrechner.Debug+ITSboard.cbuild.yml
+      project: GSPAF1Tachenrechner
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - GSPAF1Tachenrechner.cbuild-pack.yml - file is already up-to-date
+          - GSPAF1Tachenrechner+ITSboard.cbuild-run.yml - file is already up-to-date
+          - GSPAF1Tachenrechner.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@7.0.0

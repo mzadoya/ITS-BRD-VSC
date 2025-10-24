@@ -1,0 +1,37 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/CMakeFiles/Stack.Debug+ITSboard-build"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/CMakeFiles/Stack.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Stack.Debug+ITSboard"
+		],
+		"name" : "Stack.Debug+ITSboard-build"
+	}
+}

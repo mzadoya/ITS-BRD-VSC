@@ -1,0 +1,10 @@
+# Target labels
+ Stack.Debug+ITSboard
+# Source files and their labels
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/CMakeFiles/Stack.Debug+ITSboard-configure
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/CMakeFiles/Stack.Debug+ITSboard-configure.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-configure.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-patch.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-update.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-download.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/Stack/tmp/Stack.Debug+ITSboard/src/Stack.Debug+ITSboard-stamp/Stack.Debug+ITSboard-mkdir.rule
