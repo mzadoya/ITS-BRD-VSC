@@ -413,8 +413,6 @@ CompileFlags:
     - '-D__thumb__=1'
     - '-D__ARMCOMPILER_LIBCXX=1'
     - >-
-      -I/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/Inc
-    - >-
       -I/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/../../stm32cubef4/Drivers/CMSIS/Device/ST/STM32F4xx/Include
     - >-
       -I/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/../../stm32cubef4/Drivers/CMSIS/Include
@@ -437,3 +435,5 @@ CompileFlags:
       -I/Users/maximzadoya/.cache/arm/packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include
     - >-
       -I/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/../../ITS_BRD_LIB/Inc
+    - >-
+      -I/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/Inc
