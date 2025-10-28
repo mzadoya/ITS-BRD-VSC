@@ -61,7 +61,7 @@ void clear(void);
 
 /**
  ******************************************************************************
- * @brief   erzuegt ein Duplikate von oberste Element und fuegt ihm in Stack
+ * @brief   erzuegt ein Duplikat des obersten Elements und fuegt ihm in Stack
  *
  * @param   void
  *
@@ -112,7 +112,7 @@ int pop(int *v);
  * 
  * @param void
  *
- * @return true wenn es gibt kein Overflow un false wenn es gibt ein Overflow
+ * @return true wenn es kein Overflow gibt und false wenn es ein Overflow gibt
  *********************************************************************************/
 
 bool overflowCheck();
@@ -123,7 +123,7 @@ bool overflowCheck();
  * 
  * @param void
  *
- * @return true wenn es mind. zwei Elemente un false wenn es weniger oder gleich 1
+ * @return true wenn es mind. zwei Elemente gibt und false wenn es weniger oder gleich 1
  *********************************************************************************/
 
 bool safetyCheckTwo();

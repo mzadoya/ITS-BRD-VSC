@@ -16,7 +16,7 @@ static int stack[MAX_SIZE];
  * 
  * @param void
  *
- * @return true, wenn zwei oder mehr Werte im Stack vorhanden sind, anderfalls 
+ * @return true, wenn zwei oder mehr Werte im Stack vorhanden sind, andernfalls 
  *         false
  *********************************************************************************/
 bool safetyCheckOne(void) {
@@ -45,7 +45,7 @@ bool safetyCheckOne(void) {
  * 
  * @param void
  *
- * @return true wenn es gibt einige Elemente im Stack und false wenn es gibt keine
+ * @return true wenn sich mind. ein Element im Stack befindet, andernfalls false
  *********************************************************************************/
   bool underflowCheck(void) {
     if (0 >= position) {
