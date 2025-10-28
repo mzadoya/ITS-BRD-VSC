@@ -4,6 +4,6 @@
 
 method=source_dir
 command=
-source_dir=C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard
+source_dir=/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard
 work_dir=
 

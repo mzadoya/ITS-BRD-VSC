@@ -12,7 +12,7 @@
  ******************************************************************************
  * @brief   Subtrahiert die beiden obersten Elemente des Stacks.
  *
- * @param   Keine
+ * @param   void
  *
  * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
  *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
@@ -23,13 +23,13 @@
  ******************************************************************************
  */
 
-int subStack();
+int subStack(void);
 
 /**
  ******************************************************************************
  * @brief   Addiert die beiden obersten Elemente des Stacks.
  *
- * @param   Keine
+ * @param   void
  *
  * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
  *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
@@ -40,13 +40,13 @@ int subStack();
  ******************************************************************************
  */
 
-int sumStack();
+int sumStack(void);
 
 /**
  ******************************************************************************
  * @brief   Dividiert die beiden obersten Elemente des Stacks.
  *
- * @param   Keine
+ * @param   void
  *
  * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
  *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
@@ -57,13 +57,13 @@ int sumStack();
  ******************************************************************************
  */
 
-int divStack();
+int divStack(void);
 
 /**
  ******************************************************************************
  * @brief   Multipliziert die beiden obersten Elemente des Stacks.
  *
- * @param   Keine
+ * @param   void
  *
  * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
  *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
@@ -74,6 +74,6 @@ int divStack();
  ******************************************************************************
  */
 
-int mulStack();
+int mulStack(void);
 
 #endif

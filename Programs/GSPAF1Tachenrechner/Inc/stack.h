@@ -14,32 +14,32 @@
  ******************************************************************************
  * @brief   Initialisierung des Stacks
  *
- * @param   Keine
+ * @param   void
  *
  * @return  kein
  ******************************************************************************
  */
 
-void init();
+void init(void);
 
 /**
  ******************************************************************************
  * @brief   zeigt der oberste Element im Stack
  *
- * @param   Keine
+ * @param   void
  *
  * @return  beim erfolgreich ergibt der oberste Element vom Stack
  *          beim Fehlern ergibt (-1)
  ******************************************************************************
  */
 
-int top();
+int top(void);
 
 /**
  ******************************************************************************
  * @brief   fügt alle Elemente vom Stack in einen Array
  *
- * @param   Array
+ * @param   all Zeiger auf das Array, in dem die Stack-Werte gespeichert werden
  *
  * @return  ergibt (0) beim Erfolg ider (-1) beim Fehlern
  ******************************************************************************
@@ -51,25 +51,25 @@ int getAll(int* all);
  ******************************************************************************
  * @brief   setz alle Elemente und position auf (0)
  *
- * @param   Keine
+ * @param   void
  *
  * @return  Kein return
  ******************************************************************************
  */
 
-void clear();
+void clear(void);
 
 /**
  ******************************************************************************
  * @brief   erzuegt ein Duplikate von oberste Element und fuegt ihm in Stack
  *
- * @param   Keine
+ * @param   void
  *
  * @return  beim Erfolg (0) und beim Fehlern (-1)
  ******************************************************************************
  */
 
-int dupeTop();
+int dupeTop(void);
 
 /**
  ********************************************************************************  

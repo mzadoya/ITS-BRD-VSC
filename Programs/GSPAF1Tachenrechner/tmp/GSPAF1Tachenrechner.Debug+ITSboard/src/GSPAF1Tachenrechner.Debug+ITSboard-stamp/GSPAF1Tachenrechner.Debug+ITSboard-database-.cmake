@@ -1,11 +1,11 @@
 
-cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
+cmake_minimum_required(VERSION 3.15)
 
-set(command "C:/Users/denys/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.31.5/bin/cmake.exe;--build;C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/1;--target;database")
+set(command "/Users/maximzadoya/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake;--build;/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/1;--target;database")
 set(log_merged "")
 set(log_output_on_failure "ON")
-set(stdout_log "C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-out.log")
-set(stderr_log "C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-err.log")
+set(stdout_log "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-out.log")
+set(stderr_log "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-err.log")
 execute_process(
   COMMAND ${command}
   RESULT_VARIABLE result
@@ -31,7 +31,7 @@ if(result)
   if (${log_merged})
     set(msg "${msg}\nSee also\n  ${stderr_log}")
   else()
-    set(msg "${msg}\nSee also\n  C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-*.log")
+    set(msg "${msg}\nSee also\n  /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-*.log")
   endif()
   if (${log_output_on_failure})
     message(SEND_ERROR "${msg}")
@@ -50,7 +50,7 @@ if(result)
   endif()
 else()
   if(NOT "Ninja" MATCHES "Ninja")
-    set(msg "GSPAF1Tachenrechner.Debug+ITSboard database command succeeded.  See also C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-*.log")
+    set(msg "GSPAF1Tachenrechner.Debug+ITSboard database command succeeded.  See also /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-database-*.log")
     message(STATUS "${msg}")
   endif()
 endif()
