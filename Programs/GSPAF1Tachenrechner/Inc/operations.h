@@ -8,12 +8,72 @@
 #ifndef OPERATIONS_H
 #define OPERATIONS_H
 
-int divStack();
-
-int mulStack();
+/**
+ ******************************************************************************
+ * @brief   Subtrahiert die beiden obersten Elemente des Stacks.
+ *
+ * @param   Keine
+ *
+ * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
+ *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
+ *          - (-1): Stack ist voll (Overflow)
+ *          - (-2): Zu wenige Elemente auf dem Stack
+ *          - (-3): Arithmetischer Überlauf bei der Subtraktion
+ *          - (-4): Fehler beim Entfernen (Pop) der Werte vom Stack
+ ******************************************************************************
+ */
 
 int subStack();
 
+/**
+ ******************************************************************************
+ * @brief   Addiert die beiden obersten Elemente des Stacks.
+ *
+ * @param   Keine
+ *
+ * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
+ *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
+ *          - (-1): Stack ist voll (Overflow)
+ *          - (-2): Zu wenige Elemente auf dem Stack
+ *          - (-3): Arithmetischer Überlauf bei der Addition
+ *          - (-4): Fehler beim Entfernen (Pop) der Werte vom Stack
+ ******************************************************************************
+ */
+
 int sumStack();
+
+/**
+ ******************************************************************************
+ * @brief   Dividiert die beiden obersten Elemente des Stacks.
+ *
+ * @param   Keine
+ *
+ * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
+ *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
+ *          - (-1): Stack ist voll (Overflow)
+ *          - (-2): Zu wenige Elemente auf dem Stack
+ *          - (-3): Division durch Null oder arithmetischer Fehler
+ *          - (-4): Fehler beim Entfernen (Pop) der Werte vom Stack
+ ******************************************************************************
+ */
+
+int divStack();
+
+/**
+ ******************************************************************************
+ * @brief   Multipliziert die beiden obersten Elemente des Stacks.
+ *
+ * @param   Keine
+ *
+ * @return  Bei erfolgreicher Ausführung wird 0 zurückgegeben. 
+ *          Andernfalls wird einer der folgenden Fehlercodes zurückgegeben:
+ *          - (-1): Stack ist voll (Overflow)
+ *          - (-2): Zu wenige Elemente auf dem Stack
+ *          - (-3): Arithmetischer Überlauf bei der Multiplikation
+ *          - (-4): Fehler beim Entfernen (Pop) der Werte vom Stack
+ ******************************************************************************
+ */
+
+int mulStack();
 
 #endif

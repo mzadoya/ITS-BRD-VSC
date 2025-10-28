@@ -11,135 +11,122 @@
 #define STACK_H
 
 /**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
+ ******************************************************************************
+ * @brief   Initialisierung des Stacks
+ *
+ * @param   Keine
+ *
+ * @return  kein
+ ******************************************************************************
+ */
+
 void init();
 
 /**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
+ ******************************************************************************
+ * @brief   zeigt der oberste Element im Stack
+ *
+ * @param   Keine
+ *
+ * @return  beim erfolgreich ergibt der oberste Element vom Stack
+ *          beim Fehlern ergibt (-1)
+ ******************************************************************************
+ */
+
 int top();
 
 /**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
+ ******************************************************************************
+ * @brief   fügt alle Elemente vom Stack in einen Array
+ *
+ * @param   Array
+ *
+ * @return  ergibt (0) beim Erfolg ider (-1) beim Fehlern
+ ******************************************************************************
+ */
+
 int getAll(int* all);
 
 /**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
+ ******************************************************************************
+ * @brief   setz alle Elemente und position auf (0)
+ *
+ * @param   Keine
+ *
+ * @return  Kein return
+ ******************************************************************************
+ */
+
 void clear();
 
 /**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
+ ******************************************************************************
+ * @brief   erzuegt ein Duplikate von oberste Element und fuegt ihm in Stack
+ *
+ * @param   Keine
+ *
+ * @return  beim Erfolg (0) und beim Fehlern (-1)
+ ******************************************************************************
+ */
+
 int dupeTop();
 
 /**
  ********************************************************************************  
- * @brief
+ * @brief Vertauscht die beiden zuletzt auf den Stack gelegten Werte
  * 
- * @param
- * 
- * @return
- * 
+ * @return 0 wenn die Werte erfolgreich vertauscht wurden 
+ *        -1 wenn der Stack voll ist (Overflow)
+ *        -2 wenn sich weniger als zwei Elemente im Stack befinden 
  *********************************************************************************/
+
 int swapTop();
 
 /**
  ********************************************************************************  
- * @brief
+ * @brief Legt den uebergebenen Wert auf den Stack 
  * 
- * @param
+ * @param v Der Wert, der auf den Stack gelegt werden soll
  * 
- * @return
- * 
+ * @return 0 wenn das Element erfolgreich auf den Stack gelegt wurde, 
+ *        -1 wenn der Stack voll ist (Overflow)
  *********************************************************************************/
+
 int push(int v);
 
 /**
  ********************************************************************************  
- * @brief
+ * @brief Entfernt das oberste Elemente vom Stack und gibt es zurück.
  * 
- * @param
+ * @param v Zeiger auf eine Variable, in der das entfernte Element gespeichert wird.
  * 
- * @return
- * 
+ * @return 0 wenn das Element erfolgreich entfernt wurde, -1 wenn der Stack leer ist
  *********************************************************************************/
+
 int pop(int *v);
 
-/**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
-int getPos();
 
 /**
  ********************************************************************************  
- * @brief
+ * @brief prueft ob es mehr als MaxSize Elemente in Stack gibt
  * 
- * @param
- * 
- * @return
- * 
+ * @param void
+ *
+ * @return true wenn es gibt kein Overflow un false wenn es gibt ein Overflow
  *********************************************************************************/
-int getSecondValue();
+
+bool overflowCheck();
 
 /**
  ********************************************************************************  
- * @brief
+ * @brief prueft ob es zwei Elemente im Stack gibt
  * 
- * @param
- * 
- * @return
- * 
+ * @param void
+ *
+ * @return true wenn es mind. zwei Elemente un false wenn es weniger oder gleich 1
  *********************************************************************************/
- bool safetyCheckTwo();
 
- /**
- ********************************************************************************  
- * @brief
- * 
- * @param
- * 
- * @return
- * 
- *********************************************************************************/
- bool overflowCheck();
+bool safetyCheckTwo();
+
 
 #endif

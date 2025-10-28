@@ -1,8 +1,8 @@
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/database.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-build.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-configure.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-executes.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-database.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/edit_cache.dir
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/rebuild_cache.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/database.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-build.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-configure.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-executes.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-database.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/edit_cache.dir
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/rebuild_cache.dir

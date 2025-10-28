@@ -8,12 +8,14 @@
 static int position = 0;
 static int stack[MAX_SIZE];
 
-//-----------------------Helpers
+
 
 /**
  ********************************************************************************  
- * @brief Prüft, ob im Stack min. zwei Werte vorhanden sind.
+ * @brief Prüft, ob im Stack min. ein Wert vorhanden sind.
  * 
+ * @param void
+ *
  * @return true, wenn zwei oder mehr Werte im Stack vorhanden sind, anderfalls 
  *         false
  *********************************************************************************/
@@ -37,7 +39,14 @@ bool safetyCheckOne(void) {
     }
     return true;
  }
-
+/**
+ ********************************************************************************  
+ * @brief prueft ob ein Stack leer ist
+ * 
+ * @param void
+ *
+ * @return true wenn es gibt einige Elemente im Stack und false wenn es gibt keine
+ *********************************************************************************/
   bool underflowCheck(void) {
     if (0 >= position) {
         return false;
@@ -45,7 +54,7 @@ bool safetyCheckOne(void) {
     return true;
  }
 
-//-----------------------End Helpers
+
 
 void init(void) {
     for (int i = 0; i < MAX_SIZE; i++) {
@@ -66,7 +75,7 @@ int getAll(int* all){
        for (int i = position - 1; i >= 0; i-- ) {
             all[i] = stack[i];
         }   
-        return 0;
+        return position;
     }
     return -1;
 } //Correct
@@ -87,20 +96,13 @@ int dupeTop(void) {
     return -2;
 } //correct
 
-/**
- ********************************************************************************  
- * @brief Vertauscht die beiden zuletzt auf den Stack gelegten Werte
- * 
- * @return 0 wenn die Werte erfolgreich vertauscht wurden 
- *        -1 wenn der Stack voll ist (Overflow)
- *        -2 wenn sich weniger als zwei Elemente im Stack befinden 
- *********************************************************************************/
+
 int swapTop(void) {
     if (!safetyCheckTwo()) {
         return -2;
     }
     if (overflowCheck()) {
-        int temporary = stack[position - 1]; //сделать проверку что есть предыдущий
+        int temporary = stack[position - 1]; 
         stack[position - 1] = stack[position - 2];
         stack[position - 2] = temporary;
         return 0;
@@ -111,15 +113,7 @@ int swapTop(void) {
     return -1;
 } //correct
 
-/**
- ********************************************************************************  
- * @brief Legt den uebergebenen Wert auf den Stack 
- * 
- * @param v Der Wert, der auf den Stack gelegt werden soll
- * 
- * @return 0 wenn das Element erfolgreich auf den Stack gelegt wurde, 
- *        -1 wenn der Stack voll ist (Overflow)
- *********************************************************************************/
+
 int push(int v) {
     if (overflowCheck()) {
         stack[position] = v;
@@ -129,14 +123,7 @@ int push(int v) {
      return -1;
 } //Correct
 
-/**
- ********************************************************************************  
- * @brief Entfernt das oberste Elemente vom Stack und gibt es zurück.
- * 
- * @param v Zeiger auf eine Variable, in der das entfernte Element gespeichert wird.
- * 
- * @return 0 wenn das Element erfolgreich entfernt wurde, -1 wenn der Stack leer ist
- *********************************************************************************/
+
 int pop(int *v) {
     if (underflowCheck()) {
         *v = stack[position - 1];

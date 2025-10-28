@@ -1,10 +1,10 @@
 # Target labels
  GSPAF1Tachenrechner.Debug+ITSboard
 # Source files and their labels
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-configure
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-configure.rule
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-configure.rule
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-patch.rule
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-update.rule
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-download.rule
-/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-mkdir.rule
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-configure
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/CMakeFiles/GSPAF1Tachenrechner.Debug+ITSboard-configure.rule
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-configure.rule
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-patch.rule
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-update.rule
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-download.rule
+C:/Users/denys/Desktop/GS-Praktikum/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/tmp/GSPAF1Tachenrechner.Debug+ITSboard/src/GSPAF1Tachenrechner.Debug+ITSboard-stamp/GSPAF1Tachenrechner.Debug+ITSboard-mkdir.rule
