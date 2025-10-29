@@ -107,9 +107,6 @@ int swapTop(void) {
         stack[position - 2] = temporary;
         return 0;
     }
-    else {
-         printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
-    }
     return -1;
 } //correct
 

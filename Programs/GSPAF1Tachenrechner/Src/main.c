@@ -28,9 +28,9 @@
 #define MESSAGE_EINGABE "Eingabe: "
 #define MESSAGE_TOP "Letzte Eingabe: "
 #define MESSAGE_STACK_ALL "Alle Eingaben:\n"
-#define MESSAGE_SWAP_OK "Swap erolgreich!\n"
-#define MESSAGE_DOUBLE_OK "Doppelung erolgreich!\n"
-#define ERR_OVERFLOW_STACK "Fehler: Stackoverflow!g\n"
+#define MESSAGE_SWAP_OK "Swap erfolgreich!\n"
+#define MESSAGE_DOUBLE_OK "Doppelung erfolgreich!\n"
+#define ERR_OVERFLOW_STACK "Fehler: Stackoverflow!\n"
 #define ERR_OVERFLOW "Fehler: Ueberlauf bei Berechnung\n"
 #define ERR_UNDERFLOW "Fehler: Stackunderflow\n"
 #define ERR_DIVISION "Fehler: Division durch 0!\n"
@@ -45,16 +45,12 @@ void printTopValue() {
 }
 
 int main(void) {
-	initITSboard();    // Initialisierung des ITS Boards
+	initITSboard();   
 	char d;
-	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
-	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
+	GUI_init(DEFAULT_BRIGHTNESS);  
+	TP_Init(false);                
 	initDisplay();
-
-  // Begruessungstext	
 	
-	
-	// Test in Endlosschleife
 	while(1) {
 		T_token t = nextToken();
 
@@ -199,6 +195,9 @@ int main(void) {
 			int rc = swapTop();
 			if (rc == -2) {
 				printStdout(ERR_NOT_ENOUGH_VALUES);
+			}
+			else if (rc == -1) {
+				 printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
 			}
 			else {
 				printStdout(MESSAGE_SWAP_OK);
