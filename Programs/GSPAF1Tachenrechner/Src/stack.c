@@ -54,8 +54,6 @@ bool safetyCheckOne(void) {
     return true;
  }
 
-
-
 void init(void) {
     for (int i = 0; i < MAX_SIZE; i++) {
         stack[i] = 0;
@@ -67,7 +65,7 @@ int top(void) {
        return stack[position-1];
     }
     return -1;
-} //Correct
+} 
 
 int getAll(int* all){
 
@@ -78,14 +76,14 @@ int getAll(int* all){
         return position;
     }
     return -1;
-} //Correct
+} 
 
 void clear(void) {
     for (int i = position - 1; i >= 0; i-- ) {
         stack[i] = 0;  
     }
     position = 0;
-} //correct
+} 
 
 int dupeTop(void) {
     if (safetyCheckOne()) {
@@ -94,8 +92,7 @@ int dupeTop(void) {
         return 0;
     }
     return -2;
-} //correct
-
+}
 
 int swapTop(void) {
     if (!safetyCheckTwo()) {
@@ -108,8 +105,7 @@ int swapTop(void) {
         return 0;
     }
     return -1;
-} //correct
-
+} 
 
 int push(int v) {
     if (overflowCheck()) {
@@ -118,8 +114,7 @@ int push(int v) {
         return 0;
     }
      return -1;
-} //Correct
-
+} 
 
 int pop(int *v) {
     if (underflowCheck()) {
@@ -128,5 +123,5 @@ int pop(int *v) {
         return 0;   
     }
     return -1;
-} //Correct
+} 
 

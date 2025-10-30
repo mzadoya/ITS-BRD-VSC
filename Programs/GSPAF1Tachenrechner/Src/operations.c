@@ -16,22 +16,19 @@ int sumStack() {
         int nextValue;
         if (pop(&topValue) != 0) return -4;
         if (pop(&nextValue)!=0) return -4;
-        if (topValue <= INT_MAX - nextValue) { //TODO: if nextValue negative -> false number -> crash 
+        if (topValue <= INT_MAX - nextValue) { 
             int ergebnis = topValue + nextValue;
             push(ergebnis);
             return 0;
         }
         else {
-             printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung von %d + %d - Overflow\n", __FILE__, __LINE__, topValue, nextValue);
              return -3;
         }
     }
     else {
-         printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
          return -1;
     }
-} //Correct - test Bedarf
-
+} 
 
 int subStack() {
 
@@ -50,18 +47,15 @@ int subStack() {
             return 0;
         }
         else {
-             printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung von %d - %d - Overflow\n", __FILE__, __LINE__,nextValue, topValue);
              return -3;
         }
        
     }
     else {
-         printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
          return -1;
     }
     
 }
-
 
 int mulStack() {
 
@@ -80,17 +74,13 @@ int mulStack() {
             return 0;
         }
         else {
-              printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung von %d * %d - Overflow\n", __FILE__, __LINE__, topValue, nextValue);
               return -3;
         }
     }
     else {
-         printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
         return -1;
     }
-} //Correct - test Bedarf
-
-
+} 
 
 int divStack() {
     if (!safetyCheckTwo()) {
@@ -100,7 +90,7 @@ int divStack() {
     if (pop(&topValue) != 0) return -4;
 
     if(topValue == 0) {
-        return -3;
+        return -5;
     }
     
     if (overflowCheck()) {
@@ -111,12 +101,6 @@ int divStack() {
             push(ergebnis);
             return 0;
         }
-        else {
-             printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung von %d / %d - Overflow\n", __FILE__, __LINE__, nextValue, topValue);
-        }
-    }
-    else {
-         printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
     }
     return -1;
 }
