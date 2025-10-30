@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    main.c
   * @author  Maksym Zadoya
-  * @brief   
+  * @brief   Praktikumsaufgabe 1 GS WS25/26 - Tachenrechner
   ******************************************************************************
   */
 /* Includes ------------------------------------------------------------------*/
@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include "converter.h"
 #include "operations.h"
+#include <stdio.h>
 
 #define MAX_SIZE_TEMP 12
 #define MESSAGE_EINGABE "Eingabe: "
@@ -75,9 +76,11 @@ int main(void) {
 			}
 			else if (rc == -1) {
 				printStdout(ERR_OVERFLOW_STACK);
+				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
 			}
 			else if (rc == -3) {
 				printStdout(ERR_OVERFLOW);
+				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Overflow\n", __FILE__, __LINE__);
 			}
 			else if (rc == -4) {
 				printStdout(ERR_UNDERFLOW);
@@ -97,9 +100,11 @@ int main(void) {
 			}
 			else if (rc == -1) {
 				printStdout(ERR_OVERFLOW_STACK );
+				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
 			}
 			else if (rc == -3) {
 				printStdout(ERR_OVERFLOW);
+				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Overflow\n", __FILE__, __LINE__);
 			}
 			else if (rc == -4) {
 				printStdout(ERR_UNDERFLOW);
@@ -119,9 +124,11 @@ int main(void) {
 			}
 			else if (rc == -1) {
 				printStdout(ERR_OVERFLOW_STACK );
+				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
 			}
 			else if (rc == -3) {
 				printStdout(ERR_OVERFLOW);
+				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Overflow\n", __FILE__, __LINE__);
 			}
 			else if (rc == -4) {
 				printStdout(ERR_UNDERFLOW);
@@ -142,9 +149,11 @@ int main(void) {
 			}
 			else if (rc == -1) {
 				printStdout(ERR_OVERFLOW_STACK );
+				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
 			}
-			else if (rc == -3) {
+			else if (rc == -5) {
 				printStdout(ERR_DIVISION);
+				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Division durch 0\n", __FILE__, __LINE__);
 			}
 			else if (rc == -4) {
 				printStdout(ERR_UNDERFLOW);
