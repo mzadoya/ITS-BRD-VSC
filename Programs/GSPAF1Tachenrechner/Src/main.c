@@ -69,13 +69,15 @@ int main(void) {
 			{
 				char r[VALUE_SIZE];
 				char res[] = MESSAGE_EINGABE;
-				valueToString(t.val, r);
-				addDescription(res, r);
-
-				printStdout(res);
-				push(t.val);
-				break;
-
+				if (push(t.val) == 0) {
+					valueToString(t.val, r);
+					addDescription(res, r);
+					printStdout(res);
+					push(t.val);
+					break;
+				} else {
+					printStdout(ERRMSG_OVERFLOW_STACK);
+				}
 			}
 
 		case PLUS: 
