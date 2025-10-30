@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <limits.h>
+#include "stack.h"
 
 #define MAX_SIZE 1000
 
@@ -60,14 +61,15 @@ void init(void) {
     }
 }
 
-int top(void) {
+int top(int* topValue) { //TODO : return 
     if (safetyCheckOne()) {
-       return stack[position-1];
+       *topValue = stack[position-1];
+       return 0;
     }
-    return -1;
+    return -2;
 } 
 
-int getAll(int* all){
+int getAll(int* all){ //TODO stackoverflow 
 
     if (safetyCheckOne()) {
        for (int i = position - 1; i >= 0; i-- ) {
@@ -75,7 +77,7 @@ int getAll(int* all){
         }   
         return position;
     }
-    return -1;
+    return -2;
 } 
 
 void clear(void) {

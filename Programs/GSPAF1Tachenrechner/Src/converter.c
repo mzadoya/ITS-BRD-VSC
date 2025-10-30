@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include "converter.h"
 
 void valueToString(int value, char* str) {
 

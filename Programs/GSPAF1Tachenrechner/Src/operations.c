@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "stack.h"
 #include <limits.h>
+#include "operations.h"
 
 
 int sumStack() {

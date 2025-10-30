@@ -25,7 +25,7 @@
 #include "operations.h"
 #include <stdio.h>
 
-#define MAX_SIZE_TEMP 12
+#define VALUE_SIZE 12
 #define MESSAGE_EINGABE "Eingabe: "
 #define MESSAGE_TOP "Letzte Eingabe: "
 #define MESSAGE_STACK_ALL "Alle Eingaben:\n"
@@ -38,11 +38,17 @@
 #define ERR_NOT_ENOUGH_VALUES "Fehler: Nicht genug Zahlen im Stack\n"
 
 void printTopValue() {
-	char r[MAX_SIZE_TEMP];
+	char r[VALUE_SIZE];
 	char res[] = MESSAGE_TOP;
-	int toptemp = top();
-	valueToString(toptemp, r);
-	printStdout(r);
+	int topValue = 0;
+	int rc = top(&topValue);
+	if (rc == -2) {
+		printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+	}
+	else {
+		valueToString(topValue, r);
+		printStdout(r);
+	}
 }
 
 int main(void) {
@@ -59,31 +65,32 @@ int main(void) {
 		{
 		case NUMBER:
 			{
-				char r[12];
+				char r[VALUE_SIZE];
 				char res[] = MESSAGE_EINGABE;
 				valueToString(t.val, r);
 				addDescription(res, r);
+
 				printStdout(res);
 				push(t.val);
 				break;
+
 			}
 
 		case PLUS: 
 		{
 			int rc = sumStack();
 			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES);
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK);
-				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW_STACK __FILE__);
 			}
 			else if (rc == -3) {
-				printStdout(ERR_OVERFLOW);
-				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Overflow\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW __FILE__);
+				
 			}
 			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW);
+				printStdout(ERR_UNDERFLOW __FILE__);
 			}
 			else if (rc == 0){
 				printStdout( "Result: ");
@@ -96,18 +103,16 @@ int main(void) {
 		{ 
 			int rc = subStack();
 			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES);
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK );
-				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW_STACK __FILE__);
 			}
 			else if (rc == -3) {
-				printStdout(ERR_OVERFLOW);
-				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Overflow\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW __FILE__);
 			}
 			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW);
+				printStdout(ERR_UNDERFLOW __FILE__);
 			}
 			else {
 				printStdout( "Result: ");
@@ -120,18 +125,16 @@ int main(void) {
 		{
 			int rc = mulStack();
 			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES);
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK );
-				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW_STACK __FILE__);
 			}
 			else if (rc == -3) {
-				printStdout(ERR_OVERFLOW);
-				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Overflow\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW __FILE__);
 			}
 			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW);
+				printStdout(ERR_UNDERFLOW __FILE__);
 			}
 			else {
 				printStdout( "Result: ");
@@ -145,18 +148,16 @@ int main(void) {
 		{
 			int rc = divStack();
 			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES);
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK );
-				printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
+				printStdout(ERR_OVERFLOW_STACK __FILE__);
 			}
 			else if (rc == -5) {
-				printStdout(ERR_DIVISION);
-				printf("Fehler in Datei %s, Zeile %d: Error bei der Berechnung - Division durch 0\n", __FILE__, __LINE__);
+				printStdout(ERR_DIVISION __FILE__);
 			}
 			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW);
+				printStdout(ERR_UNDERFLOW __FILE__);
 			}
 			else {
 				printStdout( "Result: ");
@@ -174,16 +175,16 @@ int main(void) {
 		
 		case PRT_ALL:
 		{
-			int all[MAX_SIZE_TEMP];
+			int all[VALUE_SIZE];
 			int stackSize = getAll(all);
-			if (stackSize == -1) {
-				
+			if (stackSize == -2) {
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 
 			else {
 				printStdout(MESSAGE_STACK_ALL);
 				for (int i = 0; i < stackSize; i++) {
-					char r[MAX_SIZE_TEMP];
+					char r[VALUE_SIZE];
 					valueToString(all[i], r);
 					printStdout(r);
 					printStdout("\n");
@@ -193,6 +194,7 @@ int main(void) {
 		}
 		case PRT:
 		{
+			int topValue = 0;
 			printStdout("Letzte Eingabe:");
 			printTopValue();
 			printStdout("\n");
@@ -203,10 +205,10 @@ int main(void) {
 		{
 			int rc = swapTop();
 			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES);
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else if (rc == -1) {
-				 printf("Fehler in Datei %s, Zeile %d: Stack is full!\n", __FILE__, __LINE__);
+			    printStdout(ERR_OVERFLOW_STACK __FILE__);
 			}
 			else {
 				printStdout(MESSAGE_SWAP_OK);
@@ -218,16 +220,16 @@ int main(void) {
 		{
 			int rc = dupeTop();
 			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES);
+				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else {
-				printStdout(MESSAGE_DOUBLE_OK);
+				printStdout(MESSAGE_DOUBLE_OK __FILE__);
 			}
 		}
 		break;
 			
 		case OVERFLOW:
-		printStdout("Overflow!\n");
+		printStdout("Overflow!\n" __FILE__ );
 		break;
 /*
 		case UNEXPECTED:
