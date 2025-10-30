@@ -4,56 +4,57 @@
 #include "stack.h"
 #include <limits.h>
 #include "operations.h"
-
+#include "global.h"
+#include "fehler.h"
 
 int sumStack() {
 
     if (!safetyCheckTwo()) {
-        return -2;
+        return ERR_NOT_ENOUGH_VALUES;
     }
 
     if (overflowCheck()) {
         int topValue;
         int nextValue;
-        if (pop(&topValue) != 0) return -4;
-        if (pop(&nextValue)!=0) return -4;
+        if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
+        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
         if (topValue <= INT_MAX - nextValue) { 
             int ergebnis = topValue + nextValue;
             push(ergebnis);
             return 0;
         }
         else {
-             return -3;
+             return ERR_CALCULATION_OVERFLOW;
         }
     }
     else {
-         return -1;
+         return ERR_STACK_OVERFLOW;
     }
 } 
 
 int subStack() {
 
     if (!safetyCheckTwo()) {
-        return -2;
+        return ERR_NOT_ENOUGH_VALUES;
     }
     
     if (overflowCheck()) {
         int topValue;
         int nextValue;
-        if (pop(&topValue) != 0) return -4;
-        if (pop(&nextValue)!=0) return -4;
+        if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
+        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
         if (topValue - nextValue <= INT_MAX && topValue - nextValue >= INT_MIN) {
             int ergebnis = nextValue - topValue;
             push(ergebnis);
             return 0;
         }
         else {
-             return -3;
+             return ERR_CALCULATION_OVERFLOW;
         }
        
     }
     else {
-         return -1;
+         return ERR_STACK_OVERFLOW;
     }
     
 }
@@ -61,47 +62,47 @@ int subStack() {
 int mulStack() {
 
     if (!safetyCheckTwo()) {
-        return -2;
+        return ERR_NOT_ENOUGH_VALUES;
     }
 
     if (overflowCheck()) {
         int topValue;
         int nextValue;
-        if (pop(&topValue) != 0) return -4;
-        if (pop(&nextValue)!=0) return -4;
+        if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
+        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
         if (nextValue != 0 && topValue <= INT_MAX / nextValue) {
             int ergebnis = topValue * nextValue;
             push(ergebnis);
             return 0;
         }
         else {
-              return -3;
+              return ERR_CALCULATION_OVERFLOW;
         }
     }
     else {
-        return -1;
+        return ERR_STACK_OVERFLOW;
     }
 } 
 
 int divStack() {
     if (!safetyCheckTwo()) {
-        return -2;
+        return ERR_NOT_ENOUGH_VALUES;
     }
     int topValue;
-    if (pop(&topValue) != 0) return -4;
+    if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
 
     if(topValue == 0) {
-        return -5;
+        return ERR_DIVISION_BY_ZERO;
     }
     
     if (overflowCheck()) {
         int nextValue;
-        if (pop(&nextValue)!=0) return -4;
+        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
         if (topValue != -1 && topValue != 0) {
             int ergebnis = nextValue / topValue;
             push(ergebnis);
             return 0;
         }
     }
-    return -1;
+    return ERR_STACK_OVERFLOW;
 }

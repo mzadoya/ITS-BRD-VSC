@@ -3,13 +3,11 @@
 #include <stdbool.h>
 #include <limits.h>
 #include "stack.h"
-
-#define MAX_SIZE 1000
+#include "global.h"
+#include "fehler.h"
 
 static int position = 0;
-static int stack[MAX_SIZE];
-
-
+static int stack[STACK_MAX_SIZE];
 
 /**
  ********************************************************************************  
@@ -35,7 +33,7 @@ bool safetyCheckOne(void) {
  }
 
  bool overflowCheck(void) {
-    if (position >= MAX_SIZE) {
+    if (position >= STACK_MAX_SIZE) {
         return false;
     }
     return true;
@@ -56,7 +54,7 @@ bool safetyCheckOne(void) {
  }
 
 void init(void) {
-    for (int i = 0; i < MAX_SIZE; i++) {
+    for (int i = 0; i < STACK_MAX_SIZE; i++) {
         stack[i] = 0;
     }
 }
@@ -66,7 +64,7 @@ int top(int* topValue) { //TODO : return
        *topValue = stack[position-1];
        return 0;
     }
-    return -2;
+    return ERR_NOT_ENOUGH_VALUES;
 } 
 
 int getAll(int* all){ //TODO stackoverflow 
@@ -77,7 +75,7 @@ int getAll(int* all){ //TODO stackoverflow
         }   
         return position;
     }
-    return -2;
+    return ERR_NOT_ENOUGH_VALUES;
 } 
 
 void clear(void) {
@@ -93,12 +91,12 @@ int dupeTop(void) {
         position++;
         return 0;
     }
-    return -2;
+    return ERR_NOT_ENOUGH_VALUES;
 }
 
 int swapTop(void) {
     if (!safetyCheckTwo()) {
-        return -2;
+        return ERR_NOT_ENOUGH_VALUES;
     }
     if (overflowCheck()) {
         int temporary = stack[position - 1]; 
@@ -106,7 +104,7 @@ int swapTop(void) {
         stack[position - 2] = temporary;
         return 0;
     }
-    return -1;
+    return ERR_STACK_OVERFLOW;
 } 
 
 int push(int v) {
@@ -115,7 +113,7 @@ int push(int v) {
         position++;   
         return 0;
     }
-     return -1;
+     return ERR_STACK_OVERFLOW;
 } 
 
 int pop(int *v) {
@@ -124,6 +122,6 @@ int pop(int *v) {
         position--;
         return 0;   
     }
-    return -1;
+    return ERR_STACK_OVERFLOW;
 } 
 

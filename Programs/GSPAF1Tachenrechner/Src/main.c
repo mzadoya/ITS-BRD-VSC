@@ -24,18 +24,20 @@
 #include "converter.h"
 #include "operations.h"
 #include <stdio.h>
+#include "fehler.h"
+#include "global.h"
 
-#define VALUE_SIZE 12
+#define ERRMSG_OVERFLOW_STACK "Fehler: Stackoverflow!\n"
+#define ERRMSG_OVERFLOW "Fehler: Ueberlauf bei Berechnung\n"
+#define ERRMSG_UNDERFLOW "Fehler: Stackunderflow\n"
+#define ERRMSG_DIVISION "Fehler: Division durch 0!\n"
+#define ERRMSG_NOT_ENOUGH_VALUES "Fehler: Nicht genug Zahlen im Stack\n"
+
 #define MESSAGE_EINGABE "Eingabe: "
 #define MESSAGE_TOP "Letzte Eingabe: "
 #define MESSAGE_STACK_ALL "Alle Eingaben:\n"
 #define MESSAGE_SWAP_OK "Swap erfolgreich!\n"
 #define MESSAGE_DOUBLE_OK "Doppelung erfolgreich!\n"
-#define ERR_OVERFLOW_STACK "Fehler: Stackoverflow!\n"
-#define ERR_OVERFLOW "Fehler: Ueberlauf bei Berechnung\n"
-#define ERR_UNDERFLOW "Fehler: Stackunderflow\n"
-#define ERR_DIVISION "Fehler: Division durch 0!\n"
-#define ERR_NOT_ENOUGH_VALUES "Fehler: Nicht genug Zahlen im Stack\n"
 
 void printTopValue() {
 	char r[VALUE_SIZE];
@@ -43,7 +45,7 @@ void printTopValue() {
 	int topValue = 0;
 	int rc = top(&topValue);
 	if (rc == -2) {
-		printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+		printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 	}
 	else {
 		valueToString(topValue, r);
@@ -79,18 +81,17 @@ int main(void) {
 		case PLUS: 
 		{
 			int rc = sumStack();
-			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (rc == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
-			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK __FILE__);
+			else if (rc == ERR_STACK_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 			}
-			else if (rc == -3) {
-				printStdout(ERR_OVERFLOW __FILE__);
-				
+			else if (rc == ERR_CALCULATION_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW __FILE__);
 			}
-			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW __FILE__);
+			else if (rc == ERR_STACK_UNDERFLOW) {
+				printStdout(ERRMSG_UNDERFLOW __FILE__);
 			}
 			else if (rc == 0){
 				printStdout( "Result: ");
@@ -102,17 +103,17 @@ int main(void) {
 		case MINUS:
 		{ 
 			int rc = subStack();
-			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (rc == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
-			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK __FILE__);
+			else if (rc == ERR_STACK_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 			}
-			else if (rc == -3) {
-				printStdout(ERR_OVERFLOW __FILE__);
+			else if (rc == ERR_CALCULATION_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW __FILE__);
 			}
-			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW __FILE__);
+			else if (rc == ERR_STACK_UNDERFLOW) {
+				printStdout(ERRMSG_UNDERFLOW __FILE__);
 			}
 			else {
 				printStdout( "Result: ");
@@ -124,17 +125,17 @@ int main(void) {
 		case MULT:
 		{
 			int rc = mulStack();
-			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (rc == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
-			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK __FILE__);
+			else if (rc == ERR_STACK_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 			}
-			else if (rc == -3) {
-				printStdout(ERR_OVERFLOW __FILE__);
+			else if (rc == ERR_CALCULATION_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW __FILE__);
 			}
-			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW __FILE__);
+			else if (rc == ERR_STACK_UNDERFLOW) {
+				printStdout(ERRMSG_UNDERFLOW __FILE__);
 			}
 			else {
 				printStdout( "Result: ");
@@ -147,17 +148,17 @@ int main(void) {
 		case DIV:
 		{
 			int rc = divStack();
-			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (rc == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
-			else if (rc == -1) {
-				printStdout(ERR_OVERFLOW_STACK __FILE__);
+			else if (rc == ERR_STACK_OVERFLOW) {
+				printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 			}
 			else if (rc == -5) {
-				printStdout(ERR_DIVISION __FILE__);
+				printStdout(ERRMSG_DIVISION __FILE__);
 			}
-			else if (rc == -4) {
-				printStdout(ERR_UNDERFLOW __FILE__);
+			else if (rc == ERR_STACK_UNDERFLOW) {
+				printStdout(ERRMSG_UNDERFLOW __FILE__);
 			}
 			else {
 				printStdout( "Result: ");
@@ -177,8 +178,8 @@ int main(void) {
 		{
 			int all[VALUE_SIZE];
 			int stackSize = getAll(all);
-			if (stackSize == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (stackSize == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
 
 			else {
@@ -204,11 +205,11 @@ int main(void) {
 		case SWAP:
 		{
 			int rc = swapTop();
-			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (rc == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
-			else if (rc == -1) {
-			    printStdout(ERR_OVERFLOW_STACK __FILE__);
+			else if (rc == ERR_STACK_OVERFLOW) {
+			    printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 			}
 			else {
 				printStdout(MESSAGE_SWAP_OK);
@@ -219,8 +220,8 @@ int main(void) {
 		case DOUBLE:
 		{
 			int rc = dupeTop();
-			if (rc == -2) {
-				printStdout(ERR_NOT_ENOUGH_VALUES __FILE__);
+			if (rc == ERR_NOT_ENOUGH_VALUES) {
+				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else {
 				printStdout(MESSAGE_DOUBLE_OK __FILE__);

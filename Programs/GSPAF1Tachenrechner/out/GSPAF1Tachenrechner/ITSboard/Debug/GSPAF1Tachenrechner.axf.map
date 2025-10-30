@@ -3871,8 +3871,8 @@ Image component sizes
        524          0          0          0          0       3913   init.o
       1552          0        336          0          0       5211   keypad.o
        536          0          0         24          2       3903   lcd.o
-      1162        146        888          0          0       2212   main.o
-       518          0          0          0          0       1670   operations.o
+      1162        146        888          0          0       2214   main.o
+       518          0          0          0          0       1672   operations.o
        338         74          0          1          0       1113   scanner.o
        700          0          0          0       4004       2433   stack.o
         36          8        428          0       1024       1020   startup_stm32f429xx.o
@@ -3891,7 +3891,7 @@ Image component sizes
        488          0         84          0          0       3382   terminal.o
 
     ----------------------------------------------------------------------
-     29502        302       2304        108       5260     208033   Object Totals
+     29502        302       2304        108       5260     208037   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        152          0          3          6         10          0   (incl. Padding)
 
@@ -3937,8 +3937,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     29944        320       2304        108       5260     208033   Grand Totals
-     29944        320       2304        108       5260     208033   ELF Image Totals
+     29944        320       2304        108       5260     208037   Grand Totals
+     29944        320       2304        108       5260     208037   ELF Image Totals
      29944        320       2304        108          0          0   ROM Totals
 
 ==============================================================================
