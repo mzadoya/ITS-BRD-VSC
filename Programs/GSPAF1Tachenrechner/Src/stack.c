@@ -4,7 +4,7 @@
 #include <limits.h>
 #include "stack.h"
 #include "global.h"
-#include "fehler.h"
+#include "fehler.h"g
 
 static int position = 0;
 static int stack[STACK_MAX_SIZE];
