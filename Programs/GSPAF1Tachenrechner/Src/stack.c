@@ -86,7 +86,10 @@ void clear(void) {
 } 
 
 int dupeTop(void) {
-    if (safetyCheckOne()) {
+    if (!safetyCheckOne()) {
+        return ERR_STACK_OVERFLOW;
+    }
+    if (overflowCheck()) {
         stack[position] = stack[position-1];  
         position++;
         return 0;

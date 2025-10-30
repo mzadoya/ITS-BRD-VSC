@@ -12,51 +12,48 @@ int sumStack() {
     if (!safetyCheckTwo()) {
         return ERR_NOT_ENOUGH_VALUES;
     }
-
-    if (overflowCheck()) {
-        int topValue;
-        int nextValue;
-        if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
-        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
-        if (topValue <= INT_MAX - nextValue) { 
-            int ergebnis = topValue + nextValue;
+    int topValue;
+    int nextValue;
+    if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
+    if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
+    if (topValue <= INT_MAX - nextValue) { 
+        int ergebnis = topValue + nextValue;
+        if (overflowCheck()) {
             push(ergebnis);
             return 0;
         }
         else {
-             return ERR_CALCULATION_OVERFLOW;
+            return ERR_STACK_OVERFLOW;
         }
     }
     else {
-         return ERR_STACK_OVERFLOW;
+        return ERR_CALCULATION_OVERFLOW;
     }
-} 
+}
 
 int subStack() {
 
     if (!safetyCheckTwo()) {
         return ERR_NOT_ENOUGH_VALUES;
     }
-    
-    if (overflowCheck()) {
-        int topValue;
-        int nextValue;
-        if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
-        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
-        if (topValue - nextValue <= INT_MAX && topValue - nextValue >= INT_MIN) {
-            int ergebnis = nextValue - topValue;
+     
+    int topValue;
+    int nextValue;
+    if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
+    if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
+    if (topValue - nextValue <= INT_MAX && topValue - nextValue >= INT_MIN) {
+        int ergebnis = nextValue - topValue;
+        if (overflowCheck()) {
             push(ergebnis);
             return 0;
         }
         else {
-             return ERR_CALCULATION_OVERFLOW;
+            return ERR_STACK_OVERFLOW;
         }
-       
     }
     else {
-         return ERR_STACK_OVERFLOW;
+        return ERR_CALCULATION_OVERFLOW;
     }
-    
 }
 
 int mulStack() {
@@ -65,24 +62,24 @@ int mulStack() {
         return ERR_NOT_ENOUGH_VALUES;
     }
 
-    if (overflowCheck()) {
-        int topValue;
-        int nextValue;
-        if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
-        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
-        if (nextValue != 0 && topValue <= INT_MAX / nextValue) {
-            int ergebnis = topValue * nextValue;
+    int topValue;
+    int nextValue;
+    if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
+    if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
+    if (nextValue != 0 && topValue <= INT_MAX / nextValue) {
+        int ergebnis = topValue * nextValue;
+        if (overflowCheck()) {
             push(ergebnis);
             return 0;
         }
         else {
-              return ERR_CALCULATION_OVERFLOW;
+            return ERR_STACK_OVERFLOW;
         }
     }
     else {
-        return ERR_STACK_OVERFLOW;
+        return ERR_CALCULATION_OVERFLOW;
     }
-} 
+}
 
 int divStack() {
     if (!safetyCheckTwo()) {
@@ -95,14 +92,19 @@ int divStack() {
         return ERR_DIVISION_BY_ZERO;
     }
     
-    if (overflowCheck()) {
-        int nextValue;
-        if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
-        if (topValue != -1 && topValue != 0) {
-            int ergebnis = nextValue / topValue;
+    int nextValue;
+    if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
+    if (topValue != -1 && topValue != 0) {
+        int ergebnis = nextValue / topValue;
+        if (overflowCheck()) {
             push(ergebnis);
             return 0;
         }
+        else {
+            return ERR_STACK_OVERFLOW;
+        }
     }
-    return ERR_STACK_OVERFLOW;
+    else {
+        return ERR_CALCULATION_OVERFLOW;
+    }
 }
