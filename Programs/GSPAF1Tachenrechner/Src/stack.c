@@ -4,7 +4,9 @@
 #include <limits.h>
 #include "stack.h"
 #include "global.h"
-#include "fehler.h"g
+#include "fehler.h"
+
+#define STACK_MAX_SIZE 10
 
 static int position = 0;
 static int stack[STACK_MAX_SIZE];
@@ -19,7 +21,7 @@ static int stack[STACK_MAX_SIZE];
  *         false
  *********************************************************************************/
 bool safetyCheckOne(void) {
-    if (position == 0) {
+    if (position <= 0) {
         return false;
     }
     return true;
@@ -87,7 +89,7 @@ void clear(void) {
 
 int dupeTop(void) {
     if (!safetyCheckOne()) {
-        return ERR_STACK_OVERFLOW;
+        return ERR_NOT_ENOUGH_VALUES;
     }
     if (overflowCheck()) {
         stack[position] = stack[position-1];  
@@ -98,9 +100,11 @@ int dupeTop(void) {
 }
 
 int swapTop(void) {
+
     if (!safetyCheckTwo()) {
         return ERR_NOT_ENOUGH_VALUES;
     }
+
     if (overflowCheck()) {
         int temporary = stack[position - 1]; 
         stack[position - 1] = stack[position - 2];

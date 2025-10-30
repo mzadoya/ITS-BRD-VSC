@@ -77,6 +77,7 @@ int main(void) {
 				} else {
 					printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 				}
+				break;
 			}
 
 		case PLUS: 
@@ -212,7 +213,7 @@ int main(void) {
 			else if (rc == ERR_STACK_OVERFLOW) {
 			    printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 			}
-			else {
+			else if (rc == 0){
 				printStdout(MESSAGE_SWAP_OK);
 			}
 		}
@@ -224,7 +225,7 @@ int main(void) {
 			if (rc == ERR_NOT_ENOUGH_VALUES) {
 				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
-			else {
+			else if (rc == 0){
 				printStdout(MESSAGE_DOUBLE_OK);
 			}
 		}

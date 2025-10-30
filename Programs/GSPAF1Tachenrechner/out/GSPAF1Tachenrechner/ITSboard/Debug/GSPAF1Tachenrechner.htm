@@ -3,7 +3,7 @@
 <title>Static Call Graph - [/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/out/GSPAF1Tachenrechner/ITSboard/Debug/GSPAF1Tachenrechner.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/out/GSPAF1Tachenrechner/ITSboard/Debug/GSPAF1Tachenrechner.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Oct 30 10:44:16 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Oct 30 11:38:30 2025
 <BR><P>
 <H3>Maximum Stack Usage =        840 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1126,7 +1126,7 @@ Global Symbols
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;genTerm
 </UL>
 
-<P><STRONG><a name="[f0]"></a>divStack</STRONG> (Thumb, 130 bytes, Stack size 24 bytes, operations.o(.text.divStack))
+<P><STRONG><a name="[f0]"></a>divStack</STRONG> (Thumb, 136 bytes, Stack size 24 bytes, operations.o(.text.divStack))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = divStack &rArr; pop &rArr; underflowCheck
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pop
@@ -1137,10 +1137,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f5]"></a>dupeTop</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, stack.o(.text.dupeTop))
-<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = dupeTop &rArr; safetyCheckOne
+<P><STRONG><a name="[f5]"></a>dupeTop</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, stack.o(.text.dupeTop))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = dupeTop &rArr; overflowCheck
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;safetyCheckOne
+<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;overflowCheck
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;safetyCheckOne
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1217,7 +1218,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;genTerm
 </UL>
 
-<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 1108 bytes, Stack size 168 bytes, main.o(.text.main))
+<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 1124 bytes, Stack size 168 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 840<LI>Call Chain = main &rArr; initDisplay &rArr; makeKeyPad &rArr; printButton &rArr; GUI_drawRectangle &rArr; printDebugMsg &rArr; GUI_disNum &rArr;  printDebugMsg (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dupeTop
@@ -1274,10 +1275,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f3]"></a>overflowCheck</STRONG> (Thumb, 44 bytes, Stack size 4 bytes, stack.o(.text.overflowCheck))
+<P><STRONG><a name="[f3]"></a>overflowCheck</STRONG> (Thumb, 42 bytes, Stack size 4 bytes, stack.o(.text.overflowCheck))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = overflowCheck
 </UL>
-<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapTop
+<BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dupeTop
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;swapTop
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divStack
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mulStack
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subStack
@@ -1369,7 +1371,7 @@ Global Symbols
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f6]"></a>safetyCheckOne</STRONG> (Thumb, 40 bytes, Stack size 4 bytes, stack.o(.text.safetyCheckOne))
+<P><STRONG><a name="[f6]"></a>safetyCheckOne</STRONG> (Thumb, 42 bytes, Stack size 4 bytes, stack.o(.text.safetyCheckOne))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = safetyCheckOne
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dupeTop
