@@ -178,6 +178,8 @@ project:
         - file: Inc/stack.h
         - file: Inc/converter.h
         - file: Inc/operations.h
+        - file: Inc/global.h
+        - file: Inc/fehler.h
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:

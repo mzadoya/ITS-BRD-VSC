@@ -69,14 +69,13 @@ int main(void) {
 			{
 				char r[VALUE_SIZE];
 				char res[] = MESSAGE_EINGABE;
-				if (push(t.val) == 0) {
+				int rc = push(t.val);
+				if (rc == 0) {
 					valueToString(t.val, r);
 					addDescription(res, r);
 					printStdout(res);
-					push(t.val);
-					break;
 				} else {
-					printStdout(ERRMSG_OVERFLOW_STACK);
+					printStdout(ERRMSG_OVERFLOW_STACK __FILE__);
 				}
 			}
 
@@ -226,7 +225,7 @@ int main(void) {
 				printStdout(ERRMSG_NOT_ENOUGH_VALUES __FILE__);
 			}
 			else {
-				printStdout(MESSAGE_DOUBLE_OK __FILE__);
+				printStdout(MESSAGE_DOUBLE_OK);
 			}
 		}
 		break;

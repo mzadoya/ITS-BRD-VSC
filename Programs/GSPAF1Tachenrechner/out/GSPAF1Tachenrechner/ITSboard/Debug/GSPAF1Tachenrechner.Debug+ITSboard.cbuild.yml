@@ -337,6 +337,10 @@ build:
           category: header
         - file: ../../../../Inc/operations.h
           category: header
+        - file: ../../../../Inc/global.h
+          category: header
+        - file: ../../../../Inc/fehler.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
