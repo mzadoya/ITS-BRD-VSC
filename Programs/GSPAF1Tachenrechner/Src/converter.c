@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <stdio.h>
 #include "converter.h"
 
 void valueToString(int value, char* str) {
@@ -11,14 +12,18 @@ void valueToString(int value, char* str) {
         pos++;
         str[pos] = '\0';
     }
-    else {
+    else { //Vereinfachen 
         if (value < 0) {
             wasNegative = true;
+            int temp = (value % 10) * (-1);
+            str[pos] = '0'+ temp;
+            value = value / 10;
             value = value * (-1);
+            pos++;
         }
 
         while (value > 0 ) {
-            int temp = value % 10;
+            int temp = (value % 10);
             str[pos] = '0'+ temp;
             value = value / 10;
             pos++;

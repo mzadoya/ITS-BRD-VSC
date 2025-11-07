@@ -64,9 +64,12 @@ int mulStack() {
 
     int topValue;
     int nextValue;
-    if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW;
-    if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW;
-    if (nextValue != 0 && topValue <= INT_MAX / nextValue) {
+    if (pop(&topValue) != 0) return ERR_STACK_UNDERFLOW; //1073 741 824 
+    if (pop(&nextValue)!=0) return ERR_STACK_UNDERFLOW; //-2 
+    if (nextValue != 0 && topValue <= (INT_MAX / nextValue) || nextValue != 0 && topValue >= INT_MIN/nextValue) {
+        if (nextValue == -1 && topValue == INT_MIN || topValue == -1 && nextValue == INT_MIN) {
+             return ERR_CALCULATION_OVERFLOW;
+        }
         int ergebnis = topValue * nextValue;
         if (overflowCheck()) {
             push(ergebnis);
