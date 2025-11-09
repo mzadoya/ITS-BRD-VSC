@@ -1,0 +1,11 @@
+# Target labels
+ GSPA2Drehgeber.Debug+ITSboard
+# Source files and their labels
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/CMakeFiles/GSPA2Drehgeber.Debug+ITSboard-database
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/CMakeFiles/GSPA2Drehgeber.Debug+ITSboard-database.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-configure.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-patch.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-update.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-download.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-mkdir.rule

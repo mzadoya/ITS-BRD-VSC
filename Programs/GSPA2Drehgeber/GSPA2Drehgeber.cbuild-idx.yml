@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.11.0
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: GSPA2Drehgeber.csolution.yml
+  cbuild-run: out/GSPA2Drehgeber+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: GSPA2Drehgeber.cproject.yml
+  cbuilds:
+    - cbuild: out/GSPA2Drehgeber/ITSboard/Debug/GSPA2Drehgeber.Debug+ITSboard.cbuild.yml
+      project: GSPA2Drehgeber
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - GSPA2Drehgeber.cbuild-pack.yml - file is already up-to-date
+          - GSPA2Drehgeber+ITSboard.cbuild-run.yml - file is already up-to-date
+          - GSPA2Drehgeber.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@7.0.0

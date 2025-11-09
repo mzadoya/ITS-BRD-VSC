@@ -117,12 +117,14 @@
   "cmake.ignoreCMakeListsMissing": true,
   "C_Cpp_Runner.msvcBatchPath": "",
   "clangd.arguments": [
-    "--compile-commands-dir=/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPAF1Tachenrechner/out/GSPAF1Tachenrechner/ITSboard/Debug"
+    "--compile-commands-dir=/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/out/GSPA2Drehgeber/ITSboard/Debug"
   ],
   "debug.hideSlowPreLaunchWarning": true,
   "files.associations": {
     "stm32f4xx_hal.h": "c",
     "__locale": "c",
-    "bitset": "c"
-  }
+    "bitset": "c",
+    "sstream": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }

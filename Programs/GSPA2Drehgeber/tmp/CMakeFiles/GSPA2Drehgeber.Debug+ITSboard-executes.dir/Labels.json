@@ -1,0 +1,40 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/CMakeFiles/GSPA2Drehgeber.Debug+ITSboard-executes"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/CMakeFiles/GSPA2Drehgeber.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"GSPA2Drehgeber.Debug+ITSboard"
+		],
+		"name" : "GSPA2Drehgeber.Debug+ITSboard-executes"
+	}
+}

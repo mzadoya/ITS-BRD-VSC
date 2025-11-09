@@ -28,7 +28,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSPAF1Tachenrechner"
+                "cwd": "${workspaceFolder}/Programs/GSPA2Drehgeber"
             },
             "windows": {
                 "options": {
@@ -76,7 +76,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSPAF1Tachenrechner"
+                "cwd": "${workspaceFolder}/Programs/GSPA2Drehgeber"
             },
             "windows": {
                 "options": {
@@ -123,7 +123,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSPAF1Tachenrechner"
+                "cwd": "${workspaceFolder}/Programs/GSPA2Drehgeber"
             },
             "windows": {
                 "options": {
@@ -186,7 +186,7 @@
             "type": "shell",
             "command": "pyocd",
             "options": {
-                "cwd": "${workspaceFolder}/Programs/GSPAF1Tachenrechner"
+                "cwd": "${workspaceFolder}/Programs/GSPA2Drehgeber"
             },
             "windows": {
                 "options": {

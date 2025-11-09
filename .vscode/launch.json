@@ -5,8 +5,8 @@
             "name": "STLink@pyOCD (launch)",
             "type": "gdbtarget",
             "request": "launch",
-            "cwd": "${workspaceFolder}/Programs/GSPAF1Tachenrechner",
-            "program": "out/GSPAF1Tachenrechner/ITSboard/Debug/GSPAF1Tachenrechner.axf",
+            "cwd": "${workspaceFolder}/Programs/GSPA2Drehgeber",
+            "program": "out/GSPA2Drehgeber/ITSboard/Debug/GSPA2Drehgeber.axf",
             "gdb": "arm-none-eabi-gdb",
             "preLaunchTask": "CMSIS Load",
             "initCommands": [
@@ -43,8 +43,8 @@
             "name": "STLink@pyOCD (attach)",
             "type": "gdbtarget",
             "request": "attach",
-            "cwd": "${workspaceFolder}/Programs/GSPAF1Tachenrechner",
-            "program": "out/GSPAF1Tachenrechner/ITSboard/Debug/GSPAF1Tachenrechner.axf",
+            "cwd": "${workspaceFolder}/Programs/GSPA2Drehgeber",
+            "program": "out/GSPA2Drehgeber/ITSboard/Debug/GSPA2Drehgeber.axf",
             "gdb": "arm-none-eabi-gdb",
             "initCommands": [
                 ""
