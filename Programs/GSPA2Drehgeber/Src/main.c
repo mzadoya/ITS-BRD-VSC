@@ -21,8 +21,9 @@
 #include "led.h"
 #include "timer.h"
 #include "converter.h"
+#include "buttons.h"
 
-#define VALUE_SIZE 1000
+#define VALUE_SIZE 50
 bool fehler = false;
 uint8_t direction = 0;
 uint32_t timeDiff = 0;
@@ -39,10 +40,11 @@ int main(void) {
 	timerStart();
 
 	while(1) {
-		uint8_t eingabe = GPIOF->IDR; //or uint16 // TODO: name 
+		uint16_t eingabe = GPIOF->IDR; //or uint16 // TODO: rename 
 		uint8_t buttons = GPIOF->IDR;
 
-		int rcRotary = ecoderUpdate(eingabe, &direction); //TODO ErrMess обработчик и норм название для err 
+		int rcButton = readButtons(buttons, &fehler);
+		int rcRotary = ecoderUpdate(eingabe, &direction); //TODO rename
 		
 		if (rcRotary == ENCODER_CHANGED) {
 		    updateSpeed(&speed);
@@ -54,8 +56,8 @@ int main(void) {
 		if (fehler!=true) {
 			ledSetDirection(direction);
 			char str[VALUE_SIZE];
-			//convertDoubleValue(str, speed);
-
+			convertDoubleValue(str, speed);
+			lcdPrintS(str);
 		}
 		else {
 			ledSetError();
