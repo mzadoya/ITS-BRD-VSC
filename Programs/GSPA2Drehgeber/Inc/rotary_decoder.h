@@ -2,9 +2,10 @@
 #define ROTARY_DECODER_H
 
 #include <stdint.h>
-void timerStart(void);
-void updateTime(uint32_t *timeD);
+extern uint32_t transitionCount;
+void initDecoder(void);
 int ecoderUpdate(uint8_t eingabe, uint8_t *direction);
 void updateSpeed(double *speed);
+void updateAngle(double *wAngle);
 
 #endif

@@ -8,6 +8,8 @@ void ledSetError();
 
 void ledSetDirection(uint8_t direction);
 
-void ledClear();
+void ledStatusClear();
+
+void ledSetPhaseCount(uint32_t phasenCounter);
 
 #endif

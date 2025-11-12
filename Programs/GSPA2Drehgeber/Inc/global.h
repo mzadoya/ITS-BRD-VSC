@@ -12,5 +12,8 @@
 
 #define ENCODER_CHANGED 0
 #define ENCODER_NO_CHANGE 1
+#define ENCODER_TIME_UPDATED 2
+
+#define VALUE_MAX_SIZE 50
 
 #endif
