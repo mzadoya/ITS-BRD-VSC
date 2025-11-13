@@ -26,8 +26,8 @@
 bool fehler = false;
 uint8_t direction = 0;
 uint32_t timeDiff = 0;
-double speed = 0.0;
-double angle = 0.0;
+
+
 
 int main(void) {
 	initITSboard();    // Initialisierung des ITS Boards
@@ -45,12 +45,12 @@ int main(void) {
 		int rcButton = readButtons(eingabe, &fehler);
 		int rcRotary = ecoderUpdate(eingabe, &direction); //TODO rename
 		
-		if (rcRotary == ENCODER_TIME_UPDATED) {
-		    updateSpeed(&speed);
-			updateAngle(&angle);
-		}
+		/*if (rcRotary == ENCODER_TIME_UPDATED) {
+		    updateSpeed(speed);
+			updateAngle(angle);
+		}*/
 
-		else if (rcRotary == ENCODER_ERROR) {
+		if (rcRotary == ENCODER_ERROR) {
 			fehler = true;
 		}
 
@@ -69,3 +69,5 @@ int main(void) {
 }
 
 // EOF
+
+ 

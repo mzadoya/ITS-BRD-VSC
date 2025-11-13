@@ -22,8 +22,8 @@ int printAngle(double angle) {
 int printAngularVelocity(double speed) {
     char str[VALUE_MAX_SIZE];
     lcdGotoXY(18, 6);
-    //convertDoubleValue(str, speed);
-    //lcdPrintReplS(str);
-    lcdPrintInt(speed);
+    convertDoubleValue(str, speed);
+    lcdPrintReplS(str);
+    //lcdPrintInt(speed);
     return 0;
 }
