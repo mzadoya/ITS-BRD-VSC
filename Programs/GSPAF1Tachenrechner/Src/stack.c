@@ -64,7 +64,7 @@ void init(void) {
 int top(int* topValue) { //TODO : return 
     if (safetyCheckOne()) {
        *topValue = stack[position-1];
-       return 0;
+       return OK;
     }
     return ERR_NOT_ENOUGH_VALUES;
 } 
@@ -94,7 +94,7 @@ int dupeTop(void) {
     if (overflowCheck()) {
         stack[position] = stack[position-1];  
         position++;
-        return 0;
+        return OK;
     }
     return ERR_NOT_ENOUGH_VALUES;
 }
@@ -109,7 +109,7 @@ int swapTop(void) {
         int temporary = stack[position - 1]; 
         stack[position - 1] = stack[position - 2];
         stack[position - 2] = temporary;
-        return 0;
+        return OK;
     }
     return ERR_STACK_OVERFLOW;
 } 
@@ -118,7 +118,7 @@ int push(int v) {
     if (overflowCheck()) {
         stack[position] = v;
         position++;   
-        return 0;
+        return OK;
     }
      return ERR_STACK_OVERFLOW;
 } 
@@ -127,7 +127,7 @@ int pop(int *v) {
     if (underflowCheck()) {
         *v = stack[position - 1];
         position--;
-        return 0;   
+        return OK;   
     }
     return ERR_STACK_OVERFLOW;
 } 

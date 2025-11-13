@@ -12,5 +12,6 @@
 #define ERR_CALCULATION_OVERFLOW -3
 #define ERR_STACK_UNDERFLOW -4
 #define ERR_DIVISION_BY_ZERO -5
+#define OK 0
 
 #endif

@@ -15,6 +15,8 @@
             ],
             "customResetCommands": [
                 "monitor reset halt",
+                "maintenance flush register-cache",
+                "maintenance flush dcache",
                 "tbreak main",
                 "continue"
             ],
@@ -37,7 +39,8 @@
             "cmsis": {
                 "cbuildRunFile": "${command:cmsis-csolution.getCbuildRunFile}",
                 "updateConfiguration": "auto"
-            }
+            },
+            "auxiliaryGdb": true
         },
         {
             "name": "STLink@pyOCD (attach)",
@@ -51,6 +54,8 @@
             ],
             "customResetCommands": [
                 "monitor reset halt",
+                "maintenance flush register-cache",
+                "maintenance flush dcache",
                 "tbreak main",
                 "continue"
             ],
@@ -60,7 +65,8 @@
             "cmsis": {
                 "cbuildRunFile": "${command:cmsis-csolution.getCbuildRunFile}",
                 "updateConfiguration": "auto"
-            }
+            },
+            "auxiliaryGdb": true
         }
     ]
 }

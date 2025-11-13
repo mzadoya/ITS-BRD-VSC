@@ -24,7 +24,7 @@
 #include "display.h"
 
 bool fehler = false;
-uint8_t direction = 0;
+uint16_t direction = 0;
 uint32_t timeDiff = 0;
 
 
@@ -34,35 +34,38 @@ int main(void) {
 	GUI_init(DEFAULT_BRIGHTNESS);   // Initialisierung des LCD Boards mit Touch
 	TP_Init(false);                 // Initialisierung des LCD Boards mit Touch
 
-	initDecoder();
+	
 	initTimer();
 	initDisplay();
 	initLed();
+	initDecoder();
 	while(1) {
 		 //or uint16 // TODO: rename 
-		uint8_t eingabe = GPIOF->IDR; 
+		uint32_t timer2 = TIM2->CNT;
+		uint16_t eingabe = GPIOF->IDR; 
+
 
 		int rcButton = readButtons(eingabe, &fehler);
-		int rcRotary = ecoderUpdate(eingabe, &direction); //TODO rename
 		
-		/*if (rcRotary == ENCODER_TIME_UPDATED) {
-		    updateSpeed(speed);
-			updateAngle(angle);
-		}*/
-
-		if (rcRotary == ENCODER_ERROR) {
-			fehler = true;
-		}
-
+	
 		if (fehler!=true) {
+			int rcRotary = ecoderUpdate(eingabe, &direction, timer2); //TODO rename
+		
+
+			if (rcRotary == ENCODER_ERROR) {
+				fehler = true;
+			}
+		
 			ledSetDirection(direction);
 			ledSetPhaseCount(transitionCount);
 			if (rcRotary == ENCODER_TIME_UPDATED) {
-				printAngle(angle);
-				printAngularVelocity(speed);
+				
 			}
+			printAngle(angle);
+			printAngularVelocity(speed);
 		}
 		else {
+
 			ledSetError();
 		}
 	}

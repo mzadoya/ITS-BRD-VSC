@@ -2,31 +2,31 @@
 #include "fehler.h"
 #include "global.h"
 #include "stm32f429xx.h"
+#include "timer.h"
 #include <stdbool.h>
 #include <stdint.h>
 
 #define MASK_PIN01F 0x03U
 #define TIME_WINDOW_MS 250
 #define INACTIVITY_TIMEOUT 10000000
-#define TIMER_FREQUENCY 112500000.0
-static uint8_t lastPhase = 0;
+#define TIMER_FREQUENCY 90000000.0
+static uint16_t lastPhase = 0;
 static uint32_t time1 = 0;
-static uint32_t time2 = 0;
 static uint32_t lastActivity = 0;
-uint32_t transitionCount = 0;
+int32_t transitionCount = 0;
 double speed = 0.0;
 double angle = 0.0;
 static uint32_t currentTransition = 0;
 
 void initDecoder() {
-	lastPhase = GPIOF->IDR & MASK_PIN01F;
-	transitionCount = 0;
-	currentTransition = 0;
-	time1 = TIM2->CNT;
-	time2 = 0;
+  lastPhase = GPIOF->IDR & MASK_PIN01F;
+  transitionCount = 0;
+  currentTransition = 0;
+  time1 = TIM2->CNT;
+  lastActivity = TIM2->CNT;
 }
 
-int getPhase(uint8_t *direction, uint8_t result) {
+int getPhase(uint16_t *direction, uint16_t result) {
 
   if (lastPhase == PHASE_B) {
 
@@ -89,44 +89,40 @@ int getPhase(uint8_t *direction, uint8_t result) {
     }
   }
 
-
   return ENCODER_CHANGED;
 }
 
- int ecoderUpdate(uint8_t eingabe, uint8_t *direction) {
-   uint8_t result = eingabe & MASK_PIN01F;
+int ecoderUpdate(uint16_t eingabe, uint16_t *direction, uint32_t time2) {
+  uint8_t result = eingabe & MASK_PIN01F;
+  int rc = ENCODER_NO_CHANGE;
   if (result != lastPhase) {
-	transitionCount++;
     currentTransition++;
-    int rc = getPhase(direction, result);
-	lastPhase = result;
-	lastActivity = TIM2->CNT;
-	time2 = TIM2->CNT;
-    if (time2 - time1 >= TIME_WINDOW_MS * 90000) {
-		double localAngle = currentTransition * 0.3;
- 		double timeSec = (time2 - time1) / TIMER_FREQUENCY;
- 		if (timeSec == 0) {
-  			  return ENCODER_ERROR; // TODO ERR
- 		 }
-		speed = localAngle / timeSec; // 360/1200
- 		angle += localAngle;
-  		time1 = time2;
-  		currentTransition = 0;
-  		time2 = 0;
-  		return ENCODER_TIME_UPDATED;
-		}
-    return rc;
-  } 
-  else {
-		if ((TIM2->CNT - lastActivity) >= INACTIVITY_TIMEOUT) {
-			*direction = IDLE;
-			transitionCount = 0;
-			currentTransition = 0;
-			speed = 0.0;
-			angle = 0.0;
-		} 
-
-    return ENCODER_NO_CHANGE;
-
+    rc = getPhase(direction, result);
+    if(*direction == BACKWARD)
+    {
+      transitionCount--; // fuer LEDS
+    }
+    else if(*direction == FORWARD)
+    {
+      transitionCount++;
+    }
+    
+    angle = transitionCount * 0.3;
+      
+    lastPhase = result;
   }
- }
+
+  if (time2 - time1 >= TIME_WINDOW_MS * 1000 * TICKS_PER_US) {
+    double localAngle = currentTransition * 0.3;
+    double timeSec = (time2 - time1) / TIMER_FREQUENCY;
+    if (timeSec == 0) {
+      return ENCODER_ERROR; // TODO ERR
+    }
+    speed = localAngle / timeSec; // 360/1200
+    time1 = time2;
+    currentTransition = 0;
+    return ENCODER_TIME_UPDATED;
+  }
+
+  return rc;
+}

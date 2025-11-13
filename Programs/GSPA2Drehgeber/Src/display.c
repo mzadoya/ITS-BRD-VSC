@@ -3,6 +3,7 @@
 #include "lcd.h"
 #include "global.h"
 #include "converter.h"
+#include <stdio.h>
 
 void initDisplay(void) {
     lcdGotoXY(0, 2);
@@ -11,19 +12,35 @@ void initDisplay(void) {
     lcdPrintS("Geschwindigkeit:");
 }
 
+void convertValue(int x, int y, int *pos, char* str) {
+    lcdGotoXY(x + *pos, y);
+    lcdPrintC(str[*pos]);
+    (*pos)++;
+    if(*pos == 12)
+    {
+        *pos = 0;
+    }
+}
+
+
 int printAngle(double angle) {
-    char str[VALUE_MAX_SIZE];
-    lcdGotoXY(18, 2);
-    //convertDoubleValue(str, angle);
-    //lcdPrintReplS(str);
-    lcdPrintInt(angle);
+    static int pos = 0;
+    static char str[VALUE_MAX_SIZE];
+    if(pos == 0)
+    {
+        snprintf(str, VALUE_MAX_SIZE, "%12.1f", angle);
+    }
+
+    convertValue(18, 2, &pos, str);
     return 0;
 }
 int printAngularVelocity(double speed) {
-    char str[VALUE_MAX_SIZE];
-    lcdGotoXY(18, 6);
-    convertDoubleValue(str, speed);
-    lcdPrintReplS(str);
-    //lcdPrintInt(speed);
+    static int pos = 0;
+    static char str[VALUE_MAX_SIZE];
+    if(pos == 0)
+    {
+        snprintf(str, VALUE_MAX_SIZE, "%12.1f", speed);
+    }
+    convertValue(18, 6, &pos, str);
     return 0;
 }
