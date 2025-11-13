@@ -8,7 +8,7 @@
 #define MASK_PIN01F 0x03U
 #define TIME_WINDOW_MS 250
 #define INACTIVITY_TIMEOUT 1000000
-#define TIMER_FREQUENCY 112500000.0
+#define TIMER_FREQUENCY 90000000.0
 static uint8_t lastPhase = 0;
 static uint32_t time1 = 0;
 static uint32_t time2 = 0;
