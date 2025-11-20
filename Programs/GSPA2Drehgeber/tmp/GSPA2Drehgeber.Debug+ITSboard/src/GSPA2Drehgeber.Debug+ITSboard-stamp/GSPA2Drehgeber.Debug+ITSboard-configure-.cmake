@@ -1,7 +1,7 @@
 
 cmake_minimum_required(VERSION 3.15)
 
-set(command "/Users/maximzadoya/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake;-G;Ninja;-S;/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard;-B;/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/1;-DSOLUTION_ROOT=/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber;-DCMSIS_PACK_ROOT=/Users/maximzadoya/.cache/arm/packs;-DCMSIS_COMPILER_ROOT=/Users/maximzadoya/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.11.0/etc")
+set(command "/Users/maximzadoya/.vcpkg/artifacts/2139c4c6/tools.kitware.cmake/3.28.4/bin/cmake;-G;Ninja;-S;/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard;-B;/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/1;-DSOLUTION_ROOT=/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber;-DCMSIS_PACK_ROOT=/Users/maximzadoya/.cache/arm/packs;-DCMSIS_COMPILER_ROOT=/Users/maximzadoya/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.12.0/etc")
 set(log_merged "")
 set(log_output_on_failure "ON")
 set(stdout_log "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-configure-out.log")

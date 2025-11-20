@@ -39,9 +39,9 @@
 #define MESSAGE_SWAP_OK "Swap erfolgreich!\n"
 #define MESSAGE_DOUBLE_OK "Doppelung erfolgreich!\n"
 
+
 void printTopValue() {
 	char r[VALUE_SIZE];
-	char res[] = MESSAGE_TOP;
 	int topValue = 0;
 	int rc = top(&topValue);
 	if (rc == -2) {
@@ -53,7 +53,15 @@ void printTopValue() {
 	}
 }
 
-void errorHaнndler(int rc) {
+void printResultIfOk(int rc){
+	if(rc == OK) {
+		printStdout( "Result: ");
+		printTopValue();
+		printStdout("\n");
+	}
+}
+
+void errorHandler(int rc) {
 	switch(rc) {
 		case ERR_NOT_ENOUGH_VALUES: 
 		{
@@ -112,43 +120,25 @@ int main(void) {
 		case PLUS: 
 		{
 			rc = sumStack();
-			if (rc == OK) {
-				printStdout( "Result: ");
-				printTopValue();
-				printStdout("\n");
-			}
+			printResultIfOk(rc);
 			break;
 		}
 		case MINUS:
 		{ 
 			rc = subStack();
-			if (rc == OK) {
-				printStdout( "Result: ");
-				printTopValue();
-				printStdout("\n");
-			}
+			printResultIfOk(rc);
  			break;
 		}
 		case MULT:
 		{
 			rc = mulStack();
-			if (rc == OK) {
-				printStdout( "Result: ");
-				printTopValue();
-				printStdout("\n");
-			}
-
+			printResultIfOk(rc);
 			break;
 		}
 		case DIV:
 		{
 			rc = divStack();
-			if (rc == OK) {
-				printStdout( "Result: ");
-				printTopValue();
-				printStdout("\n");
-			}
-			
+			printResultIfOk(rc);
 			break;
 		}
 		case CLEAR:
@@ -205,6 +195,7 @@ int main(void) {
 			
 		case OVERFLOW:
 		printStdout("Overflow!\n" __FILE__ );
+		printStdout("\n");
 		break;
 /*
 		case UNEXPECTED:
@@ -219,8 +210,9 @@ int main(void) {
 			break;
 		}
 		if (rc!=OK) {
-			errorHaнndler(rc);
+			errorHandler(rc);
 			rc = OK;
+			printStdout("\n");
 		}
 	}
 }

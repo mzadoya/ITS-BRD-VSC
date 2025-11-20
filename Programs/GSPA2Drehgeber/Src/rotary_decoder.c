@@ -7,7 +7,7 @@
 #include <stdint.h>
 
 #define MASK_PIN01F 0x03U
-#define TIME_WINDOW_MS 250
+#define TIME_WINDOW_MS 300
 #define INACTIVITY_TIMEOUT 10000000
 #define TIMER_FREQUENCY 90000000.0
 static uint16_t lastPhase = 0;
@@ -116,9 +116,9 @@ int ecoderUpdate(uint16_t eingabe, uint16_t *direction, uint32_t time2) {
     double localAngle = currentTransition * 0.3;
     double timeSec = (time2 - time1) / TIMER_FREQUENCY;
     if (timeSec == 0) {
-      return ENCODER_ERROR; // TODO ERR
+      return ENCODER_ERROR; 
     }
-    speed = localAngle / timeSec; // 360/1200
+    speed = localAngle / timeSec; 
     time1 = time2;
     currentTransition = 0;
     return ENCODER_TIME_UPDATED;

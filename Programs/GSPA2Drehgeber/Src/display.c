@@ -8,8 +8,12 @@
 void initDisplay(void) {
     lcdGotoXY(0, 2);
     lcdPrintS("Winkel:");
+    lcdGotoXY(33, 2);
+    lcdPrintS("GRAD");
     lcdGotoXY(0, 6);
     lcdPrintS("Geschwindigkeit:");
+    lcdGotoXY(33, 6);
+    lcdPrintS("GRAD/S");
 }
 
 void convertValue(int x, int y, int *pos, char* str) {
@@ -22,7 +26,6 @@ void convertValue(int x, int y, int *pos, char* str) {
     }
 }
 
-
 int printAngle(double angle) {
     static int pos = 0;
     static char str[VALUE_MAX_SIZE];
@@ -31,7 +34,7 @@ int printAngle(double angle) {
         snprintf(str, VALUE_MAX_SIZE, "%12.1f", angle);
     }
 
-    convertValue(18, 2, &pos, str);
+    convertValue(16, 2, &pos, str);
     return 0;
 }
 int printAngularVelocity(double speed) {
@@ -41,6 +44,6 @@ int printAngularVelocity(double speed) {
     {
         snprintf(str, VALUE_MAX_SIZE, "%12.1f", speed);
     }
-    convertValue(18, 6, &pos, str);
+    convertValue(16, 6, &pos, str);
     return 0;
 }

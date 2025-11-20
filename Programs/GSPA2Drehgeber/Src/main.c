@@ -22,11 +22,14 @@
 #include "timer.h"
 #include "buttons.h"
 #include "display.h"
+#include <limits.h>
 
+#define PUNKT 0x01U
+int tst = 0;
 bool fehler = false;
 uint16_t direction = 0;
 uint32_t timeDiff = 0;
-
+bool isHigh = false;
 
 
 int main(void) {
@@ -39,14 +42,28 @@ int main(void) {
 	initDisplay();
 	initLed();
 	initDecoder();
+	
+	GPIOE->BSRR = PUNKT << 16; 
 	while(1) {
+		if (isHigh) {
+			GPIOE->BSRR = PUNKT; 
+		}
+		else {
+			GPIOE->BSRR = PUNKT << 16; 
+		}
+		isHigh = !isHigh;
+		
 		 //or uint16 // TODO: rename 
+		 
 		uint32_t timer2 = TIM2->CNT;
-		uint16_t eingabe = GPIOF->IDR; 
+		uint16_t eingabe = GPIOF->IDR;
 
+		
 
 		int rcButton = readButtons(eingabe, &fehler);
 		
+
+	
 	
 		if (fehler!=true) {
 			int rcRotary = ecoderUpdate(eingabe, &direction, timer2); //TODO rename
@@ -58,9 +75,6 @@ int main(void) {
 		
 			ledSetDirection(direction);
 			ledSetPhaseCount(transitionCount);
-			if (rcRotary == ENCODER_TIME_UPDATED) {
-				
-			}
 			printAngle(angle);
 			printAngularVelocity(speed);
 		}
@@ -68,6 +82,8 @@ int main(void) {
 
 			ledSetError();
 		}
+		
+		
 	}
 }
 
