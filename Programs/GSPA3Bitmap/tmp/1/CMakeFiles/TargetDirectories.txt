@@ -1,0 +1,11 @@
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/database.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/GSPA3Bitmap.Debug+ITSboard.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_Drivers_BSP_STM32F4xx_Nucleo_144.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_Drivers_Board.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_Drivers_STM32F4xx_HAL_Driver.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_Utils.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_LCD.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_ITS_BRD_LIB.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/Group_Program_User_Src.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/edit_cache.dir
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/1/CMakeFiles/rebuild_cache.dir

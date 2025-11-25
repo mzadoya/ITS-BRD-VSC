@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.12.0
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: GSPA3Bitmap.csolution.yml
+  cbuild-run: out/GSPA3Bitmap+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: GSPA3Bitmap.cproject.yml
+  cbuilds:
+    - cbuild: out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.Debug+ITSboard.cbuild.yml
+      project: GSPA3Bitmap
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - GSPA3Bitmap.cbuild-pack.yml - file is already up-to-date
+          - GSPA3Bitmap+ITSboard.cbuild-run.yml - file is already up-to-date
+          - GSPA3Bitmap.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@7.0.0

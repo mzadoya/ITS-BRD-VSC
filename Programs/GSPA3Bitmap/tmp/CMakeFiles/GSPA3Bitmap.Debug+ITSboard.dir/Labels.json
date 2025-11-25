@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/CMakeFiles/GSPA3Bitmap.Debug+ITSboard"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/CMakeFiles/GSPA3Bitmap.Debug+ITSboard.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/CMakeFiles/GSPA3Bitmap.Debug+ITSboard-complete.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-build.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-database.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-executes.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-install.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-mkdir.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-test.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/tmp/GSPA3Bitmap.Debug+ITSboard/src/GSPA3Bitmap.Debug+ITSboard-stamp/GSPA3Bitmap.Debug+ITSboard-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"GSPA3Bitmap.Debug+ITSboard"
+		],
+		"name" : "GSPA3Bitmap.Debug+ITSboard"
+	}
+}
