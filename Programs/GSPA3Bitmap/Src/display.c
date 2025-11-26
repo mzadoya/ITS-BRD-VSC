@@ -7,7 +7,7 @@
 #include "LCD_GUI.h"
 
 uint32_t xCoords = 0;
-uint32_t yCoords = 320;
+uint32_t yCoords = 0;
 uint8_t colorsSize = 0; //TODO rename
 Coordinate coords;
 uint32_t bildWidth = 0;
@@ -16,6 +16,10 @@ uint32_t bildHeight = 0;
 void initCoords(int32_t width, int32_t height) {
     bildHeight = height;
     bildWidth = width;
+    xCoords = 0; 
+    yCoords = 319;
+    (coords).x = xCoords;
+    (coords).y = yCoords;
 }
 
 int checkYBounds(uint32_t yCoords) {
@@ -34,53 +38,55 @@ int updateCoords() {
     int rcXBounds = checkXBounds(xCoords);
     int rcYBounds = checkYBounds(yCoords);
     if (rcXBounds == OK) {
-        (coords).x = xCoords;
-         xCoords++;
+        xCoords++;  
     }
     if (xCoords == bildWidth && rcYBounds == OK) {
         xCoords = 0;
-        (coords).x = xCoords;
-        (coords).y = --yCoords;
+        yCoords--;
     }
-    
+    (coords).x = xCoords;
+    (coords).y = yCoords;
     return rcYBounds;
 }
 
-int inputRecognizer(char* info) { //TODO rename 
 
-    if (info[0] == 0x00) {
-    switch (info[1])
-    {
-        case 0x00:
-            yCoords--;
-            xCoords = 0;
-            break;
-        case 0x01:
-            return STATUS_END_OF_FILE;
-            break;
-        /*case 0x02:
-      
-            break;
 
-        case 0x03:
-      
-            break;*/
-        default:
-            break;
-        }   
-    }
-    else {
-        colorsSize = info[0];
-        return STATUS_COLOR;
+int displayDrawRLE(uint16_t lcdColor, int size){
+    for (int i = 0; i < size; i++) {
+        GUI_drawPoint(coords, lcdColor, DOT_PIXEL_1X1, DOT_FILL_AROUND);
+        updateCoords();
     }
     return OK;
 }
 
-int displayDraw(uint16_t lcdColor){
-    for (int i = 0; i < colorsSize; i++) {
-        GUI_drawPoint(coords, lcdColor, DOT_PIXEL_1X1, DOT_FILL_AROUND);
-        updateCoords();
+int displayDrawAbsolut(uint16_t lcdColor) {
+     GUI_drawPoint(coords, lcdColor, DOT_PIXEL_1X1, DOT_FILL_AROUND);
+     updateCoords();
+     return OK;
+}
+
+int updateDelta(uint32_t x, uint32_t y) {
+    int rcX = checkXBounds(xCoords + x);
+    if (rcX != OK) {
+        return rcX;
     }
-    colorsSize = 0;
-    return OK;
+    xCoords += x;
+    int rcY = checkYBounds(yCoords - y);
+    if (rcY != OK) {
+        return rcY;
+    }
+    yCoords -= y;
+    return 0;
+}
+
+int endline() {
+    int rcY = checkYBounds(yCoords - 1);
+    if (rcY != OK) {
+        return rcY;
+    }
+    yCoords--;
+    xCoords = 0;
+    coords.x = xCoords;
+    coords.y = yCoords;
+    return rcY;
 }

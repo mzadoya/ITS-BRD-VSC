@@ -182,6 +182,7 @@ project:
         - file: Inc/buttons.h
         - file: Inc/converter.h      
         - file: Inc/display.h
+        - file: Inc/statusHandler.h
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -195,6 +196,7 @@ project:
         - file: Src/buttons.c
         - file: Src/сonverter.c
         - file: Src/display.c
+        - file: Src/statusHandler.c
 
   components:
     - component: ARM::CMSIS:CORE

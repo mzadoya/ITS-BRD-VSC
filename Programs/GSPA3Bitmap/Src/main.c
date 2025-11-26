@@ -10,6 +10,7 @@
 #include "BMP_types.h"
 #include "LCD_general.h"
 #include "errorhandler.h"
+#include "headers.h"
 #include "input.h"
 #include "stm32f4xx_hal.h"
 #include "init.h"
@@ -26,12 +27,19 @@
 
 bool nextFileReady = true;
 bool isFileCompleted = false;
+bool isAbsoluteMode = false;
 uint16_t buttons = 0;
 BITMAPFILEHEADER fileHeader;
 BITMAPINFOHEADER passport;
 RGBQUAD palette[MAX_COLOR_TABLE_SIZE];
-char nextByte[2] = {00, 00};
+unsigned char nextByte[2] = {00, 00};
 uint16_t lcdColor = 0;
+uint16_t secondLcdColor = 0;
+int absoluteSize = 0;
+bool isAligned = false;
+int status = OK;
+unsigned char trash;
+
 
 uint32_t start = 0;
 uint32_t end = 0;
@@ -62,52 +70,119 @@ void errorHandler(int rc) {
 	}
 
 	printError(rc, __FILE__, __LINE__, (char*)msg, false);
-
 }
-int main(void) {
-	initITSboard(); 
-	GUI_init(DEFAULT_BRIGHTNESS);
-	TP_Init(false); 
-	initInput();
 
+void statusCheck() {
 
-	while(1) {
-		//Read Block
-		buttons = GPIOF->IDR;
+	switch (status)
+	{
+	case STATUS_EOL:
+		endline();
+		break;
+
+	case STATUS_END_OF_FILE:
+		isFileCompleted = true;
+		nextFileReady = true;
+		break;
 		
-		if (nextFileReady) {
-			openNextFile();
-			GUI_clear(0xFFFF);
-			int rcShake = shakeHandsWithFile(&fileHeader, &passport, palette);
-			if (rcShake != OK) {
-				errorHandler(rcShake);
-			}
-			initCoords(passport.biWidth, passport.biHeight);
-			isFileCompleted = false;
-			nextFileReady = false;
-			start = fileHeader.bfOffBits;
-			end = fileHeader.bfSize;
+	case STATUS_ABSOLUTE:
+		absoluteSize = nextByte[1];
+		if (absoluteSize %2 !=0) {
+			isAligned = false;
 		}
-		COMread(nextByte, 1, 2);
-
+		else {
+			isAligned = true;
+		}
+		isAbsoluteMode = true;
+		break;
 	
-		//Compute Block
-		int rcInput = inputRecognizer(nextByte);
-		if (rcInput == STATUS_END_OF_FILE) {
-			isFileCompleted = true;
-		}
-		buttonHandler(&nextFileReady, buttons);
+		default:
 
 
-
-		if (!isFileCompleted /*&& rcInput == STATUS_COLOR*/) {
-		convertColor(palette[nextByte[1]], &lcdColor);		
-		//Back Block
-
-
-		displayDraw(lcdColor);
-		}
+		break;
 	}
 }
 
-// EOF
+int main(void) {
+    initITSboard(); 
+    GUI_init(DEFAULT_BRIGHTNESS);
+    TP_Init(false); 
+    initInput();
+
+    while(1) {
+        // --- БЛОК 1: ЗАГРУЗКА ---
+        buttons = GPIOF->IDR;
+
+        if (nextFileReady) {
+            openNextFile();
+            GUI_clear(0xFFFF);
+            int rcHeaders = readHeaders();
+
+            if (rcHeaders != OK) {
+                errorHandler(rcHeaders);
+                isFileCompleted = true; // Останавливаемся при ошибке
+            }
+            else {
+                getFileHeader(&fileHeader);
+                getInfoHeader(&passport);
+                readPalette(palette);
+                // Пропускаем мусор (используем bfOffBits аккуратно)
+                skipTrash(fileHeader.bfOffBits); 
+                initCoords(passport.biWidth, passport.biHeight);
+                isFileCompleted = false;
+            }
+            nextFileReady = false;
+        }
+
+        buttonHandler(&nextFileReady, buttons);
+
+        // --- БЛОК 2: ДЕКОДИРОВАНИЕ ---
+        if (!isFileCompleted) {
+            
+            // ВЕТКА А: АБСОЛЮТНЫЙ РЕЖИМ
+            if (isAbsoluteMode) {
+                // 1. Читаем один пиксель
+                COMread(nextByte, 1, 1); 
+                
+                // 2. Рисуем его
+                convertColor(palette[nextByte[0]], &lcdColor);
+                displayDrawAbsolut(lcdColor);
+
+                // 3. Уменьшаем счетчик
+                absoluteSize--;
+                
+                // 4. Проверяем конец блока
+                if (absoluteSize == 0) {
+                    isAbsoluteMode = false; // ВЫХОДИМ ИЗ РЕЖИМА!
+                    
+                    // Если было нечетное кол-во байт, читаем паддинг
+                    if (!isAligned) {
+                        COMread(&trash, 1, 1);
+                    }
+                }
+            }
+            // ВЕТКА Б: КОМАНДЫ / RLE
+            else {
+                // 1. Читаем команду (2 байта)
+                COMread(nextByte, 1, 2);
+
+                status = inputRecognizer(nextByte);
+
+                if (status == STATUS_DELTA) {
+                    // ИСПРАВЛЕНИЕ DELTA: Читаем аргументы!
+                    unsigned char deltaArgs[2];
+                    COMread(deltaArgs, 1, 2);
+                    updateDelta(deltaArgs[0], deltaArgs[1]);
+                    status = OK;
+                }
+                else if (status == STATUS_RLE) {
+                    convertColor(palette[nextByte[1]], &lcdColor);
+                    displayDrawRLE(lcdColor, nextByte[0]);
+                }
+                
+                // Проверяем остальные статусы (EOL, EOF, START_ABSOLUTE)
+                statusCheck();
+            }
+        }
+    }
+}

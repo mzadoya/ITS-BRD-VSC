@@ -12,3 +12,4 @@ int convertColor(RGBQUAD palette, uint16_t* lcdColor) {
     
     return 0;
 }
+
