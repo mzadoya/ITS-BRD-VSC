@@ -88,7 +88,7 @@ void statusCheck() {
 
 	case STATUS_END_OF_FILE:
 		isFileCompleted = true;
-		//nextFileReady = true;
+		nextFileReady = true;
 		break;
 		
 	case STATUS_ABSOLUTE:
@@ -114,7 +114,7 @@ int main(void) {
 
 		if (nextFileReady) {
 			openNextFile();
-			GUI_clear(0xFFFF);
+			
 			int rcHeaders = readHeaders();
 
 			if (rcHeaders != OK) {
@@ -122,6 +122,7 @@ int main(void) {
 				isFileCompleted = true;
 			}
 			else {
+				GUI_clear(0xFFFF);
 				getFileHeader (&fileHeader);
 				getInfoHeader (&passport);
 				readPalette(palette);

@@ -53,15 +53,14 @@ int updateCoords() {
     if (rcXBounds == OK) {
         xCoords++;  
     }
-    if (xCoords == bildWidth && rcYBounds == OK) {
-        xCoords = LCD_X;
-        yCoords--;
-    }
+    
     (coords).x = xCoords;
     (coords).y = yCoords;
     return rcYBounds;
 }
 
+
+//PART A ----
 int displayDrawRLE(uint16_t lcdColor, int size){
     for (int i = 0; i < size; i++) {
         int rcBounds = checkBounds(coords.x, coords.y);
@@ -83,6 +82,7 @@ int displayDrawAbsolut(uint16_t lcdColor) {
      updateCoords();
      return OK;
 }
+//END PART A ----
 
 int updateDelta(uint32_t x, uint32_t y) {
     int rcBounds = checkBounds(xCoords+x, yCoords - y);
