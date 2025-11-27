@@ -1554,17 +1554,20 @@ Section Cross References
     varlenarr.o(.text.test4) refers to varlenarr.o(.text.printArr) for printArr
     varlenarr.o(.text.test4) refers to malloc.o(i.free) for free
     varlenarr.o(.ARM.exidx.text.test4) refers to varlenarr.o(.text.test4) for [Anonymous Symbol]
+    main.o(.text.activateAbsolut) refers to main.o(.bss.nextByte) for nextByte
+    main.o(.text.activateAbsolut) refers to main.o(.bss.absoluteSize) for absoluteSize
+    main.o(.text.activateAbsolut) refers to main.o(.bss.isAligned) for isAligned
+    main.o(.text.activateAbsolut) refers to main.o(.bss.isAbsoluteMode) for isAbsoluteMode
+    main.o(.ARM.exidx.text.activateAbsolut) refers to main.o(.text.activateAbsolut) for [Anonymous Symbol]
     main.o(.text.errorHandler) refers to main.o(.rodata.str1.1) for .L.str
     main.o(.text.errorHandler) refers to errorhandler.o(.text.printError) for printError
     main.o(.ARM.exidx.text.errorHandler) refers to main.o(.text.errorHandler) for [Anonymous Symbol]
     main.o(.text.statusCheck) refers to main.o(.bss.status) for status
     main.o(.text.statusCheck) refers to display.o(.text.endline) for endline
     main.o(.text.statusCheck) refers to main.o(.bss.isFileCompleted) for isFileCompleted
-    main.o(.text.statusCheck) refers to main.o(.data.nextFileReady) for nextFileReady
-    main.o(.text.statusCheck) refers to main.o(.bss.nextByte) for nextByte
-    main.o(.text.statusCheck) refers to main.o(.bss.absoluteSize) for absoluteSize
-    main.o(.text.statusCheck) refers to main.o(.bss.isAligned) for isAligned
-    main.o(.text.statusCheck) refers to main.o(.bss.isAbsoluteMode) for isAbsoluteMode
+    main.o(.text.statusCheck) refers to main.o(.text.activateAbsolut) for activateAbsolut
+    main.o(.text.statusCheck) refers to main.o(.rodata.str1.1) for .L.str.6
+    main.o(.text.statusCheck) refers to errorhandler.o(.text.printError) for printError
     main.o(.ARM.exidx.text.statusCheck) refers to main.o(.text.statusCheck) for [Anonymous Symbol]
     main.o(.text.main) refers to init.o(.text.initITSboard) for initITSboard
     main.o(.text.main) refers to LCD_GUI.o(.text.GUI_init) for GUI_init
@@ -1589,15 +1592,15 @@ Section Cross References
     main.o(.text.main) refers to main.o(.bss.isAbsoluteMode) for isAbsoluteMode
     main.o(.text.main) refers to main.o(.bss.nextByte) for nextByte
     main.o(.text.main) refers to input.o(.text.COMread) for COMread
-    main.o(.text.main) refers to main.o(.bss.lcdColor) for lcdColor
-    main.o(.text.main) refers to сonverter.o(.text.convertColor) for convertColor
-    main.o(.text.main) refers to display.o(.text.displayDrawAbsolut) for displayDrawAbsolut
     main.o(.text.main) refers to main.o(.bss.absoluteSize) for absoluteSize
     main.o(.text.main) refers to main.o(.bss.isAligned) for isAligned
     main.o(.text.main) refers to main.o(.bss.trash) for trash
-    main.o(.text.main) refers to statusHandler.o(.text.inputRecognizer) for inputRecognizer
+    main.o(.text.main) refers to main.o(.bss.lcdColor) for lcdColor
+    main.o(.text.main) refers to сonverter.o(.text.convertColor) for convertColor
+    main.o(.text.main) refers to display.o(.text.displayDrawAbsolut) for displayDrawAbsolut
     main.o(.text.main) refers to main.o(.bss.status) for status
     main.o(.text.main) refers to display.o(.text.updateDelta) for updateDelta
+    main.o(.text.main) refers to statusHandler.o(.text.inputRecognizer) for inputRecognizer
     main.o(.text.main) refers to display.o(.text.displayDrawRLE) for displayDrawRLE
     main.o(.text.main) refers to main.o(.text.statusCheck) for statusCheck
     main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
@@ -1624,6 +1627,9 @@ Section Cross References
     display.o(.ARM.exidx.text.initCoords) refers to display.o(.text.initCoords) for [Anonymous Symbol]
     display.o(.ARM.exidx.text.checkYBounds) refers to display.o(.text.checkYBounds) for [Anonymous Symbol]
     display.o(.ARM.exidx.text.checkXBounds) refers to display.o(.text.checkXBounds) for [Anonymous Symbol]
+    display.o(.text.checkBounds) refers to display.o(.text.checkXBounds) for checkXBounds
+    display.o(.text.checkBounds) refers to display.o(.text.checkYBounds) for checkYBounds
+    display.o(.ARM.exidx.text.checkBounds) refers to display.o(.text.checkBounds) for [Anonymous Symbol]
     display.o(.text.updateCoords) refers to display.o(.bss.xCoords) for xCoords
     display.o(.text.updateCoords) refers to display.o(.text.checkXBounds) for checkXBounds
     display.o(.text.updateCoords) refers to display.o(.bss.yCoords) for yCoords
@@ -1632,17 +1638,18 @@ Section Cross References
     display.o(.text.updateCoords) refers to display.o(.bss.coords) for coords
     display.o(.ARM.exidx.text.updateCoords) refers to display.o(.text.updateCoords) for [Anonymous Symbol]
     display.o(.text.displayDrawRLE) refers to display.o(.bss.coords) for coords
+    display.o(.text.displayDrawRLE) refers to display.o(.text.checkBounds) for checkBounds
     display.o(.text.displayDrawRLE) refers to LCD_GUI.o(.text.GUI_drawPoint) for GUI_drawPoint
     display.o(.text.displayDrawRLE) refers to display.o(.text.updateCoords) for updateCoords
     display.o(.ARM.exidx.text.displayDrawRLE) refers to display.o(.text.displayDrawRLE) for [Anonymous Symbol]
     display.o(.text.displayDrawAbsolut) refers to display.o(.bss.coords) for coords
+    display.o(.text.displayDrawAbsolut) refers to display.o(.text.checkBounds) for checkBounds
     display.o(.text.displayDrawAbsolut) refers to LCD_GUI.o(.text.GUI_drawPoint) for GUI_drawPoint
     display.o(.text.displayDrawAbsolut) refers to display.o(.text.updateCoords) for updateCoords
     display.o(.ARM.exidx.text.displayDrawAbsolut) refers to display.o(.text.displayDrawAbsolut) for [Anonymous Symbol]
     display.o(.text.updateDelta) refers to display.o(.bss.xCoords) for xCoords
-    display.o(.text.updateDelta) refers to display.o(.text.checkXBounds) for checkXBounds
     display.o(.text.updateDelta) refers to display.o(.bss.yCoords) for yCoords
-    display.o(.text.updateDelta) refers to display.o(.text.checkYBounds) for checkYBounds
+    display.o(.text.updateDelta) refers to display.o(.text.checkBounds) for checkBounds
     display.o(.ARM.exidx.text.updateDelta) refers to display.o(.text.updateDelta) for [Anonymous Symbol]
     display.o(.text.endline) refers to display.o(.bss.yCoords) for yCoords
     display.o(.text.endline) refers to display.o(.text.checkYBounds) for checkYBounds
@@ -2943,12 +2950,10 @@ Removing Unused input sections from the image.
     Removing varlenarr.o(.ARM.exidx.text.test4), (8 bytes).
     Removing varlenarr.o(.rodata.str1.1), (111 bytes).
     Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text.activateAbsolut), (8 bytes).
     Removing main.o(.ARM.exidx.text.errorHandler), (8 bytes).
     Removing main.o(.ARM.exidx.text.statusCheck), (8 bytes).
     Removing main.o(.ARM.exidx.text.main), (8 bytes).
-    Removing main.o(.bss.secondLcdColor), (2 bytes).
-    Removing main.o(.bss.start), (4 bytes).
-    Removing main.o(.bss.end), (4 bytes).
     Removing main.o(.ARM.use_no_argv), (4 bytes).
     Removing handshake.o(.text), (0 bytes).
     Removing handshake.o(.text.readHeader), (170 bytes).
@@ -2967,6 +2972,7 @@ Removing Unused input sections from the image.
     Removing display.o(.ARM.exidx.text.initCoords), (8 bytes).
     Removing display.o(.ARM.exidx.text.checkYBounds), (8 bytes).
     Removing display.o(.ARM.exidx.text.checkXBounds), (8 bytes).
+    Removing display.o(.ARM.exidx.text.checkBounds), (8 bytes).
     Removing display.o(.ARM.exidx.text.updateCoords), (8 bytes).
     Removing display.o(.ARM.exidx.text.displayDrawRLE), (8 bytes).
     Removing display.o(.ARM.exidx.text.displayDrawAbsolut), (8 bytes).
@@ -2979,7 +2985,7 @@ Removing Unused input sections from the image.
     Removing dfixi.o(.text), (62 bytes).
     Removing dsqrt.o(.text), (162 bytes).
 
-1191 unused section(s) (total 787358 bytes) removed from the image.
+1190 unused section(s) (total 787364 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3357,118 +3363,120 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08005e14   Section        0  stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriority)
     __NVIC_SetPriorityGrouping               0x08005e59   Thumb Code    60  stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping)
     [Anonymous Symbol]                       0x08005e58   Section        0  stm32f4xx_hal_cortex.o(.text.__NVIC_SetPriorityGrouping)
-    basicChecks                              0x08005e95   Thumb Code   728  headers.o(.text.basicChecks)
-    [Anonymous Symbol]                       0x08005e94   Section        0  headers.o(.text.basicChecks)
-    [Anonymous Symbol]                       0x0800616c   Section        0  buttons.o(.text.buttonHandler)
-    [Anonymous Symbol]                       0x08006190   Section        0  display.o(.text.checkXBounds)
-    [Anonymous Symbol]                       0x080061b4   Section        0  display.o(.text.checkYBounds)
-    check_SPI_SR                             0x080061d9   Thumb Code    72  LCD_SPI.o(.text.check_SPI_SR)
-    [Anonymous Symbol]                       0x080061d8   Section        0  LCD_SPI.o(.text.check_SPI_SR)
-    [Anonymous Symbol]                       0x08006220   Section        0  сonverter.o(.text.convertColor)
-    [Anonymous Symbol]                       0x08006264   Section        0  display.o(.text.displayDrawAbsolut)
-    [Anonymous Symbol]                       0x0800628c   Section        0  display.o(.text.displayDrawRLE)
-    [Anonymous Symbol]                       0x080062d0   Section        0  display.o(.text.endline)
-    [Anonymous Symbol]                       0x08006328   Section        0  main.o(.text.errorHandler)
-    [Anonymous Symbol]                       0x080063b0   Section        0  headers.o(.text.getFileHeader)
-    [Anonymous Symbol]                       0x08006400   Section        0  headers.o(.text.getInfoHeader)
-    [Anonymous Symbol]                       0x08006444   Section        0  display.o(.text.initCoords)
-    initGPIOs                                0x08006491   Thumb Code   320  init.o(.text.initGPIOs)
-    [Anonymous Symbol]                       0x08006490   Section        0  init.o(.text.initGPIOs)
-    [Anonymous Symbol]                       0x080065d0   Section        0  init.o(.text.initITSboard)
-    [Anonymous Symbol]                       0x080065e4   Section        0  input.o(.text.initInput)
-    [Anonymous Symbol]                       0x0800663c   Section        0  statusHandler.o(.text.inputRecognizer)
-    [Anonymous Symbol]                       0x08006688   Section        0  LCD_Tools.o(.text.itoa)
-    [Anonymous Symbol]                       0x0800673c   Section        0  lcd.o(.text.lcdGotoXY)
-    [Anonymous Symbol]                       0x08006778   Section        0  lcd.o(.text.lcdPrintS)
-    [Anonymous Symbol]                       0x0800694c   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x08006b70   Section        0  input.o(.text.nextChar)
-    [Anonymous Symbol]                       0x08006bf8   Section        0  input.o(.text.openNextFile)
-    [Anonymous Symbol]                       0x08006c18   Section        0  LCD_Debug.o(.text.printDebugMsg)
-    [Anonymous Symbol]                       0x08006ccc   Section        0  errorhandler.o(.text.printError)
-    readChar                                 0x08006d45   Thumb Code    30  input.o(.text.readChar)
-    [Anonymous Symbol]                       0x08006d44   Section        0  input.o(.text.readChar)
-    [Anonymous Symbol]                       0x08006d64   Section        0  headers.o(.text.readHeaders)
-    [Anonymous Symbol]                       0x08006e2c   Section        0  handshake.o(.text.readPalette)
-    save_restore_AltFn_SPI1_MOSI_Pin         0x08006e85   Thumb Code    48  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
-    [Anonymous Symbol]                       0x08006e84   Section        0  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
-    [Anonymous Symbol]                       0x08006eb4   Section        0  handshake.o(.text.skipTrash)
-    startNextByteBurst                       0x08006f19   Thumb Code   142  input.o(.text.startNextByteBurst)
-    [Anonymous Symbol]                       0x08006f18   Section        0  input.o(.text.startNextByteBurst)
-    [Anonymous Symbol]                       0x08006fa8   Section        0  main.o(.text.statusCheck)
-    [Anonymous Symbol]                       0x08007040   Section        0  stdinout_USART.o(.text.stdinout_init)
-    stringCopy                               0x080070f1   Thumb Code    70  lcd.o(.text.stringCopy)
-    [Anonymous Symbol]                       0x080070f0   Section        0  lcd.o(.text.stringCopy)
-    [Anonymous Symbol]                       0x08007138   Section        0  display.o(.text.updateCoords)
-    [Anonymous Symbol]                       0x080071d4   Section        0  display.o(.text.updateDelta)
-    usbUartDMAInt                            0x08007249   Thumb Code   188  input.o(.text.usbUartDMAInt)
-    [Anonymous Symbol]                       0x08007248   Section        0  input.o(.text.usbUartDMAInt)
-    usbUartRead                              0x08007305   Thumb Code   148  input.o(.text.usbUartRead)
-    [Anonymous Symbol]                       0x08007304   Section        0  input.o(.text.usbUartRead)
-    usbUartWrite                             0x08007399   Thumb Code    96  input.o(.text.usbUartWrite)
-    [Anonymous Symbol]                       0x08007398   Section        0  input.o(.text.usbUartWrite)
-    writeChar                                0x080073f9   Thumb Code    26  input.o(.text.writeChar)
-    [Anonymous Symbol]                       0x080073f8   Section        0  input.o(.text.writeChar)
-    i.__0snprintf                            0x08007414   Section        0  printfa.o(i.__0snprintf)
-    i.__scatterload_copy                     0x08007448   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08007456   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08007458   Section       14  handlers.o(i.__scatterload_zeroinit)
-    _fp_digits                               0x08007469   Thumb Code   366  printfa.o(i._fp_digits)
-    i._fp_digits                             0x08007468   Section        0  printfa.o(i._fp_digits)
-    _printf_core                             0x080075ed   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_core                           0x080075ec   Section        0  printfa.o(i._printf_core)
-    _printf_post_padding                     0x08007cc9   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_post_padding                   0x08007cc8   Section        0  printfa.o(i._printf_post_padding)
-    _printf_pre_padding                      0x08007ced   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._printf_pre_padding                    0x08007cec   Section        0  printfa.o(i._printf_pre_padding)
-    _snputc                                  0x08007d1b   Thumb Code    22  printfa.o(i._snputc)
-    i._snputc                                0x08007d1a   Section        0  printfa.o(i._snputc)
-    STREAM_OFFSET_TAB                        0x08007d80   Data           8  input.o(.rodata.STREAM_OFFSET_TAB)
-    [Anonymous Symbol]                       0x08007d80   Section        0  input.o(.rodata.STREAM_OFFSET_TAB)
-    USART3_Resources                         0x08007d88   Data          52  USART_STM32F4xx.o(.rodata.USART3_Resources)
-    [Anonymous Symbol]                       0x08007d88   Section        0  USART_STM32F4xx.o(.rodata.USART3_Resources)
-    USART3_rx                                0x08007dbc   Data          12  USART_STM32F4xx.o(.rodata.USART3_rx)
-    [Anonymous Symbol]                       0x08007dbc   Section        0  USART_STM32F4xx.o(.rodata.USART3_rx)
-    USART3_tx                                0x08007dc8   Data          12  USART_STM32F4xx.o(.rodata.USART3_tx)
-    [Anonymous Symbol]                       0x08007dc8   Section        0  USART_STM32F4xx.o(.rodata.USART3_tx)
-    .L.str                                   0x08007e3b   Data          82  LCD_GUI.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007e3b   Section        0  LCD_GUI.o(.rodata.str1.1)
-    .L.str                                   0x08007e8d   Data          82  LCD_SPI.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007e8d   Section        0  LCD_SPI.o(.rodata.str1.1)
-    .L.str                                   0x08007edf   Data          82  LCD_TIM.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007edf   Section        0  LCD_TIM.o(.rodata.str1.1)
-    .L.str.1                                 0x08007f31   Data           6  LCD_Debug.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007f31   Section        0  LCD_Debug.o(.rodata.str1.1)
-    .L.str                                   0x08007f37   Data          22  LCD_Debug.o(.rodata.str1.1)
-    .L.str                                   0x08007f4d   Data          30  errorhandler.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007f4d   Section        0  errorhandler.o(.rodata.str1.1)
-    .L.str.13                                0x08007f6b   Data          38  headers.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007f6b   Section        0  headers.o(.rodata.str1.1)
-    .L.str.7                                 0x08007f91   Data          41  headers.o(.rodata.str1.1)
-    .L.str.10                                0x08007fba   Data          50  headers.o(.rodata.str1.1)
-    .L.str.1                                 0x08007fec   Data          32  headers.o(.rodata.str1.1)
-    .L.str.11                                0x0800800c   Data          49  headers.o(.rodata.str1.1)
-    .L.str.5                                 0x0800803d   Data          47  headers.o(.rodata.str1.1)
-    .L.str.4                                 0x0800806c   Data          30  headers.o(.rodata.str1.1)
-    .L.str.9                                 0x0800808a   Data          39  headers.o(.rodata.str1.1)
-    .L.str.8                                 0x080080b1   Data          40  headers.o(.rodata.str1.1)
-    .L.str.6                                 0x080080d9   Data          27  headers.o(.rodata.str1.1)
-    .L.str.2                                 0x080080f4   Data          31  headers.o(.rodata.str1.1)
-    .L.str.3                                 0x08008113   Data          31  headers.o(.rodata.str1.1)
-    .L.str.14                                0x08008132   Data          58  headers.o(.rodata.str1.1)
-    .L.str.12                                0x0800816c   Data          44  headers.o(.rodata.str1.1)
-    .L.str                                   0x08008198   Data          86  headers.o(.rodata.str1.1)
-    .L.str.2                                 0x080081ee   Data          40  input.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080081ee   Section        0  input.o(.rodata.str1.1)
-    .L.str                                   0x08008216   Data          31  input.o(.rodata.str1.1)
-    .L.str.1                                 0x08008235   Data          84  input.o(.rodata.str1.1)
-    .L.str                                   0x08008289   Data          41  main.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08008289   Section        0  main.o(.rodata.str1.1)
-    .L.str.1                                 0x080082b2   Data          54  main.o(.rodata.str1.1)
-    .L.str.6                                 0x080082e8   Data          83  main.o(.rodata.str1.1)
-    .L.str.2                                 0x0800833b   Data          36  main.o(.rodata.str1.1)
-    .L.str.4                                 0x0800835f   Data          22  main.o(.rodata.str1.1)
-    .L.str.3                                 0x08008375   Data          43  main.o(.rodata.str1.1)
-    .L.str.5                                 0x080083a0   Data          18  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08005e94   Section        0  main.o(.text.activateAbsolut)
+    basicChecks                              0x08005ee5   Thumb Code   728  headers.o(.text.basicChecks)
+    [Anonymous Symbol]                       0x08005ee4   Section        0  headers.o(.text.basicChecks)
+    [Anonymous Symbol]                       0x080061bc   Section        0  buttons.o(.text.buttonHandler)
+    [Anonymous Symbol]                       0x080061e0   Section        0  display.o(.text.checkBounds)
+    [Anonymous Symbol]                       0x0800621c   Section        0  display.o(.text.checkXBounds)
+    [Anonymous Symbol]                       0x08006240   Section        0  display.o(.text.checkYBounds)
+    check_SPI_SR                             0x08006265   Thumb Code    72  LCD_SPI.o(.text.check_SPI_SR)
+    [Anonymous Symbol]                       0x08006264   Section        0  LCD_SPI.o(.text.check_SPI_SR)
+    [Anonymous Symbol]                       0x080062ac   Section        0  сonverter.o(.text.convertColor)
+    [Anonymous Symbol]                       0x080062f0   Section        0  display.o(.text.displayDrawAbsolut)
+    [Anonymous Symbol]                       0x0800633c   Section        0  display.o(.text.displayDrawRLE)
+    [Anonymous Symbol]                       0x080063a4   Section        0  display.o(.text.endline)
+    [Anonymous Symbol]                       0x080063fc   Section        0  main.o(.text.errorHandler)
+    [Anonymous Symbol]                       0x08006484   Section        0  headers.o(.text.getFileHeader)
+    [Anonymous Symbol]                       0x080064d4   Section        0  headers.o(.text.getInfoHeader)
+    [Anonymous Symbol]                       0x08006518   Section        0  display.o(.text.initCoords)
+    initGPIOs                                0x08006565   Thumb Code   320  init.o(.text.initGPIOs)
+    [Anonymous Symbol]                       0x08006564   Section        0  init.o(.text.initGPIOs)
+    [Anonymous Symbol]                       0x080066a4   Section        0  init.o(.text.initITSboard)
+    [Anonymous Symbol]                       0x080066b8   Section        0  input.o(.text.initInput)
+    [Anonymous Symbol]                       0x08006710   Section        0  statusHandler.o(.text.inputRecognizer)
+    [Anonymous Symbol]                       0x0800675c   Section        0  LCD_Tools.o(.text.itoa)
+    [Anonymous Symbol]                       0x08006810   Section        0  lcd.o(.text.lcdGotoXY)
+    [Anonymous Symbol]                       0x0800684c   Section        0  lcd.o(.text.lcdPrintS)
+    [Anonymous Symbol]                       0x08006a20   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x08006c48   Section        0  input.o(.text.nextChar)
+    [Anonymous Symbol]                       0x08006cd0   Section        0  input.o(.text.openNextFile)
+    [Anonymous Symbol]                       0x08006cf0   Section        0  LCD_Debug.o(.text.printDebugMsg)
+    [Anonymous Symbol]                       0x08006da4   Section        0  errorhandler.o(.text.printError)
+    readChar                                 0x08006e1d   Thumb Code    30  input.o(.text.readChar)
+    [Anonymous Symbol]                       0x08006e1c   Section        0  input.o(.text.readChar)
+    [Anonymous Symbol]                       0x08006e3c   Section        0  headers.o(.text.readHeaders)
+    [Anonymous Symbol]                       0x08006f04   Section        0  handshake.o(.text.readPalette)
+    save_restore_AltFn_SPI1_MOSI_Pin         0x08006f5d   Thumb Code    48  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
+    [Anonymous Symbol]                       0x08006f5c   Section        0  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
+    [Anonymous Symbol]                       0x08006f8c   Section        0  handshake.o(.text.skipTrash)
+    startNextByteBurst                       0x08006ff1   Thumb Code   142  input.o(.text.startNextByteBurst)
+    [Anonymous Symbol]                       0x08006ff0   Section        0  input.o(.text.startNextByteBurst)
+    [Anonymous Symbol]                       0x08007080   Section        0  main.o(.text.statusCheck)
+    [Anonymous Symbol]                       0x080070f4   Section        0  stdinout_USART.o(.text.stdinout_init)
+    stringCopy                               0x080071a5   Thumb Code    70  lcd.o(.text.stringCopy)
+    [Anonymous Symbol]                       0x080071a4   Section        0  lcd.o(.text.stringCopy)
+    [Anonymous Symbol]                       0x080071ec   Section        0  display.o(.text.updateCoords)
+    [Anonymous Symbol]                       0x08007288   Section        0  display.o(.text.updateDelta)
+    usbUartDMAInt                            0x080072ed   Thumb Code   188  input.o(.text.usbUartDMAInt)
+    [Anonymous Symbol]                       0x080072ec   Section        0  input.o(.text.usbUartDMAInt)
+    usbUartRead                              0x080073a9   Thumb Code   148  input.o(.text.usbUartRead)
+    [Anonymous Symbol]                       0x080073a8   Section        0  input.o(.text.usbUartRead)
+    usbUartWrite                             0x0800743d   Thumb Code    96  input.o(.text.usbUartWrite)
+    [Anonymous Symbol]                       0x0800743c   Section        0  input.o(.text.usbUartWrite)
+    writeChar                                0x0800749d   Thumb Code    26  input.o(.text.writeChar)
+    [Anonymous Symbol]                       0x0800749c   Section        0  input.o(.text.writeChar)
+    i.__0snprintf                            0x080074b8   Section        0  printfa.o(i.__0snprintf)
+    i.__scatterload_copy                     0x080074ec   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080074fa   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080074fc   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _fp_digits                               0x0800750d   Thumb Code   366  printfa.o(i._fp_digits)
+    i._fp_digits                             0x0800750c   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x08007691   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_core                           0x08007690   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x08007d6d   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x08007d6c   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x08007d91   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x08007d90   Section        0  printfa.o(i._printf_pre_padding)
+    _snputc                                  0x08007dbf   Thumb Code    22  printfa.o(i._snputc)
+    i._snputc                                0x08007dbe   Section        0  printfa.o(i._snputc)
+    STREAM_OFFSET_TAB                        0x08007e24   Data           8  input.o(.rodata.STREAM_OFFSET_TAB)
+    [Anonymous Symbol]                       0x08007e24   Section        0  input.o(.rodata.STREAM_OFFSET_TAB)
+    USART3_Resources                         0x08007e2c   Data          52  USART_STM32F4xx.o(.rodata.USART3_Resources)
+    [Anonymous Symbol]                       0x08007e2c   Section        0  USART_STM32F4xx.o(.rodata.USART3_Resources)
+    USART3_rx                                0x08007e60   Data          12  USART_STM32F4xx.o(.rodata.USART3_rx)
+    [Anonymous Symbol]                       0x08007e60   Section        0  USART_STM32F4xx.o(.rodata.USART3_rx)
+    USART3_tx                                0x08007e6c   Data          12  USART_STM32F4xx.o(.rodata.USART3_tx)
+    [Anonymous Symbol]                       0x08007e6c   Section        0  USART_STM32F4xx.o(.rodata.USART3_tx)
+    .L.str                                   0x08007edf   Data          82  LCD_GUI.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007edf   Section        0  LCD_GUI.o(.rodata.str1.1)
+    .L.str                                   0x08007f31   Data          82  LCD_SPI.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007f31   Section        0  LCD_SPI.o(.rodata.str1.1)
+    .L.str                                   0x08007f83   Data          82  LCD_TIM.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007f83   Section        0  LCD_TIM.o(.rodata.str1.1)
+    .L.str.1                                 0x08007fd5   Data           6  LCD_Debug.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007fd5   Section        0  LCD_Debug.o(.rodata.str1.1)
+    .L.str                                   0x08007fdb   Data          22  LCD_Debug.o(.rodata.str1.1)
+    .L.str                                   0x08007ff1   Data          30  errorhandler.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007ff1   Section        0  errorhandler.o(.rodata.str1.1)
+    .L.str.13                                0x0800800f   Data          38  headers.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800800f   Section        0  headers.o(.rodata.str1.1)
+    .L.str.7                                 0x08008035   Data          41  headers.o(.rodata.str1.1)
+    .L.str.10                                0x0800805e   Data          50  headers.o(.rodata.str1.1)
+    .L.str.1                                 0x08008090   Data          32  headers.o(.rodata.str1.1)
+    .L.str.11                                0x080080b0   Data          49  headers.o(.rodata.str1.1)
+    .L.str.5                                 0x080080e1   Data          47  headers.o(.rodata.str1.1)
+    .L.str.4                                 0x08008110   Data          30  headers.o(.rodata.str1.1)
+    .L.str.9                                 0x0800812e   Data          39  headers.o(.rodata.str1.1)
+    .L.str.8                                 0x08008155   Data          40  headers.o(.rodata.str1.1)
+    .L.str.6                                 0x0800817d   Data          27  headers.o(.rodata.str1.1)
+    .L.str.2                                 0x08008198   Data          31  headers.o(.rodata.str1.1)
+    .L.str.3                                 0x080081b7   Data          31  headers.o(.rodata.str1.1)
+    .L.str.14                                0x080081d6   Data          58  headers.o(.rodata.str1.1)
+    .L.str.12                                0x08008210   Data          44  headers.o(.rodata.str1.1)
+    .L.str                                   0x0800823c   Data          86  headers.o(.rodata.str1.1)
+    .L.str.2                                 0x08008292   Data          40  input.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08008292   Section        0  input.o(.rodata.str1.1)
+    .L.str                                   0x080082ba   Data          31  input.o(.rodata.str1.1)
+    .L.str.1                                 0x080082d9   Data          84  input.o(.rodata.str1.1)
+    .L.str                                   0x0800832d   Data          41  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x0800832d   Section        0  main.o(.rodata.str1.1)
+    .L.str.1                                 0x08008356   Data          54  main.o(.rodata.str1.1)
+    .L.str.6                                 0x0800838c   Data          83  main.o(.rodata.str1.1)
+    .L.str.2                                 0x080083df   Data          36  main.o(.rodata.str1.1)
+    .L.str.4                                 0x08008403   Data          22  main.o(.rodata.str1.1)
+    .L.str.3                                 0x08008419   Data          43  main.o(.rodata.str1.1)
+    .L.str.5                                 0x08008444   Data          18  main.o(.rodata.str1.1)
     crd                                      0x2000000c   Data           4  lcd.o(.data.crd)
     [Anonymous Symbol]                       0x2000000c   Section        0  lcd.o(.data.crd)
     fontHeight                               0x20000010   Data           4  lcd.o(.data.fontHeight)
@@ -3724,49 +3732,51 @@ Image Symbol Table
     USART3_IRQHandler                        0x08003e2d   Thumb Code    16  USART_STM32F4xx.o(.text.USART3_IRQHandler)
     USART_IRQHandler                         0x08004ded   Thumb Code  1026  USART_STM32F4xx.o(.text.USART_IRQHandler)
     UsageFault_Handler                       0x08005d69   Thumb Code     4  stm32f4xx_it.o(.text.UsageFault_Handler)
-    buttonHandler                            0x0800616d   Thumb Code    36  buttons.o(.text.buttonHandler)
-    checkXBounds                             0x08006191   Thumb Code    34  display.o(.text.checkXBounds)
-    checkYBounds                             0x080061b5   Thumb Code    34  display.o(.text.checkYBounds)
-    convertColor                             0x08006221   Thumb Code    66  сonverter.o(.text.convertColor)
-    displayDrawAbsolut                       0x08006265   Thumb Code    40  display.o(.text.displayDrawAbsolut)
-    displayDrawRLE                           0x0800628d   Thumb Code    68  display.o(.text.displayDrawRLE)
-    endline                                  0x080062d1   Thumb Code    88  display.o(.text.endline)
-    errorHandler                             0x08006329   Thumb Code   136  main.o(.text.errorHandler)
-    getFileHeader                            0x080063b1   Thumb Code    78  headers.o(.text.getFileHeader)
-    getInfoHeader                            0x08006401   Thumb Code    68  headers.o(.text.getInfoHeader)
-    initCoords                               0x08006445   Thumb Code    76  display.o(.text.initCoords)
-    initITSboard                             0x080065d1   Thumb Code    20  init.o(.text.initITSboard)
-    initInput                                0x080065e5   Thumb Code    88  input.o(.text.initInput)
-    inputRecognizer                          0x0800663d   Thumb Code    76  statusHandler.o(.text.inputRecognizer)
-    itoa                                     0x08006689   Thumb Code   180  LCD_Tools.o(.text.itoa)
-    lcdGotoXY                                0x0800673d   Thumb Code    58  lcd.o(.text.lcdGotoXY)
-    lcdPrintS                                0x08006779   Thumb Code   466  lcd.o(.text.lcdPrintS)
-    main                                     0x0800694d   Thumb Code   548  main.o(.text.main)
-    nextChar                                 0x08006b71   Thumb Code   136  input.o(.text.nextChar)
-    openNextFile                             0x08006bf9   Thumb Code    32  input.o(.text.openNextFile)
-    printDebugMsg                            0x08006c19   Thumb Code   178  LCD_Debug.o(.text.printDebugMsg)
-    printError                               0x08006ccd   Thumb Code   118  errorhandler.o(.text.printError)
-    readHeaders                              0x08006d65   Thumb Code   198  headers.o(.text.readHeaders)
-    readPalette                              0x08006e2d   Thumb Code    86  handshake.o(.text.readPalette)
-    skipTrash                                0x08006eb5   Thumb Code    98  handshake.o(.text.skipTrash)
-    statusCheck                              0x08006fa9   Thumb Code   152  main.o(.text.statusCheck)
-    stdinout_init                            0x08007041   Thumb Code   174  stdinout_USART.o(.text.stdinout_init)
-    updateCoords                             0x08007139   Thumb Code   156  display.o(.text.updateCoords)
-    updateDelta                              0x080071d5   Thumb Code   116  display.o(.text.updateDelta)
-    __0snprintf                              0x08007415   Thumb Code    48  printfa.o(i.__0snprintf)
-    __1snprintf                              0x08007415   Thumb Code     0  printfa.o(i.__0snprintf)
-    __2snprintf                              0x08007415   Thumb Code     0  printfa.o(i.__0snprintf)
-    __c89snprintf                            0x08007415   Thumb Code     0  printfa.o(i.__0snprintf)
-    snprintf                                 0x08007415   Thumb Code     0  printfa.o(i.__0snprintf)
-    __scatterload_copy                       0x08007449   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08007457   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08007459   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    AHBPrescTable                            0x08007d30   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08007d40   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
-    Driver_USART3                            0x08007d48   Data          56  USART_STM32F4xx.o(.rodata.Driver_USART3)
-    initCmds                                 0x08007dd4   Data         103  LCD_Driver.o(.rodata.initCmds)
-    Region$$Table$$Base                      0x080083b4   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080083d4   Number         0  anon$$obj.o(Region$$Table)
+    activateAbsolut                          0x08005e95   Thumb Code    78  main.o(.text.activateAbsolut)
+    buttonHandler                            0x080061bd   Thumb Code    36  buttons.o(.text.buttonHandler)
+    checkBounds                              0x080061e1   Thumb Code    60  display.o(.text.checkBounds)
+    checkXBounds                             0x0800621d   Thumb Code    34  display.o(.text.checkXBounds)
+    checkYBounds                             0x08006241   Thumb Code    34  display.o(.text.checkYBounds)
+    convertColor                             0x080062ad   Thumb Code    66  сonverter.o(.text.convertColor)
+    displayDrawAbsolut                       0x080062f1   Thumb Code    76  display.o(.text.displayDrawAbsolut)
+    displayDrawRLE                           0x0800633d   Thumb Code   104  display.o(.text.displayDrawRLE)
+    endline                                  0x080063a5   Thumb Code    88  display.o(.text.endline)
+    errorHandler                             0x080063fd   Thumb Code   136  main.o(.text.errorHandler)
+    getFileHeader                            0x08006485   Thumb Code    78  headers.o(.text.getFileHeader)
+    getInfoHeader                            0x080064d5   Thumb Code    68  headers.o(.text.getInfoHeader)
+    initCoords                               0x08006519   Thumb Code    76  display.o(.text.initCoords)
+    initITSboard                             0x080066a5   Thumb Code    20  init.o(.text.initITSboard)
+    initInput                                0x080066b9   Thumb Code    88  input.o(.text.initInput)
+    inputRecognizer                          0x08006711   Thumb Code    76  statusHandler.o(.text.inputRecognizer)
+    itoa                                     0x0800675d   Thumb Code   180  LCD_Tools.o(.text.itoa)
+    lcdGotoXY                                0x08006811   Thumb Code    58  lcd.o(.text.lcdGotoXY)
+    lcdPrintS                                0x0800684d   Thumb Code   466  lcd.o(.text.lcdPrintS)
+    main                                     0x08006a21   Thumb Code   550  main.o(.text.main)
+    nextChar                                 0x08006c49   Thumb Code   136  input.o(.text.nextChar)
+    openNextFile                             0x08006cd1   Thumb Code    32  input.o(.text.openNextFile)
+    printDebugMsg                            0x08006cf1   Thumb Code   178  LCD_Debug.o(.text.printDebugMsg)
+    printError                               0x08006da5   Thumb Code   118  errorhandler.o(.text.printError)
+    readHeaders                              0x08006e3d   Thumb Code   198  headers.o(.text.readHeaders)
+    readPalette                              0x08006f05   Thumb Code    86  handshake.o(.text.readPalette)
+    skipTrash                                0x08006f8d   Thumb Code    98  handshake.o(.text.skipTrash)
+    statusCheck                              0x08007081   Thumb Code   114  main.o(.text.statusCheck)
+    stdinout_init                            0x080070f5   Thumb Code   174  stdinout_USART.o(.text.stdinout_init)
+    updateCoords                             0x080071ed   Thumb Code   156  display.o(.text.updateCoords)
+    updateDelta                              0x08007289   Thumb Code    98  display.o(.text.updateDelta)
+    __0snprintf                              0x080074b9   Thumb Code    48  printfa.o(i.__0snprintf)
+    __1snprintf                              0x080074b9   Thumb Code     0  printfa.o(i.__0snprintf)
+    __2snprintf                              0x080074b9   Thumb Code     0  printfa.o(i.__0snprintf)
+    __c89snprintf                            0x080074b9   Thumb Code     0  printfa.o(i.__0snprintf)
+    snprintf                                 0x080074b9   Thumb Code     0  printfa.o(i.__0snprintf)
+    __scatterload_copy                       0x080074ed   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080074fb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080074fd   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    AHBPrescTable                            0x08007dd4   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08007de4   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
+    Driver_USART3                            0x08007dec   Data          56  USART_STM32F4xx.o(.rodata.Driver_USART3)
+    initCmds                                 0x08007e78   Data         103  LCD_Driver.o(.rodata.initCmds)
+    Region$$Table$$Base                      0x08008458   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08008478   Number         0  anon$$obj.o(Region$$Table)
     Font16FLASH                              0x20000000   Data           8  fontsFLASH.o(.data.Font16FLASH)
     SystemCoreClock                          0x20000008   Data           4  system_stm32f4xx.o(.data.SystemCoreClock)
     nextFileReady                            0x20000028   Data           1  main.o(.data.nextFileReady)
@@ -3801,41 +3811,41 @@ Memory Map of the image
 
   Image Entry point : 0x080001c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00008410, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000084b0, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000083d4, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00008478, Max: 0x00200000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001ac   Data   RO           63    RESET               startup_stm32f429xx.o
-    0x080001ac   0x080001ac   0x00000000   Code   RO         1802  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001ac   0x080001ac   0x00000004   Code   RO         1877    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001b0   0x080001b0   0x00000004   Code   RO         1880    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1882    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1884    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001b4   0x080001b4   0x00000008   Code   RO         1885    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1887    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1889    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001bc   0x080001bc   0x00000004   Code   RO         1878    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001ac   0x080001ac   0x00000000   Code   RO         1803  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001ac   0x080001ac   0x00000004   Code   RO         1878    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001b0   0x080001b0   0x00000004   Code   RO         1881    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1883    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1885    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001b4   0x080001b4   0x00000008   Code   RO         1886    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1888    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1890    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001bc   0x080001bc   0x00000004   Code   RO         1879    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001c0   0x080001c0   0x00000024   Code   RO           64  * .text               startup_stm32f429xx.o
-    0x080001e4   0x080001e4   0x00000062   Code   RO         1805    .text               mc_w.l(uldiv.o)
-    0x08000246   0x08000246   0x00000062   Code   RO         1807    .text               mc_w.l(ldiv.o)
-    0x080002a8   0x080002a8   0x00000024   Code   RO         1809    .text               mc_w.l(memcpya.o)
-    0x080002cc   0x080002cc   0x00000024   Code   RO         1811    .text               mc_w.l(memseta.o)
-    0x080002f0   0x080002f0   0x0000000e   Code   RO         1813    .text               mc_w.l(strlen.o)
-    0x080002fe   0x080002fe   0x0000002c   Code   RO         1905    .text               mc_w.l(uidiv.o)
-    0x0800032a   0x0800032a   0x0000001e   Code   RO         1907    .text               mc_w.l(llshl.o)
-    0x08000348   0x08000348   0x00000020   Code   RO         1909    .text               mc_w.l(llushr.o)
-    0x08000368   0x08000368   0x00000000   Code   RO         1920    .text               mc_w.l(iusefp.o)
-    0x08000368   0x08000368   0x000000ba   Code   RO         1921    .text               mf_w.l(depilogue.o)
-    0x08000422   0x08000422   0x0000014e   Code   RO         1923    .text               mf_w.l(dadd.o)
-    0x08000570   0x08000570   0x000000e4   Code   RO         1925    .text               mf_w.l(dmul.o)
-    0x08000654   0x08000654   0x000000de   Code   RO         1927    .text               mf_w.l(ddiv.o)
-    0x08000732   0x08000732   0x00000030   Code   RO         1931    .text               mf_w.l(dfixul.o)
+    0x080001e4   0x080001e4   0x00000062   Code   RO         1806    .text               mc_w.l(uldiv.o)
+    0x08000246   0x08000246   0x00000062   Code   RO         1808    .text               mc_w.l(ldiv.o)
+    0x080002a8   0x080002a8   0x00000024   Code   RO         1810    .text               mc_w.l(memcpya.o)
+    0x080002cc   0x080002cc   0x00000024   Code   RO         1812    .text               mc_w.l(memseta.o)
+    0x080002f0   0x080002f0   0x0000000e   Code   RO         1814    .text               mc_w.l(strlen.o)
+    0x080002fe   0x080002fe   0x0000002c   Code   RO         1906    .text               mc_w.l(uidiv.o)
+    0x0800032a   0x0800032a   0x0000001e   Code   RO         1908    .text               mc_w.l(llshl.o)
+    0x08000348   0x08000348   0x00000020   Code   RO         1910    .text               mc_w.l(llushr.o)
+    0x08000368   0x08000368   0x00000000   Code   RO         1921    .text               mc_w.l(iusefp.o)
+    0x08000368   0x08000368   0x000000ba   Code   RO         1922    .text               mf_w.l(depilogue.o)
+    0x08000422   0x08000422   0x0000014e   Code   RO         1924    .text               mf_w.l(dadd.o)
+    0x08000570   0x08000570   0x000000e4   Code   RO         1926    .text               mf_w.l(dmul.o)
+    0x08000654   0x08000654   0x000000de   Code   RO         1928    .text               mf_w.l(ddiv.o)
+    0x08000732   0x08000732   0x00000030   Code   RO         1932    .text               mf_w.l(dfixul.o)
     0x08000762   0x08000762   0x00000002   PAD
-    0x08000764   0x08000764   0x00000030   Code   RO         1933    .text               mf_w.l(cdrcmple.o)
-    0x08000794   0x08000794   0x00000030   Code   RO         1935    .text               mc_w.l(init.o)
-    0x080007c4   0x080007c4   0x00000024   Code   RO         1938    .text               mc_w.l(llsshr.o)
+    0x08000764   0x08000764   0x00000030   Code   RO         1934    .text               mf_w.l(cdrcmple.o)
+    0x08000794   0x08000794   0x00000030   Code   RO         1936    .text               mc_w.l(init.o)
+    0x080007c4   0x080007c4   0x00000024   Code   RO         1939    .text               mc_w.l(llsshr.o)
     0x080007e8   0x080007e8   0x00000004   Code   RO           91    .text.BusFault_Handler  stm32f4xx_it.o
     0x080007ec   0x080007ec   0x00000052   Code   RO         1620    .text.COMread       input.o
     0x0800083e   0x0800083e   0x00000002   PAD
@@ -4040,148 +4050,154 @@ Memory Map of the image
     0x08005e14   0x08005e14   0x00000042   Code   RO          121    .text.__NVIC_SetPriority  stm32f4xx_hal_cortex.o
     0x08005e56   0x08005e56   0x00000002   PAD
     0x08005e58   0x08005e58   0x0000003c   Code   RO          115    .text.__NVIC_SetPriorityGrouping  stm32f4xx_hal_cortex.o
-    0x08005e94   0x08005e94   0x000002d8   Code   RO         1587    .text.basicChecks   headers.o
-    0x0800616c   0x0800616c   0x00000024   Code   RO         1744    .text.buttonHandler  buttons.o
-    0x08006190   0x08006190   0x00000022   Code   RO         1764    .text.checkXBounds  display.o
-    0x080061b2   0x080061b2   0x00000002   PAD
-    0x080061b4   0x080061b4   0x00000022   Code   RO         1762    .text.checkYBounds  display.o
-    0x080061d6   0x080061d6   0x00000002   PAD
-    0x080061d8   0x080061d8   0x00000048   Code   RO         1250    .text.check_SPI_SR  LCD_SPI.o
-    0x08006220   0x08006220   0x00000042   Code   RO         1752    .text.convertColor  сonverter.o
+    0x08005e94   0x08005e94   0x0000004e   Code   RO         1696    .text.activateAbsolut  main.o
+    0x08005ee2   0x08005ee2   0x00000002   PAD
+    0x08005ee4   0x08005ee4   0x000002d8   Code   RO         1587    .text.basicChecks   headers.o
+    0x080061bc   0x080061bc   0x00000024   Code   RO         1743    .text.buttonHandler  buttons.o
+    0x080061e0   0x080061e0   0x0000003c   Code   RO         1765    .text.checkBounds   display.o
+    0x0800621c   0x0800621c   0x00000022   Code   RO         1763    .text.checkXBounds  display.o
+    0x0800623e   0x0800623e   0x00000002   PAD
+    0x08006240   0x08006240   0x00000022   Code   RO         1761    .text.checkYBounds  display.o
     0x08006262   0x08006262   0x00000002   PAD
-    0x08006264   0x08006264   0x00000028   Code   RO         1770    .text.displayDrawAbsolut  display.o
-    0x0800628c   0x0800628c   0x00000044   Code   RO         1768    .text.displayDrawRLE  display.o
-    0x080062d0   0x080062d0   0x00000058   Code   RO         1774    .text.endline       display.o
-    0x08006328   0x08006328   0x00000088   Code   RO         1696    .text.errorHandler  main.o
-    0x080063b0   0x080063b0   0x0000004e   Code   RO         1589    .text.getFileHeader  headers.o
-    0x080063fe   0x080063fe   0x00000002   PAD
-    0x08006400   0x08006400   0x00000044   Code   RO         1591    .text.getInfoHeader  headers.o
-    0x08006444   0x08006444   0x0000004c   Code   RO         1760    .text.initCoords    display.o
-    0x08006490   0x08006490   0x00000140   Code   RO         1403    .text.initGPIOs     init.o
-    0x080065d0   0x080065d0   0x00000014   Code   RO         1399    .text.initITSboard  init.o
-    0x080065e4   0x080065e4   0x00000058   Code   RO         1604    .text.initInput     input.o
-    0x0800663c   0x0800663c   0x0000004c   Code   RO         1789    .text.inputRecognizer  statusHandler.o
-    0x08006688   0x08006688   0x000000b4   Code   RO         1301    .text.itoa          LCD_Tools.o
-    0x0800673c   0x0800673c   0x0000003a   Code   RO         1381    .text.lcdGotoXY     lcd.o
-    0x08006776   0x08006776   0x00000002   PAD
-    0x08006778   0x08006778   0x000001d2   Code   RO         1367    .text.lcdPrintS     lcd.o
-    0x0800694a   0x0800694a   0x00000002   PAD
-    0x0800694c   0x0800694c   0x00000224   Code   RO         1700    .text.main          main.o
-    0x08006b70   0x08006b70   0x00000088   Code   RO         1612    .text.nextChar      input.o
-    0x08006bf8   0x08006bf8   0x00000020   Code   RO         1616    .text.openNextFile  input.o
-    0x08006c18   0x08006c18   0x000000b2   Code   RO         1333    .text.printDebugMsg  LCD_Debug.o
-    0x08006cca   0x08006cca   0x00000002   PAD
-    0x08006ccc   0x08006ccc   0x00000076   Code   RO         1575    .text.printError    errorhandler.o
-    0x08006d42   0x08006d42   0x00000002   PAD
-    0x08006d44   0x08006d44   0x0000001e   Code   RO         1608    .text.readChar      input.o
-    0x08006d62   0x08006d62   0x00000002   PAD
-    0x08006d64   0x08006d64   0x000000c6   Code   RO         1585    .text.readHeaders   headers.o
-    0x08006e2a   0x08006e2a   0x00000002   PAD
-    0x08006e2c   0x08006e2c   0x00000056   Code   RO         1731    .text.readPalette   handshake.o
-    0x08006e82   0x08006e82   0x00000002   PAD
-    0x08006e84   0x08006e84   0x00000030   Code   RO         1248    .text.save_restore_AltFn_SPI1_MOSI_Pin  LCD_SPI.o
-    0x08006eb4   0x08006eb4   0x00000062   Code   RO         1733    .text.skipTrash     handshake.o
-    0x08006f16   0x08006f16   0x00000002   PAD
-    0x08006f18   0x08006f18   0x0000008e   Code   RO         1614    .text.startNextByteBurst  input.o
-    0x08006fa6   0x08006fa6   0x00000002   PAD
-    0x08006fa8   0x08006fa8   0x00000098   Code   RO         1698    .text.statusCheck   main.o
-    0x08007040   0x08007040   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
-    0x080070ee   0x080070ee   0x00000002   PAD
-    0x080070f0   0x080070f0   0x00000046   Code   RO         1369    .text.stringCopy    lcd.o
-    0x08007136   0x08007136   0x00000002   PAD
-    0x08007138   0x08007138   0x0000009c   Code   RO         1766    .text.updateCoords  display.o
-    0x080071d4   0x080071d4   0x00000074   Code   RO         1772    .text.updateDelta   display.o
-    0x08007248   0x08007248   0x000000bc   Code   RO         1606    .text.usbUartDMAInt  input.o
-    0x08007304   0x08007304   0x00000094   Code   RO         1618    .text.usbUartRead   input.o
-    0x08007398   0x08007398   0x00000060   Code   RO         1654    .text.usbUartWrite  input.o
-    0x080073f8   0x080073f8   0x0000001a   Code   RO         1610    .text.writeChar     input.o
-    0x08007412   0x08007412   0x00000002   PAD
-    0x08007414   0x08007414   0x00000034   Code   RO         1819    i.__0snprintf       mc_w.l(printfa.o)
-    0x08007448   0x08007448   0x0000000e   Code   RO         1943    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08007456   0x08007456   0x00000002   Code   RO         1944    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08007458   0x08007458   0x0000000e   Code   RO         1945    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08007466   0x08007466   0x00000002   PAD
-    0x08007468   0x08007468   0x00000184   Code   RO         1825    i._fp_digits        mc_w.l(printfa.o)
-    0x080075ec   0x080075ec   0x000006dc   Code   RO         1826    i._printf_core      mc_w.l(printfa.o)
-    0x08007cc8   0x08007cc8   0x00000024   Code   RO         1827    i._printf_post_padding  mc_w.l(printfa.o)
-    0x08007cec   0x08007cec   0x0000002e   Code   RO         1828    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x08007d1a   0x08007d1a   0x00000016   Code   RO         1829    i._snputc           mc_w.l(printfa.o)
-    0x08007d30   0x08007d30   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
-    0x08007d40   0x08007d40   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
-    0x08007d48   0x08007d48   0x00000038   Data   RO         1548    .rodata.Driver_USART3  USART_STM32F4xx.o
-    0x08007d80   0x08007d80   0x00000008   Data   RO         1668    .rodata.STREAM_OFFSET_TAB  input.o
-    0x08007d88   0x08007d88   0x00000034   Data   RO         1553    .rodata.USART3_Resources  USART_STM32F4xx.o
-    0x08007dbc   0x08007dbc   0x0000000c   Data   RO         1550    .rodata.USART3_rx   USART_STM32F4xx.o
-    0x08007dc8   0x08007dc8   0x0000000c   Data   RO         1549    .rodata.USART3_tx   USART_STM32F4xx.o
-    0x08007dd4   0x08007dd4   0x00000067   Data   RO         1158    .rodata.initCmds    LCD_Driver.o
-    0x08007e3b   0x08007e3b   0x00000052   Data   RO         1190    .rodata.str1.1      LCD_GUI.o
-    0x08007e8d   0x08007e8d   0x00000052   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
-    0x08007edf   0x08007edf   0x00000052   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
-    0x08007f31   0x08007f31   0x0000001c   Data   RO         1336    .rodata.str1.1      LCD_Debug.o
-    0x08007f4d   0x08007f4d   0x0000001e   Data   RO         1578    .rodata.str1.1      errorhandler.o
-    0x08007f6b   0x08007f6b   0x00000283   Data   RO         1595    .rodata.str1.1      headers.o
-    0x080081ee   0x080081ee   0x0000009b   Data   RO         1664    .rodata.str1.1      input.o
-    0x08008289   0x08008289   0x00000129   Data   RO         1714    .rodata.str1.1      main.o
-    0x080083b2   0x080083b2   0x00000002   PAD
-    0x080083b4   0x080083b4   0x00000020   Data   RO         1942    Region$$Table       anon$$obj.o
+    0x08006264   0x08006264   0x00000048   Code   RO         1250    .text.check_SPI_SR  LCD_SPI.o
+    0x080062ac   0x080062ac   0x00000042   Code   RO         1751    .text.convertColor  сonverter.o
+    0x080062ee   0x080062ee   0x00000002   PAD
+    0x080062f0   0x080062f0   0x0000004c   Code   RO         1771    .text.displayDrawAbsolut  display.o
+    0x0800633c   0x0800633c   0x00000068   Code   RO         1769    .text.displayDrawRLE  display.o
+    0x080063a4   0x080063a4   0x00000058   Code   RO         1775    .text.endline       display.o
+    0x080063fc   0x080063fc   0x00000088   Code   RO         1698    .text.errorHandler  main.o
+    0x08006484   0x08006484   0x0000004e   Code   RO         1589    .text.getFileHeader  headers.o
+    0x080064d2   0x080064d2   0x00000002   PAD
+    0x080064d4   0x080064d4   0x00000044   Code   RO         1591    .text.getInfoHeader  headers.o
+    0x08006518   0x08006518   0x0000004c   Code   RO         1759    .text.initCoords    display.o
+    0x08006564   0x08006564   0x00000140   Code   RO         1403    .text.initGPIOs     init.o
+    0x080066a4   0x080066a4   0x00000014   Code   RO         1399    .text.initITSboard  init.o
+    0x080066b8   0x080066b8   0x00000058   Code   RO         1604    .text.initInput     input.o
+    0x08006710   0x08006710   0x0000004c   Code   RO         1790    .text.inputRecognizer  statusHandler.o
+    0x0800675c   0x0800675c   0x000000b4   Code   RO         1301    .text.itoa          LCD_Tools.o
+    0x08006810   0x08006810   0x0000003a   Code   RO         1381    .text.lcdGotoXY     lcd.o
+    0x0800684a   0x0800684a   0x00000002   PAD
+    0x0800684c   0x0800684c   0x000001d2   Code   RO         1367    .text.lcdPrintS     lcd.o
+    0x08006a1e   0x08006a1e   0x00000002   PAD
+    0x08006a20   0x08006a20   0x00000226   Code   RO         1702    .text.main          main.o
+    0x08006c46   0x08006c46   0x00000002   PAD
+    0x08006c48   0x08006c48   0x00000088   Code   RO         1612    .text.nextChar      input.o
+    0x08006cd0   0x08006cd0   0x00000020   Code   RO         1616    .text.openNextFile  input.o
+    0x08006cf0   0x08006cf0   0x000000b2   Code   RO         1333    .text.printDebugMsg  LCD_Debug.o
+    0x08006da2   0x08006da2   0x00000002   PAD
+    0x08006da4   0x08006da4   0x00000076   Code   RO         1575    .text.printError    errorhandler.o
+    0x08006e1a   0x08006e1a   0x00000002   PAD
+    0x08006e1c   0x08006e1c   0x0000001e   Code   RO         1608    .text.readChar      input.o
+    0x08006e3a   0x08006e3a   0x00000002   PAD
+    0x08006e3c   0x08006e3c   0x000000c6   Code   RO         1585    .text.readHeaders   headers.o
+    0x08006f02   0x08006f02   0x00000002   PAD
+    0x08006f04   0x08006f04   0x00000056   Code   RO         1730    .text.readPalette   handshake.o
+    0x08006f5a   0x08006f5a   0x00000002   PAD
+    0x08006f5c   0x08006f5c   0x00000030   Code   RO         1248    .text.save_restore_AltFn_SPI1_MOSI_Pin  LCD_SPI.o
+    0x08006f8c   0x08006f8c   0x00000062   Code   RO         1732    .text.skipTrash     handshake.o
+    0x08006fee   0x08006fee   0x00000002   PAD
+    0x08006ff0   0x08006ff0   0x0000008e   Code   RO         1614    .text.startNextByteBurst  input.o
+    0x0800707e   0x0800707e   0x00000002   PAD
+    0x08007080   0x08007080   0x00000072   Code   RO         1700    .text.statusCheck   main.o
+    0x080070f2   0x080070f2   0x00000002   PAD
+    0x080070f4   0x080070f4   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
+    0x080071a2   0x080071a2   0x00000002   PAD
+    0x080071a4   0x080071a4   0x00000046   Code   RO         1369    .text.stringCopy    lcd.o
+    0x080071ea   0x080071ea   0x00000002   PAD
+    0x080071ec   0x080071ec   0x0000009c   Code   RO         1767    .text.updateCoords  display.o
+    0x08007288   0x08007288   0x00000062   Code   RO         1773    .text.updateDelta   display.o
+    0x080072ea   0x080072ea   0x00000002   PAD
+    0x080072ec   0x080072ec   0x000000bc   Code   RO         1606    .text.usbUartDMAInt  input.o
+    0x080073a8   0x080073a8   0x00000094   Code   RO         1618    .text.usbUartRead   input.o
+    0x0800743c   0x0800743c   0x00000060   Code   RO         1654    .text.usbUartWrite  input.o
+    0x0800749c   0x0800749c   0x0000001a   Code   RO         1610    .text.writeChar     input.o
+    0x080074b6   0x080074b6   0x00000002   PAD
+    0x080074b8   0x080074b8   0x00000034   Code   RO         1820    i.__0snprintf       mc_w.l(printfa.o)
+    0x080074ec   0x080074ec   0x0000000e   Code   RO         1944    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080074fa   0x080074fa   0x00000002   Code   RO         1945    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080074fc   0x080074fc   0x0000000e   Code   RO         1946    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800750a   0x0800750a   0x00000002   PAD
+    0x0800750c   0x0800750c   0x00000184   Code   RO         1826    i._fp_digits        mc_w.l(printfa.o)
+    0x08007690   0x08007690   0x000006dc   Code   RO         1827    i._printf_core      mc_w.l(printfa.o)
+    0x08007d6c   0x08007d6c   0x00000024   Code   RO         1828    i._printf_post_padding  mc_w.l(printfa.o)
+    0x08007d90   0x08007d90   0x0000002e   Code   RO         1829    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x08007dbe   0x08007dbe   0x00000016   Code   RO         1830    i._snputc           mc_w.l(printfa.o)
+    0x08007dd4   0x08007dd4   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
+    0x08007de4   0x08007de4   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
+    0x08007dec   0x08007dec   0x00000038   Data   RO         1548    .rodata.Driver_USART3  USART_STM32F4xx.o
+    0x08007e24   0x08007e24   0x00000008   Data   RO         1668    .rodata.STREAM_OFFSET_TAB  input.o
+    0x08007e2c   0x08007e2c   0x00000034   Data   RO         1553    .rodata.USART3_Resources  USART_STM32F4xx.o
+    0x08007e60   0x08007e60   0x0000000c   Data   RO         1550    .rodata.USART3_rx   USART_STM32F4xx.o
+    0x08007e6c   0x08007e6c   0x0000000c   Data   RO         1549    .rodata.USART3_tx   USART_STM32F4xx.o
+    0x08007e78   0x08007e78   0x00000067   Data   RO         1158    .rodata.initCmds    LCD_Driver.o
+    0x08007edf   0x08007edf   0x00000052   Data   RO         1190    .rodata.str1.1      LCD_GUI.o
+    0x08007f31   0x08007f31   0x00000052   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
+    0x08007f83   0x08007f83   0x00000052   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
+    0x08007fd5   0x08007fd5   0x0000001c   Data   RO         1336    .rodata.str1.1      LCD_Debug.o
+    0x08007ff1   0x08007ff1   0x0000001e   Data   RO         1578    .rodata.str1.1      errorhandler.o
+    0x0800800f   0x0800800f   0x00000283   Data   RO         1595    .rodata.str1.1      headers.o
+    0x08008292   0x08008292   0x0000009b   Data   RO         1664    .rodata.str1.1      input.o
+    0x0800832d   0x0800832d   0x00000129   Data   RO         1713    .rodata.str1.1      main.o
+    0x08008456   0x08008456   0x00000002   PAD
+    0x08008458   0x08008458   0x00000020   Data   RO         1943    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080083d8, Size: 0x000010c0, Max: 0x00030000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08008478, Size: 0x000010c0, Max: 0x00030000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080083d8   0x00000008   Data   RW         1102    .data.Font16FLASH   fontsFLASH.o
-    0x20000008   0x080083e0   0x00000004   Data   RW           75    .data.SystemCoreClock  system_stm32f4xx.o
-    0x2000000c   0x080083e4   0x00000004   Data   RW         1385    .data.crd           lcd.o
-    0x20000010   0x080083e8   0x00000004   Data   RW         1386    .data.fontHeight    lcd.o
-    0x20000014   0x080083ec   0x00000004   Data   RW         1384    .data.fontWidth     lcd.o
-    0x20000018   0x080083f0   0x00000004   Data   RW         1387    .data.lcdFont       lcd.o
-    0x2000001c   0x080083f4   0x00000004   Data   RW         1383    .data.lcdmaxx       lcd.o
-    0x20000020   0x080083f8   0x00000004   Data   RW         1389    .data.lcdmaxy       lcd.o
-    0x20000024   0x080083fc   0x00000004   Data   RW         1666    .data.nextCharPos   input.o
-    0x20000028   0x08008400   0x00000001   Data   RW         1702    .data.nextFileReady  main.o
-    0x20000029   0x08008401   0x00000003   PAD
-    0x2000002c   0x08008404   0x00000004   Data   RW         1255    .data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF  LCD_SPI.o
-    0x20000030   0x08008408   0x00000001   Data   RW          332    .data.uwTickFreq    stm32f4xx_hal.o
-    0x20000031   0x08008409   0x00000003   PAD
-    0x20000034   0x0800840c   0x00000004   Data   RW          331    .data.uwTickPrio    stm32f4xx_hal.o
+    0x20000000   0x08008478   0x00000008   Data   RW         1102    .data.Font16FLASH   fontsFLASH.o
+    0x20000008   0x08008480   0x00000004   Data   RW           75    .data.SystemCoreClock  system_stm32f4xx.o
+    0x2000000c   0x08008484   0x00000004   Data   RW         1385    .data.crd           lcd.o
+    0x20000010   0x08008488   0x00000004   Data   RW         1386    .data.fontHeight    lcd.o
+    0x20000014   0x0800848c   0x00000004   Data   RW         1384    .data.fontWidth     lcd.o
+    0x20000018   0x08008490   0x00000004   Data   RW         1387    .data.lcdFont       lcd.o
+    0x2000001c   0x08008494   0x00000004   Data   RW         1383    .data.lcdmaxx       lcd.o
+    0x20000020   0x08008498   0x00000004   Data   RW         1389    .data.lcdmaxy       lcd.o
+    0x20000024   0x0800849c   0x00000004   Data   RW         1666    .data.nextCharPos   input.o
+    0x20000028   0x080084a0   0x00000001   Data   RW         1704    .data.nextFileReady  main.o
+    0x20000029   0x080084a1   0x00000003   PAD
+    0x2000002c   0x080084a4   0x00000004   Data   RW         1255    .data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF  LCD_SPI.o
+    0x20000030   0x080084a8   0x00000001   Data   RW          332    .data.uwTickFreq    stm32f4xx_hal.o
+    0x20000031   0x080084a9   0x00000003   PAD
+    0x20000034   0x080084ac   0x00000004   Data   RW          331    .data.uwTickPrio    stm32f4xx_hal.o
     0x20000038        -       0x00000048   Zero   RW          105    .bss.EthHandle      stm32f4xx_it.o
     0x20000080        -       0x00000014   Zero   RW         1551    .bss.USART3_Info    USART_STM32F4xx.o
     0x20000094        -       0x00000024   Zero   RW         1552    .bss.USART3_TransferInfo  USART_STM32F4xx.o
-    0x200000b8        -       0x00000004   Zero   RW         1709    .bss.absoluteSize   main.o
-    0x200000bc        -       0x00000004   Zero   RW         1780    .bss.bildHeight     display.o
-    0x200000c0        -       0x00000004   Zero   RW         1779    .bss.bildWidth      display.o
+    0x200000b8        -       0x00000004   Zero   RW         1710    .bss.absoluteSize   main.o
+    0x200000bc        -       0x00000004   Zero   RW         1781    .bss.bildHeight     display.o
+    0x200000c0        -       0x00000004   Zero   RW         1780    .bss.bildWidth      display.o
     0x200000c4        -       0x00000100   Zero   RW         1577    .bss.buf            errorhandler.o
-    0x200001c4        -       0x00000002   Zero   RW         1705    .bss.buttons        main.o
-    0x200001c6        -       0x00000004   Zero   RW         1781    .bss.coords         display.o
+    0x200001c4        -       0x00000002   Zero   RW         1707    .bss.buttons        main.o
+    0x200001c6        -       0x00000004   Zero   RW         1782    .bss.coords         display.o
     0x200001ca        -       0x0000000e   Zero   RW         1594    .bss.fileHeader     headers.o
-    0x200001d8        -       0x0000000e   Zero   RW         1715    .bss.fileHeader     main.o
-    0x200001e6   0x08008410   0x00000002   PAD
+    0x200001d8        -       0x0000000e   Zero   RW         1714    .bss.fileHeader     main.o
+    0x200001e6   0x080084b0   0x00000002   PAD
     0x200001e8        -       0x00000040   Zero   RW         1286    .bss.htim4          LCD_TIM.o
     0x20000228        -       0x00000028   Zero   RW         1596    .bss.infoHeader     headers.o
-    0x20000250        -       0x00000001   Zero   RW         1704    .bss.isAbsoluteMode  main.o
-    0x20000251        -       0x00000001   Zero   RW         1710    .bss.isAligned      main.o
-    0x20000252        -       0x00000001   Zero   RW         1703    .bss.isFileCompleted  main.o
-    0x20000253   0x08008410   0x00000001   PAD
+    0x20000250        -       0x00000001   Zero   RW         1706    .bss.isAbsoluteMode  main.o
+    0x20000251        -       0x00000001   Zero   RW         1711    .bss.isAligned      main.o
+    0x20000252        -       0x00000001   Zero   RW         1705    .bss.isFileCompleted  main.o
+    0x20000253   0x080084b0   0x00000001   PAD
     0x20000254        -       0x00000002   Zero   RW         1388    .bss.lcdColor       lcd.o
-    0x20000256        -       0x00000002   Zero   RW         1707    .bss.lcdColor       main.o
-    0x20000258        -       0x00000002   Zero   RW         1706    .bss.nextByte       main.o
-    0x2000025a   0x08008410   0x00000002   PAD
+    0x20000256        -       0x00000002   Zero   RW         1709    .bss.lcdColor       main.o
+    0x20000258        -       0x00000002   Zero   RW         1708    .bss.nextByte       main.o
+    0x2000025a   0x080084b0   0x00000002   PAD
     0x2000025c        -       0x00000004   Zero   RW         1665    .bss.noElemsInBuf   input.o
-    0x20000260        -       0x00000400   Zero   RW         1717    .bss.palette        main.o
-    0x20000660        -       0x00000028   Zero   RW         1716    .bss.passport       main.o
+    0x20000260        -       0x00000400   Zero   RW         1716    .bss.palette        main.o
+    0x20000660        -       0x00000028   Zero   RW         1715    .bss.passport       main.o
     0x20000688        -       0x00000600   Zero   RW         1667    .bss.ringBuffer     input.o
     0x20000c88        -       0x00000018   Zero   RW         1227    .bss.sTP_DEV        LCD_Touch.o
-    0x20000ca0        -       0x00000004   Zero   RW         1711    .bss.status         main.o
-    0x20000ca4        -       0x00000001   Zero   RW         1718    .bss.trash          main.o
-    0x20000ca5   0x08008410   0x00000003   PAD
+    0x20000ca0        -       0x00000004   Zero   RW         1712    .bss.status         main.o
+    0x20000ca4        -       0x00000001   Zero   RW         1717    .bss.trash          main.o
+    0x20000ca5   0x080084b0   0x00000003   PAD
     0x20000ca8        -       0x00000004   Zero   RW         1669    .bss.usbUartRead.nextReadPos  input.o
     0x20000cac        -       0x00000004   Zero   RW          333    .bss.uwTick         stm32f4xx_hal.o
     0x20000cb0        -       0x00000001   Zero   RW         1593    .bss.validHeaders   headers.o
-    0x20000cb1   0x08008410   0x00000003   PAD
-    0x20000cb4        -       0x00000004   Zero   RW         1776    .bss.xCoords        display.o
-    0x20000cb8        -       0x00000004   Zero   RW         1777    .bss.yCoords        display.o
-    0x20000cbc   0x08008410   0x00000004   PAD
+    0x20000cb1   0x080084b0   0x00000003   PAD
+    0x20000cb4        -       0x00000004   Zero   RW         1777    .bss.xCoords        display.o
+    0x20000cb8        -       0x00000004   Zero   RW         1778    .bss.yCoords        display.o
+    0x20000cbc   0x080084b0   0x00000004   PAD
     0x20000cc0        -       0x00000400   Zero   RW           61    STACK               startup_stm32f429xx.o
 
 
@@ -4202,7 +4218,7 @@ Image component sizes
         92          0          0          0         24       6454   LCD_Touch.o
       8678         52        132          0         56      22515   USART_STM32F4xx.o
         36          0          0          0          0        818   buttons.o
-       612          0          0          0         20       2740   display.o
+       726          0          0          0         20       3025   display.o
        232          0          0          0          0       2438   error.o
        118          0         30          0        256        920   errorhandler.o
          0          0          0          8          0       1900   fontsFLASH.o
@@ -4211,7 +4227,7 @@ Image component sizes
        524          0          0          0          0       3897   init.o
       1646          0        163          4       1544       7461   input.o
        594          0          0         24          2       3887   lcd.o
-       836          6        297          1       1096       3362   main.o
+       878          6        297          1       1096       3351   main.o
         36          8        428          0       1024       1012   startup_stm32f429xx.o
         76          0          0          0          0        674   statusHandler.o
        174          0          0          0          0       1567   stdinout_USART.o
@@ -4229,9 +4245,9 @@ Image component sizes
         66          0          0          0          0       1095   сonverter.o
 
     ----------------------------------------------------------------------
-     27728         80       2128         56       4232     210707   Object Totals
+     27892         80       2128         56       4232     210981   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-       152          0          2          6         15          0   (incl. Padding)
+       160          0          2          6         15          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -4286,15 +4302,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     31620        182       2128         56       4232     211235   Grand Totals
-     31620        182       2128         56       4232     211235   ELF Image Totals
-     31620        182       2128         56          0          0   ROM Totals
+     31784        182       2128         56       4232     211509   Grand Totals
+     31784        182       2128         56       4232     211509   ELF Image Totals
+     31784        182       2128         56          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                33748 (  32.96kB)
+    Total RO  Size (Code + RO Data)                33912 (  33.12kB)
     Total RW  Size (RW Data + ZI Data)              4288 (   4.19kB)
-    Total ROM Size (Code + RO Data + RW Data)      33804 (  33.01kB)
+    Total ROM Size (Code + RO Data + RW Data)      33968 (  33.17kB)
 
 ==============================================================================
 
