@@ -183,6 +183,8 @@ project:
         - file: Inc/converter.h      
         - file: Inc/display.h
         - file: Inc/statusHandler.h
+        - file: Inc/imageHandler.h
+
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -197,6 +199,7 @@ project:
         - file: Src/сonverter.c
         - file: Src/display.c
         - file: Src/statusHandler.c
+        - file: Src/imageHandler.c
 
   components:
     - component: ARM::CMSIS:CORE

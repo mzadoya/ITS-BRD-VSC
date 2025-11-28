@@ -9,8 +9,10 @@
 
 
 #define BITS_PER_PIXEL 8
-#define POS_AFTER_HANDSHAKE (14 + 40 + 1024)
+#define POS_AFTER_HANDSHAKE (14 + 40) 
 #define CHUNK 64
+uint32_t bytes = 0;
+
 
 int readHeader(BITMAPFILEHEADER *fileHeader) {
     char buffer[4];
@@ -80,9 +82,16 @@ int readPassport(BITMAPINFOHEADER *passport) {
     return OK;
 }
 
-int readPalette(RGBQUAD *palette) {
+int readPalette(RGBQUAD *palette, uint32_t colorsSize) 
+{
+    if (colorsSize == 0) {
+        colorsSize = MAX_COLOR_TABLE_SIZE;
+    }
+    bytes = colorsSize * sizeof(RGBQUAD);
+
+
     char buffer[4] = {0, 0, 0, 0};
-    for (int i = 0; i < MAX_COLOR_TABLE_SIZE; i++) {
+    for (int i = 0; i < colorsSize; i++) {
         COMread(buffer, 1, 4);
         (*palette).rgbRed = (unsigned char) buffer[2];
         (*palette).rgbGreen = (unsigned char) buffer[1];
@@ -94,10 +103,10 @@ int readPalette(RGBQUAD *palette) {
 }
 
 int skipTrash(uint32_t offset) {
-    if (POS_AFTER_HANDSHAKE >= offset) {
+    if ((POS_AFTER_HANDSHAKE+bytes) >= offset) {
         return ERR_READ_FAIL;
     }
-    uint32_t bytesToSkip = offset - POS_AFTER_HANDSHAKE;
+    uint32_t bytesToSkip = offset - (POS_AFTER_HANDSHAKE+bytes) ;
     char trash[CHUNK];
     while (bytesToSkip > 0) {
         if (bytesToSkip > CHUNK) {
@@ -121,11 +130,11 @@ int shakeHandsWithFile(BITMAPFILEHEADER* fileHeader, BITMAPINFOHEADER* passport,
    if (rcPassport != OK) {
     return rcPassport;
    }
-   int rcPalette = readPalette(palette);
+   int rcPalette = readPalette(palette, passport->biClrUsed);
    if (rcPalette != OK) {
     return rcPalette;
    }
-   if (POS_AFTER_HANDSHAKE != (*fileHeader).bfOffBits) {
+   if ((POS_AFTER_HANDSHAKE +bytes)  != (*fileHeader).bfOffBits) {
         int rcSkip = skipTrash((*fileHeader).bfOffBits);
         return rcSkip;
    }

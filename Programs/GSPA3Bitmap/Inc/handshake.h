@@ -8,6 +8,6 @@ int shakeHandsWithFile(BITMAPFILEHEADER* fileHeader, BITMAPINFOHEADER* passport,
 
 
 int skipTrash(uint32_t offset);
-int readPalette(RGBQUAD *palette);
+int readPalette(RGBQUAD *palette, uint32_t colorsSize);
 
 #endif

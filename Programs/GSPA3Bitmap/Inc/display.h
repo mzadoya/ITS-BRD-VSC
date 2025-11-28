@@ -12,4 +12,7 @@ int displayDrawRLE(uint16_t lcdColor, int size);
 int displayDrawAbsolut(uint16_t lcdColor);
 int updateDelta(uint32_t x, uint32_t y);
 int endline();
+int updateRLELine(uint16_t lcdColor, int size);
+int updateAbsolutLine(uint16_t lcdColor);
+int lcdPrintLine();
 #endif

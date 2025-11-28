@@ -215,6 +215,7 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/сonverter.c"
   "${SOLUTION_ROOT}/Src/display.c"
   "${SOLUTION_ROOT}/Src/statusHandler.c"
+  "${SOLUTION_ROOT}/Src/imageHandler.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>

@@ -347,6 +347,8 @@ build:
           category: header
         - file: ../../../../Inc/statusHandler.h
           category: header
+        - file: ../../../../Inc/imageHandler.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/errorhandler.c
@@ -368,6 +370,8 @@ build:
         - file: ../../../../Src/display.c
           category: sourceC
         - file: ../../../../Src/statusHandler.c
+          category: sourceC
+        - file: ../../../../Src/imageHandler.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
