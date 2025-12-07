@@ -3,7 +3,7 @@
 <title>Static Call Graph - [/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Fri Nov 28 08:23:11 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Fri Nov 28 21:09:47 2025
 <BR><P>
 <H3>Maximum Stack Usage =        616 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -444,10 +444,10 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
-<LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 <LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ldivmod
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
 </UL>
 
 <P><STRONG><a name="[7c]"></a>__aeabi_ldivmod</STRONG> (Thumb, 98 bytes, Stack size 24 bytes, ldiv.o(.text))
@@ -1206,8 +1206,8 @@ Global Symbols
 <P><STRONG><a name="[fd]"></a>getInfoHeader</STRONG> (Thumb, 68 bytes, Stack size 16 bytes, headers.o(.text.getInfoHeader))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = getInfoHeader &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1306,16 +1306,16 @@ Global Symbols
 <P><STRONG><a name="[10d]"></a>lcdPrintS</STRONG> (Thumb, 466 bytes, Stack size 16 bytes, lcd.o(.text.lcdPrintS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringCopy
+<BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringCopy
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
 
-<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 232 bytes, Stack size 32 bytes, main.o(.text.main))
+<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 226 bytes, Stack size 32 bytes, main.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 616<LI>Call Chain = main &rArr; skipTrash &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
@@ -1371,9 +1371,9 @@ Global Symbols
 <P><STRONG><a name="[f5]"></a>printError</STRONG> (Thumb, 118 bytes, Stack size 48 bytes, errorhandler.o(.text.printError))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416<LI>Call Chain = printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdGotoXY
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snprintf
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdGotoXY
 <LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;statusCheck
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errorHandler
@@ -1726,8 +1726,8 @@ Local Symbols
 <P><STRONG><a name="[e4]"></a>USART_Initialize</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, USART_STM32F4xx.o(.text.USART_Initialize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = USART_Initialize &rArr; Enable_GPIO_Clock
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Enable_GPIO_Clock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_Initialize
 </UL>
@@ -1758,11 +1758,11 @@ Local Symbols
 <P><STRONG><a name="[e5]"></a>USART_PowerControl</STRONG> (Thumb, 1118 bytes, Stack size 64 bytes, USART_STM32F4xx.o(.text.USART_PowerControl))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = USART_PowerControl &rArr; HAL_NVIC_DisableIRQ &rArr; __NVIC_DisableIRQ
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_DisableIRQ
 <LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_PeripheralReset
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_EnableIRQ
 <LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_ClearPendingIRQ
-<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_PowerControl
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Uninitialize

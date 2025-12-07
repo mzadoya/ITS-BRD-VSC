@@ -1,0 +1,11 @@
+# Target labels
+ GSPA4WireBus.Debug+ITSboard
+# Source files and their labels
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/CMakeFiles/GSPA4WireBus.Debug+ITSboard-build
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/CMakeFiles/GSPA4WireBus.Debug+ITSboard-build.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/GSPA4WireBus.Debug+ITSboard/src/GSPA4WireBus.Debug+ITSboard-stamp/GSPA4WireBus.Debug+ITSboard-build.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/GSPA4WireBus.Debug+ITSboard/src/GSPA4WireBus.Debug+ITSboard-stamp/GSPA4WireBus.Debug+ITSboard-configure.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/GSPA4WireBus.Debug+ITSboard/src/GSPA4WireBus.Debug+ITSboard-stamp/GSPA4WireBus.Debug+ITSboard-patch.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/GSPA4WireBus.Debug+ITSboard/src/GSPA4WireBus.Debug+ITSboard-stamp/GSPA4WireBus.Debug+ITSboard-update.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/GSPA4WireBus.Debug+ITSboard/src/GSPA4WireBus.Debug+ITSboard-stamp/GSPA4WireBus.Debug+ITSboard-download.rule
+/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA4WireBus/tmp/GSPA4WireBus.Debug+ITSboard/src/GSPA4WireBus.Debug+ITSboard-stamp/GSPA4WireBus.Debug+ITSboard-mkdir.rule
