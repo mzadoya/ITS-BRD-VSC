@@ -5,8 +5,8 @@
             "name": "STLink@pyOCD (launch)",
             "type": "gdbtarget",
             "request": "launch",
-            "cwd": "${workspaceFolder}/Programs/GSPA4WireBus",
-            "program": "out/GSPA4WireBus/ITSboard/Debug/GSPA4WireBus.axf",
+            "cwd": "${workspaceFolder}/Programs/GSPA3Bitmap",
+            "program": "out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.axf",
             "gdb": "arm-none-eabi-gdb",
             "preLaunchTask": "CMSIS Load",
             "initCommands": [
@@ -46,8 +46,8 @@
             "name": "STLink@pyOCD (attach)",
             "type": "gdbtarget",
             "request": "attach",
-            "cwd": "${workspaceFolder}/Programs/GSPA4WireBus",
-            "program": "out/GSPA4WireBus/ITSboard/Debug/GSPA4WireBus.axf",
+            "cwd": "${workspaceFolder}/Programs/GSPA3Bitmap",
+            "program": "out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.axf",
             "gdb": "arm-none-eabi-gdb",
             "initCommands": [
                 ""

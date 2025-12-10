@@ -178,6 +178,7 @@ project:
         - file: Inc/errCodes.h
         - file: Inc/sensor.h
         - file: Inc/global.h
+        - file: Inc/math.h
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
@@ -186,5 +187,6 @@ project:
         - file: Src/onewire.c
         - file: Src/timing.c
         - file: Src/sensor.c
+        - file: Src/math.c
   components:
     - component: ARM::CMSIS:CORE

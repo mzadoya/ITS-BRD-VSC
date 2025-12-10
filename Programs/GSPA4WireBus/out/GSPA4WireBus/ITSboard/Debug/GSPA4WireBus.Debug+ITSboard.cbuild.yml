@@ -337,6 +337,8 @@ build:
           category: header
         - file: ../../../../Inc/global.h
           category: header
+        - file: ../../../../Inc/math.h
+          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -348,6 +350,8 @@ build:
         - file: ../../../../Src/timing.c
           category: sourceC
         - file: ../../../../Src/sensor.c
+          category: sourceC
+        - file: ../../../../Src/math.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

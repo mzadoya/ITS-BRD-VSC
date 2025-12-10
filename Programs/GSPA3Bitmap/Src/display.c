@@ -1,6 +1,4 @@
-
-
-
+#include "display.h"
 #include "LCD_general.h"
 #include <stdint.h>
 #include "eCodes.h"
@@ -99,10 +97,11 @@ int updateRLELine(uint16_t lcdColor, int size){
             currentPos++;
         }
     }
+ 
     return OK;
 }
 
-int updateAbsolutLine(uint16_t lcdColor) {
+int updateAbsolutLineToDraw(uint16_t lcdColor) {
      if (currentPos < bufferSize) {
         lcdColorMap[currentPos] = lcdColor;
         currentPos++;

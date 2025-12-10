@@ -1,4 +1,3 @@
-
 #include "handshake.h"
 #include "eCodes.h"
 #include "BMP_types.h"

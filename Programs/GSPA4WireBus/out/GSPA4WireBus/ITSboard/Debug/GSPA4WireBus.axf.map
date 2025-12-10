@@ -1437,6 +1437,7 @@ Section Cross References
     sensor.o(.text.sensorReadRom) refers to onewire.o(.text.oneWireReset) for oneWireReset
     sensor.o(.text.sensorReadRom) refers to onewire.o(.text.oneWireWriteByte) for oneWireWriteByte
     sensor.o(.text.sensorReadRom) refers to onewire.o(.text.oneWireReadByte) for oneWireReadByte
+    sensor.o(.text.sensorReadRom) refers to sensor.o(.bss.sensor) for sensor
     sensor.o(.text.sensorReadRom) refers to sensor.o(.bss.crcPack) for crcPack
     sensor.o(.text.sensorReadRom) refers to crc.o(.text.checkCRC) for checkCRC
     sensor.o(.ARM.exidx.text.sensorReadRom) refers to sensor.o(.text.sensorReadRom) for [Anonymous Symbol]
@@ -1446,14 +1447,24 @@ Section Cross References
     sensor.o(.ARM.exidx.text.sensorSelect) refers to sensor.o(.text.sensorSelect) for [Anonymous Symbol]
     sensor.o(.text.sensorFullThrottle) refers to timing.o(.text.wait) for wait
     sensor.o(.ARM.exidx.text.sensorFullThrottle) refers to sensor.o(.text.sensorFullThrottle) for [Anonymous Symbol]
+    sensor.o(.ARM.exidx.text.sensorParseData) refers to sensor.o(.text.sensorParseData) for [Anonymous Symbol]
     sensor.o(.text.sensorReadData) refers to onewire.o(.text.oneWireWriteByte) for oneWireWriteByte
     sensor.o(.text.sensorReadData) refers to onewire.o(.text.oneWireReadByte) for oneWireReadByte
     sensor.o(.text.sensorReadData) refers to sensor.o(.bss.tempData) for tempData
+    sensor.o(.text.sensorReadData) refers to crc.o(.text.checkCRC) for checkCRC
+    sensor.o(.text.sensorReadData) refers to sensor.o(.text.sensorParseData) for sensorParseData
     sensor.o(.ARM.exidx.text.sensorReadData) refers to sensor.o(.text.sensorReadData) for [Anonymous Symbol]
-    sensor.o(.text.sensorReadTemperature) refers to sensor.o(.text.sensorSelect) for sensorSelect
-    sensor.o(.text.sensorReadTemperature) refers to sensor.o(.text.sensorFullThrottle) for sensorFullThrottle
-    sensor.o(.text.sensorReadTemperature) refers to sensor.o(.text.sensorReadData) for sensorReadData
-    sensor.o(.ARM.exidx.text.sensorReadTemperature) refers to sensor.o(.text.sensorReadTemperature) for [Anonymous Symbol]
+    sensor.o(.text.sensorGetTemperature) refers to sensor.o(.text.sensorSelect) for sensorSelect
+    sensor.o(.text.sensorGetTemperature) refers to onewire.o(.text.oneWireWriteByte) for oneWireWriteByte
+    sensor.o(.text.sensorGetTemperature) refers to sensor.o(.text.sensorFullThrottle) for sensorFullThrottle
+    sensor.o(.text.sensorGetTemperature) refers to sensor.o(.text.sensorReadData) for sensorReadData
+    sensor.o(.text.sensorGetTemperature) refers to sensor.o(.bss.sensor) for sensor
+    sensor.o(.text.sensorGetTemperature) refers to math.o(.text.tempCalcCelcius) for tempCalcCelcius
+    sensor.o(.ARM.exidx.text.sensorGetTemperature) refers to sensor.o(.text.sensorGetTemperature) for [Anonymous Symbol]
+    math.o(.text.tempCalcCelcius) refers to dflti.o(.text) for __aeabi_i2d
+    math.o(.text.tempCalcCelcius) refers to dadd.o(.text) for __aeabi_dadd
+    math.o(.text.tempCalcCelcius) refers to d2f.o(.text) for __aeabi_d2f
+    math.o(.ARM.exidx.text.tempCalcCelcius) refers to math.o(.text.tempCalcCelcius) for [Anonymous Symbol]
     sqrt.o(i.__hardfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
     sqrt.o(i.__hardfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
     sqrt.o(i.__hardfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
@@ -1516,10 +1527,18 @@ Section Cross References
     printfa.o(i._printf_pre_padding) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i._snputc) refers (Special) to iusefp.o(.text) for __I$use$fp
     printfa.o(i._sputc) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
+    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    dflti.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dflti.o(.text) refers to depilogue.o(.text) for _double_epilogue
     dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
     dfixi.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     dfixi.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    d2f.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    d2f.o(.text) refers to fepilogue.o(.text) for _float_round
     entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
     entry2.o(.ARM.Collect$$$$00002712) refers to startup_stm32f429xx.o(STACK) for __initial_sp
     entry2.o(__vectab_stack_and_reset_area) refers to startup_stm32f429xx.o(STACK) for __initial_sp
@@ -1534,13 +1553,10 @@ Section Cross References
     errno.o(i.__aeabi_errno_addr) refers to errno.o(.data) for .data
     errno.o(i.__read_errno) refers to errno.o(.data) for .data
     errno.o(i.__set_errno) refers to errno.o(.data) for .data
+    fepilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     depilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
     depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
-    dadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
-    dadd.o(.text) refers to llshl.o(.text) for __aeabi_llsl
-    dadd.o(.text) refers to llsshr.o(.text) for __aeabi_lasr
-    dadd.o(.text) refers to depilogue.o(.text) for _double_epilogue
     dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
     dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
     ddiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
@@ -2711,24 +2727,33 @@ Removing Unused input sections from the image.
     Removing sensor.o(.ARM.exidx.text.sensorSelect), (8 bytes).
     Removing sensor.o(.text.sensorFullThrottle), (60 bytes).
     Removing sensor.o(.ARM.exidx.text.sensorFullThrottle), (8 bytes).
-    Removing sensor.o(.text.sensorReadData), (94 bytes).
+    Removing sensor.o(.text.sensorParseData), (8 bytes).
+    Removing sensor.o(.ARM.exidx.text.sensorParseData), (8 bytes).
+    Removing sensor.o(.text.sensorReadData), (126 bytes).
     Removing sensor.o(.ARM.exidx.text.sensorReadData), (8 bytes).
-    Removing sensor.o(.text.sensorReadTemperature), (64 bytes).
-    Removing sensor.o(.ARM.exidx.text.sensorReadTemperature), (8 bytes).
+    Removing sensor.o(.text.sensorGetTemperature), (98 bytes).
+    Removing sensor.o(.ARM.exidx.text.sensorGetTemperature), (8 bytes).
     Removing sensor.o(.bss.registration), (8 bytes).
+    Removing sensor.o(.bss.sensor), (21 bytes).
     Removing sensor.o(.bss.crcPack), (8 bytes).
     Removing sensor.o(.bss.tempData), (9 bytes).
+    Removing math.o(.text), (0 bytes).
+    Removing math.o(.text.tempCalcCelcius), (128 bytes).
+    Removing math.o(.ARM.exidx.text.tempCalcCelcius), (8 bytes).
+    Removing dadd.o(.text), (334 bytes).
+    Removing dflti.o(.text), (34 bytes).
     Removing dfltui.o(.text), (26 bytes).
     Removing dfixi.o(.text), (62 bytes).
+    Removing d2f.o(.text), (56 bytes).
+    Removing fepilogue.o(.text), (110 bytes).
     Removing depilogue.o(.text), (186 bytes).
-    Removing dadd.o(.text), (334 bytes).
     Removing dmul.o(.text), (228 bytes).
     Removing ddiv.o(.text), (222 bytes).
     Removing dsqrt.o(.text), (162 bytes).
     Removing dfixul.o(.text), (48 bytes).
     Removing cdrcmple.o(.text), (48 bytes).
 
-1168 unused section(s) (total 790195 bytes) removed from the image.
+1177 unused section(s) (total 790634 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2768,11 +2793,14 @@ Image Symbol Table
     ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusesemip.o ABSOLUTE
+    ../fplib/microlib/d2f.c                  0x00000000   Number         0  d2f.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixi.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dflti.o ABSOLUTE
     ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ../fplib/microlib/fpsqrt.c               0x00000000   Number         0  dsqrt.o ABSOLUTE
@@ -2824,6 +2852,7 @@ Image Symbol Table
     keypad.c                                 0x00000000   Number         0  keypad.o ABSOLUTE
     lcd.c                                    0x00000000   Number         0  lcd.o ABSOLUTE
     main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    math.c                                   0x00000000   Number         0  math.o ABSOLUTE
     onewire.c                                0x00000000   Number         0  onewire.o ABSOLUTE
     sensor.c                                 0x00000000   Number         0  sensor.o ABSOLUTE
     stdinout_USART.c                         0x00000000   Number         0  stdinout_USART.o ABSOLUTE
@@ -3292,21 +3321,21 @@ Memory Map of the image
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001ac   Data   RO           63    RESET               startup_stm32f429xx.o
-    0x080001ac   0x080001ac   0x00000000   Code   RO         1642  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001ac   0x080001ac   0x00000004   Code   RO         1685    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001b0   0x080001b0   0x00000004   Code   RO         1688    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1690    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1692    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001b4   0x080001b4   0x00000008   Code   RO         1693    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1695    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1697    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001bc   0x080001bc   0x00000004   Code   RO         1686    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001ac   0x080001ac   0x00000000   Code   RO         1653  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001ac   0x080001ac   0x00000004   Code   RO         1702    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001b0   0x080001b0   0x00000004   Code   RO         1705    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1707    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1709    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001b4   0x080001b4   0x00000008   Code   RO         1710    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1712    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1714    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001bc   0x080001bc   0x00000004   Code   RO         1703    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001c0   0x080001c0   0x00000024   Code   RO           64  * .text               startup_stm32f429xx.o
-    0x080001e4   0x080001e4   0x00000062   Code   RO         1645    .text               mc_w.l(uldiv.o)
-    0x08000246   0x08000246   0x00000024   Code   RO         1649    .text               mc_w.l(memseta.o)
-    0x0800026a   0x0800026a   0x0000001e   Code   RO         1715    .text               mc_w.l(llshl.o)
-    0x08000288   0x08000288   0x00000020   Code   RO         1717    .text               mc_w.l(llushr.o)
-    0x080002a8   0x080002a8   0x00000030   Code   RO         1741    .text               mc_w.l(init.o)
+    0x080001e4   0x080001e4   0x00000062   Code   RO         1656    .text               mc_w.l(uldiv.o)
+    0x08000246   0x08000246   0x00000024   Code   RO         1660    .text               mc_w.l(memseta.o)
+    0x0800026a   0x0800026a   0x0000001e   Code   RO         1732    .text               mc_w.l(llshl.o)
+    0x08000288   0x08000288   0x00000020   Code   RO         1734    .text               mc_w.l(llushr.o)
+    0x080002a8   0x080002a8   0x00000030   Code   RO         1760    .text               mc_w.l(init.o)
     0x080002d8   0x080002d8   0x00000004   Code   RO           91    .text.BusFault_Handler  stm32f4xx_it.o
     0x080002dc   0x080002dc   0x00000002   Code   RO           97    .text.DebugMon_Handler  stm32f4xx_it.o
     0x080002de   0x080002de   0x00000002   PAD
@@ -3483,9 +3512,9 @@ Memory Map of the image
     0x08005254   0x08005254   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
     0x08005302   0x08005302   0x00000002   PAD
     0x08005304   0x08005304   0x00000034   Code   RO         1609    .text.wait          timing.o
-    0x08005338   0x08005338   0x0000000e   Code   RO         1749    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08005346   0x08005346   0x00000002   Code   RO         1750    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08005348   0x08005348   0x0000000e   Code   RO         1751    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08005338   0x08005338   0x0000000e   Code   RO         1766    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08005346   0x08005346   0x00000002   Code   RO         1767    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08005348   0x08005348   0x0000000e   Code   RO         1768    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08005356   0x08005356   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
     0x08005366   0x08005366   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
     0x0800536e   0x0800536e   0x00000002   PAD
@@ -3497,7 +3526,7 @@ Memory Map of the image
     0x0800545b   0x0800545b   0x00000052   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
     0x080054ad   0x080054ad   0x00000052   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
     0x080054ff   0x080054ff   0x00000001   PAD
-    0x08005500   0x08005500   0x00000020   Data   RO         1748    Region$$Table       anon$$obj.o
+    0x08005500   0x08005500   0x00000020   Data   RO         1765    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08005520, Size: 0x000004f0, Max: 0x00030000, ABSOLUTE)

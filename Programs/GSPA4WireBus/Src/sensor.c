@@ -6,11 +6,14 @@
 #include "stm32f429xx.h"
 #include "timing.h"
 #include <stdint.h>
+#include "math.h"
 
 #define PUSH_PULL_DURATION 750000
 uint64_t registration = 0;
 unsigned char crcPack[8];
 unsigned char tempData[9];
+
+ Thermometer sensor;
 
 int sensorReadRom(){
     registration = 0;
@@ -27,7 +30,7 @@ int sensorReadRom(){
             return rc;
         }
         uint64_t temp = byte;
-        registration = registration | (temp << (8*i));
+        sensor.romID = sensor.romID | (temp << (8*i));
         crcPack[i] = (unsigned char) byte;
     }
     if (checkCRC(sizeof(crcPack), crcPack) == false) {
@@ -56,6 +59,10 @@ void sensorFullThrottle() {
     GPIOD->OTYPER |= PD0_MASK;
 }
 
+int sensorParseData() {
+
+}
+
 int sensorReadData() {
     uint8_t byte = 0;
     int rc = OK;
@@ -67,16 +74,23 @@ int sensorReadData() {
         }
         tempData[i] = (unsigned char) byte; 
     }
-    return OK;
+
+    if (checkCRC(sizeof(tempData), tempData) == false) {
+        return ERR_BIT_FLIPPED;
+    }
+    rc = sensorParseData();
+    return rc;
 }
 
-int sensorReadTemperature() {
+int sensorGetTemperature() {
+    
     int rc = OK;
 
    rc = sensorSelect();
    if (rc!=OK) {
     return rc;
    }
+   oneWireWriteByte(0x44);
 
    sensorFullThrottle();
 
@@ -85,6 +99,11 @@ int sensorReadTemperature() {
     return rc;
    }
 
-   sensorReadData();
+   rc = sensorReadData();
+   if (rc!=OK) {
+    return rc;
+   }
+
+   rc = tempCalcCelcius(&sensor);
    return rc;
 }

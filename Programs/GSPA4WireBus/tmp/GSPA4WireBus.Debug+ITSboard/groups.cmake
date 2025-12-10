@@ -210,6 +210,7 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/onewire.c"
   "${SOLUTION_ROOT}/Src/timing.c"
   "${SOLUTION_ROOT}/Src/sensor.c"
+  "${SOLUTION_ROOT}/Src/math.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>

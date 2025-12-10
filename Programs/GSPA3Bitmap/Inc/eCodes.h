@@ -8,12 +8,15 @@
 #define STATUS_RLE 2
 #define STATUS_END_OF_FILE 1
 
+#define MODE_RECORDING 5
+#define MODE_DRAW 6
 #define OK 0
 #define ERR_NOT_BMP -1
 #define ERR_WRONG_FORMAT -2
 #define ERR_READ_FAIL -3
 #define ERR_OUT_OF_BOUNDS -4
 #define ERR_SIGNATURE -5
+#define ERR_IMAGE_NOT_SUPPORTED -6
 
 
 #define MSG_ERR_NOT_BMP "Invalid Header Signature (Expected 'BM')"
