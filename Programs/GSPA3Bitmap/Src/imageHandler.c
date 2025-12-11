@@ -4,12 +4,15 @@
 #include "eCodes.h"
 #include "input.h"
 #include <stdbool.h>
+#include <stdlib.h>
+#include <math.h>
 #include "errorHandler.h"
 #include "LCD_GUI.h"
 
 #define MAX_SCALED_WIDTH (480*5)
 #define MAX_SCALED_HEIGHT (320*5) 
 #define MAX_LINES 5
+#define BLACK 0x00U
 bool isAligned = false;
 int status = OK;
 unsigned char trash;
@@ -27,6 +30,14 @@ void resetDecoderState(void) {
     isAbsoluteMode = false;
     absoluteSize = 0; 
     isAligned = false;
+}
+
+void reset() {
+  for (int y = 0; y < MAX_LINES; y++) {
+    for (int x = 0; x < MAX_SCALED_WIDTH; x++) {
+      lineBuffer[y][x] = BLACK;
+    }
+  }
 }
 
 int recordLine() {
@@ -92,11 +103,17 @@ void activateAbsolut(void) {
 void statusCheck() {
   switch (status) {
   case STATUS_EOL:
-    endline();
+    if(mode == MODE_DRAW)
+    {
+     endline();
+    }
     break;
 
   case STATUS_END_OF_FILE:
-    endline();
+    if(mode == MODE_DRAW)
+    {
+     endline();
+    }
     // nextFileReady = true;
     break;
 
@@ -170,6 +187,8 @@ int calculateBoxAverage(int boxScale, uint16_t *finalColor, int startX, int endX
   for (int y = 0; y < boxScale; y++) {
     for (int x = startX; x < endX; x++) {
     
+      if (x>=MAX_SCALED_WIDTH) break;
+      
       uint8_t colorRed = (lineBuffer[y][x] >> 11) & 0x1F;
       uint8_t colorGreen = (lineBuffer[y][x] >> 5) & 0x3F;
       uint8_t colorBlue =  (lineBuffer[y][x]) & 0x1F;
@@ -194,21 +213,12 @@ int handleScaledImage(BITMAPINFOHEADER* passport, RGBQUAD* palette) {
     return ERR_IMAGE_NOT_SUPPORTED;
   }
   float scaleX = (float)passport->biWidth / LCD_X_MAXPIXEL;
-  float scaleY = (float)passport->biHeight / LCD_Y_MAXPIXEL;
-  float scaleRAW = (scaleX > scaleY) ? scaleX : scaleY;
-  int boxScale = 0;
-  if (scaleRAW < 1.0) {
-    scaleRAW = 1.0;
-  }
-  boxScale = (int)scaleRAW;
-  if ((scaleRAW - boxScale) != 0.0) {
-    boxScale++;
-  }
-  if (boxScale > MAX_LINES) {
-    boxScale = MAX_LINES;
-  }
+ float scaleY = (float)abs(passport->biHeight) / LCD_Y_MAXPIXEL;
+  float scaleRAW = (scaleX < scaleY) ? scaleY : scaleX;
 
+  /*
   if ((*passport).biCompression == BI_RGB) {
+    reset();
     for (int y = 0; y < LCD_Y_MAXPIXEL; y++) {
       currentRecordY = 0;
       for (int row = 0; row < boxScale; row++) {
@@ -227,13 +237,18 @@ int handleScaledImage(BITMAPINFOHEADER* passport, RGBQUAD* palette) {
     }
     status = STATUS_END_OF_FILE;
   }
+ */
 
-  else if ((*passport).biCompression == BI_RLE8) {
-
+  if ((*passport).biCompression == BI_RLE8) {
+    reset();
+    int linesProcessed = 0;
     for (int y = 0; y < LCD_Y_MAXPIXEL; y++) {
       
+      int targetFileRow = (int) ((y+1) * scaleRAW);
+      int linesToRead = targetFileRow - linesProcessed;
+
       currentRecordY = 0; 
-      for (int i = 0; i < boxScale; i++) {
+      for (int i = 0; i < linesToRead; i++) {
         currentRecordX = 0; 
         status = OK;       
         while (status != STATUS_EOL && status != STATUS_END_OF_FILE) {
@@ -244,20 +259,23 @@ int handleScaledImage(BITMAPINFOHEADER* passport, RGBQUAD* palette) {
             handleCompressedImage(palette);
           }
         }
-        if (status == STATUS_EOL) status = OK;
-        
+        if (status == STATUS_EOL) {
+          status = OK;
+          linesProcessed++;
+        }
         if (status != STATUS_END_OF_FILE) {
           currentRecordY++;
         } else {
           break; 
         }
       }
-
+      
       for (int x = 0; x < LCD_X_MAXPIXEL; x++) {
-        int startX = (int) (x*scaleRAW);
-        int endX = (int) ((x+1)*(scaleRAW));
+        int startX = (int)(x*scaleRAW);
+        int endX = (int)((x+1)*(scaleRAW));
+
         uint16_t finalColor = 0;
-        calculateBoxAverage(boxScale, &finalColor, startX, endX);
+        calculateBoxAverage(linesToRead, &finalColor, startX, endX);
         updateAbsolutLineToDraw(finalColor);
       }
       
@@ -278,7 +296,10 @@ int imageHandler(BITMAPINFOHEADER* passport, RGBQUAD* palette) {
   }
   else {
     mode = MODE_DRAW;
-    status = handleStandardImage(passport, palette);
+    
+    while ((handleStandardImage(passport, palette))!=STATUS_END_OF_FILE) {
+
+    }
   }
   return status;
 }

@@ -3,11 +3,11 @@
 <title>Static Call Graph - [/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA3Bitmap/out/GSPA3Bitmap/ITSboard/Debug/GSPA3Bitmap.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Wed Dec 10 09:21:31 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Dec 11 17:13:13 2025
 <BR><P>
-<H3>Maximum Stack Usage =        688 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        656 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-main &rArr; imageHandler &rArr; handleScaledImage &rArr; handleUncompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+main &rArr; imageHandler &rArr; handleScaledImage &rArr; handleCompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 <P>
 <H3>
 Mutually Recursive functions
@@ -147,7 +147,7 @@ Global Symbols
 <P><STRONG><a name="[66]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(.text)
 </UL>
-<P><STRONG><a name="[13f]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[13d]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[77]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -157,15 +157,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[140]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[13e]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[141]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[13f]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[142]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[140]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[143]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[141]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[144]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[142]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f429xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
@@ -444,8 +444,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ldivmod
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateBoxAverage
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
@@ -463,18 +463,18 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getInfoHeader
 </UL>
 
-<P><STRONG><a name="[145]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[143]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
-<P><STRONG><a name="[146]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
+<P><STRONG><a name="[144]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memcpya.o(.text), UNUSED)
 
 <P><STRONG><a name="[7e]"></a>__aeabi_memset</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset$wrapper
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[147]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[145]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[148]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[146]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[7d]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -483,38 +483,22 @@ Global Symbols
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Initialize
 </UL>
 
-<P><STRONG><a name="[149]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[147]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[14a]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[148]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[7f]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
 </UL>
 
-<P><STRONG><a name="[115]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
+<P><STRONG><a name="[113]"></a>strlen</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, strlen.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 </UL>
 
-<P><STRONG><a name="[108]"></a>__aeabi_dcmpge</STRONG> (Thumb, 54 bytes, Stack size 12 bytes, dcmpge.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_dcmpge
-</UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-</UL>
+<P><STRONG><a name="[149]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
-<P><STRONG><a name="[109]"></a>__aeabi_dcmpeq</STRONG> (Thumb, 56 bytes, Stack size 12 bytes, dcmpeq.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = __aeabi_dcmpeq
-</UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-</UL>
-
-<P><STRONG><a name="[107]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-</UL>
-
-<P><STRONG><a name="[14b]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
-
-<P><STRONG><a name="[13e]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[13c]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[7b]"></a>__aeabi_llsl</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, llshl.o(.text))
@@ -524,7 +508,7 @@ Global Symbols
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[14c]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[14a]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[7a]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
@@ -532,9 +516,9 @@ Global Symbols
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[14d]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[14b]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
-<P><STRONG><a name="[14e]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[14c]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[81]"></a>_double_round</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, depilogue.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
@@ -559,7 +543,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_drsub
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dsub
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[84]"></a>__aeabi_dsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, dadd.o(.text), UNUSED)
@@ -573,24 +557,24 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>__aeabi_dmul</STRONG> (Thumb, 228 bytes, Stack size 48 bytes, dmul.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[87]"></a>__aeabi_ddiv</STRONG> (Thumb, 222 bytes, Stack size 32 bytes, ddiv.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[88]"></a>__aeabi_d2ulz</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, dfixul.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsr
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
-<P><STRONG><a name="[13b]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdrcmple.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<P><STRONG><a name="[139]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdrcmple.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 </UL>
 
 <P><STRONG><a name="[78]"></a>__scatterload</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, init.o(.text))
@@ -599,13 +583,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[14f]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[14d]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[83]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[150]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[14e]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
 <P><STRONG><a name="[4]"></a>BusFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.BusFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f429xx.o(RESET)
@@ -617,10 +601,10 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;absoluteModeHanler
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skipTrash
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readPalette
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skipTrash
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readPalette
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
 </UL>
 
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(.text.DebugMon_Handler))
@@ -707,7 +691,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disChar
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 </UL>
@@ -718,7 +702,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printDebugMsg
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_fillRectangleMC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 </UL>
 
 <P><STRONG><a name="[a0]"></a>GUI_init</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, LCD_GUI.o(.text.GUI_init))
@@ -785,7 +769,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_GPIO_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Control
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_MspPostInit
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
@@ -835,7 +819,7 @@ Global Symbols
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
 <P><STRONG><a name="[a9]"></a>HAL_InitTick</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text.HAL_InitTick))
@@ -1152,20 +1136,20 @@ Global Symbols
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
 </UL>
 
-<P><STRONG><a name="[122]"></a>activateAbsolut</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, imageHandler.o(.text.activateAbsolut))
+<P><STRONG><a name="[120]"></a>activateAbsolut</STRONG> (Thumb, 78 bytes, Stack size 0 bytes, imageHandler.o(.text.activateAbsolut))
 <BR><BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;statusCheck
 </UL>
 
-<P><STRONG><a name="[117]"></a>buttonHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, buttons.o(.text.buttonHandler))
+<P><STRONG><a name="[115]"></a>buttonHandler</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, buttons.o(.text.buttonHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = buttonHandler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f7]"></a>calculateBoxAverage</STRONG> (Thumb, 288 bytes, Stack size 80 bytes, imageHandler.o(.text.calculateBoxAverage))
+<P><STRONG><a name="[f7]"></a>calculateBoxAverage</STRONG> (Thumb, 300 bytes, Stack size 80 bytes, imageHandler.o(.text.calculateBoxAverage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = calculateBoxAverage &rArr; __aeabi_uldivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
@@ -1200,7 +1184,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;absoluteModeHanler
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
 </UL>
 
 <P><STRONG><a name="[fb]"></a>endline</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, display.o(.text.endline))
@@ -1210,7 +1194,7 @@ Global Symbols
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;checkYBounds
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;statusCheck
 </UL>
 
@@ -1251,37 +1235,34 @@ Global Symbols
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
 </UL>
 
-<P><STRONG><a name="[106]"></a>handleScaledImage</STRONG> (Thumb, 904 bytes, Stack size 96 bytes, imageHandler.o(.text.handleScaledImage))
-<BR><BR>[Stack]<UL><LI>Max Depth = 632<LI>Call Chain = handleScaledImage &rArr; handleUncompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[106]"></a>handleScaledImage</STRONG> (Thumb, 612 bytes, Stack size 88 bytes, imageHandler.o(.text.handleScaledImage))
+<BR><BR>[Stack]<UL><LI>Max Depth = 600<LI>Call Chain = handleScaledImage &rArr; handleCompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpeq
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dcmpge
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateBoxAverage
+<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculateBoxAverage
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;absoluteModeHanler
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;endline
 <LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;updateAbsolutLineToDraw
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
 </UL>
 
-<P><STRONG><a name="[10b]"></a>handleStandardImage</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, imageHandler.o(.text.handleStandardImage))
+<P><STRONG><a name="[108]"></a>handleStandardImage</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, imageHandler.o(.text.handleStandardImage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 560<LI>Call Chain = handleStandardImage &rArr; handleUncompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;absoluteModeHanler
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;endline
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
+<BR>[Called By]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
 </UL>
 
-<P><STRONG><a name="[10a]"></a>handleUncompressedImage</STRONG> (Thumb, 222 bytes, Stack size 40 bytes, imageHandler.o(.text.handleUncompressedImage))
+<P><STRONG><a name="[109]"></a>handleUncompressedImage</STRONG> (Thumb, 222 bytes, Stack size 40 bytes, imageHandler.o(.text.handleUncompressedImage))
 <BR><BR>[Stack]<UL><LI>Max Depth = 536<LI>Call Chain = handleUncompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recordLine
@@ -1289,43 +1270,42 @@ Global Symbols
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;convertColor
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
 </UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
+<BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
 </UL>
 
-<P><STRONG><a name="[10c]"></a>imageHandler</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, imageHandler.o(.text.imageHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 656<LI>Call Chain = imageHandler &rArr; handleScaledImage &rArr; handleUncompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[10a]"></a>imageHandler</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, imageHandler.o(.text.imageHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 624<LI>Call Chain = imageHandler &rArr; handleScaledImage &rArr; handleCompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleStandardImage
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11d]"></a>initCoords</STRONG> (Thumb, 126 bytes, Stack size 8 bytes, display.o(.text.initCoords))
+<P><STRONG><a name="[11b]"></a>initCoords</STRONG> (Thumb, 126 bytes, Stack size 8 bytes, display.o(.text.initCoords))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = initCoords
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[10e]"></a>initITSboard</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, init.o(.text.initITSboard))
+<P><STRONG><a name="[10c]"></a>initITSboard</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, init.o(.text.initITSboard))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = initITSboard &rArr; SystemClock_Config &rArr; Error_Handler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stdinout_init
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stdinout_init
+<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initGPIOs
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[110]"></a>initInput</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, input.o(.text.initInput))
+<P><STRONG><a name="[10e]"></a>initInput</STRONG> (Thumb, 88 bytes, Stack size 16 bytes, input.o(.text.initInput))
 <BR><BR>[Stack]<UL><LI>Max Depth = 384<LI>Call Chain = initInput &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeChar
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
+<BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeChar
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1344,7 +1324,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disNum
 </UL>
 
-<P><STRONG><a name="[121]"></a>lcdGotoXY</STRONG> (Thumb, 58 bytes, Stack size 4 bytes, lcd.o(.text.lcdGotoXY))
+<P><STRONG><a name="[11f]"></a>lcdGotoXY</STRONG> (Thumb, 58 bytes, Stack size 4 bytes, lcd.o(.text.lcdGotoXY))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = lcdGotoXY
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
@@ -1358,34 +1338,34 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;endline
 </UL>
 
-<P><STRONG><a name="[114]"></a>lcdPrintS</STRONG> (Thumb, 466 bytes, Stack size 16 bytes, lcd.o(.text.lcdPrintS))
+<P><STRONG><a name="[112]"></a>lcdPrintS</STRONG> (Thumb, 466 bytes, Stack size 16 bytes, lcd.o(.text.lcdPrintS))
 <BR><BR>[Stack]<UL><LI>Max Depth = 368<LI>Call Chain = lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringCopy
+<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stringCopy
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_disStr
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_drawRectangle
 </UL>
-<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
+<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
 
-<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 226 bytes, Stack size 32 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 688<LI>Call Chain = main &rArr; imageHandler &rArr; handleScaledImage &rArr; handleUncompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 206 bytes, Stack size 32 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 656<LI>Call Chain = main &rArr; imageHandler &rArr; handleScaledImage &rArr; handleCompressedImage &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initCoords
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skipTrash
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readPalette
-<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resetDecoderState
+<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;imageHandler
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initCoords
+<LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;skipTrash
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readPalette
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resetDecoderState
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errorHandler
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buttonHandler
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openNextFile
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;buttonHandler
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openNextFile
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getInfoHeader
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFileHeader
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TP_InitBasic
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_clear
 <LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GUI_init
@@ -1395,17 +1375,17 @@ Global Symbols
 <P><STRONG><a name="[8b]"></a>nextChar</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, input.o(.text.nextChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 464<LI>Call Chain = nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
+<BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
 </UL>
 
-<P><STRONG><a name="[118]"></a>openNextFile</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, input.o(.text.openNextFile))
+<P><STRONG><a name="[116]"></a>openNextFile</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, input.o(.text.openNextFile))
 <BR><BR>[Stack]<UL><LI>Max Depth = 464<LI>Call Chain = openNextFile &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
-<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartRead
+<BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1426,20 +1406,20 @@ Global Symbols
 <P><STRONG><a name="[f6]"></a>printError</STRONG> (Thumb, 118 bytes, Stack size 48 bytes, errorhandler.o(.text.printError))
 <BR><BR>[Stack]<UL><LI>Max Depth = 416<LI>Call Chain = printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snprintf
-<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdGotoXY
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
+<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;snprintf
+<LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdGotoXY
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 </UL>
 <BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;statusCheck
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;errorHandler
-<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getInfoHeader
 <LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;getFileHeader
-<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;basicChecks
 </UL>
 
-<P><STRONG><a name="[119]"></a>readHeaders</STRONG> (Thumb, 198 bytes, Stack size 24 bytes, headers.o(.text.readHeaders))
+<P><STRONG><a name="[117]"></a>readHeaders</STRONG> (Thumb, 198 bytes, Stack size 24 bytes, headers.o(.text.readHeaders))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = readHeaders &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
@@ -1449,7 +1429,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11b]"></a>readPalette</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, handshake.o(.text.readPalette))
+<P><STRONG><a name="[119]"></a>readPalette</STRONG> (Thumb, 118 bytes, Stack size 24 bytes, handshake.o(.text.readPalette))
 <BR><BR>[Stack]<UL><LI>Max Depth = 520<LI>Call Chain = readPalette &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
@@ -1460,14 +1440,20 @@ Global Symbols
 <P><STRONG><a name="[f4]"></a>recordLine</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, imageHandler.o(.text.recordLine))
 <BR><BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;absoluteModeHanler
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
 </UL>
 
-<P><STRONG><a name="[11a]"></a>resetDecoderState</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, imageHandler.o(.text.resetDecoderState))
+<P><STRONG><a name="[107]"></a>reset</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, imageHandler.o(.text.reset))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = reset
+</UL>
+<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
+</UL>
+
+<P><STRONG><a name="[118]"></a>resetDecoderState</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, imageHandler.o(.text.resetDecoderState))
 <BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[11c]"></a>skipTrash</STRONG> (Thumb, 116 bytes, Stack size 88 bytes, handshake.o(.text.skipTrash))
+<P><STRONG><a name="[11a]"></a>skipTrash</STRONG> (Thumb, 116 bytes, Stack size 88 bytes, handshake.o(.text.skipTrash))
 <BR><BR>[Stack]<UL><LI>Max Depth = 584<LI>Call Chain = skipTrash &rArr; COMread &rArr; nextChar &rArr; startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;COMread
@@ -1475,20 +1461,20 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[105]"></a>statusCheck</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, imageHandler.o(.text.statusCheck))
+<P><STRONG><a name="[105]"></a>statusCheck</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, imageHandler.o(.text.statusCheck))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = statusCheck &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;activateAbsolut
+<BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;activateAbsolut
 <LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;endline
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 </UL>
 
-<P><STRONG><a name="[10f]"></a>stdinout_init</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, stdinout_USART.o(.text.stdinout_init))
+<P><STRONG><a name="[10d]"></a>stdinout_init</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, stdinout_USART.o(.text.stdinout_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = stdinout_init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
 <P><STRONG><a name="[f3]"></a>updateAbsolutLineToDraw</STRONG> (Thumb, 72 bytes, Stack size 4 bytes, display.o(.text.updateAbsolutLineToDraw))
@@ -1496,7 +1482,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleScaledImage
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;absoluteModeHanler
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleUncompressedImage
 </UL>
 
 <P><STRONG><a name="[102]"></a>updateDelta</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, display.o(.text.updateDelta))
@@ -1513,27 +1499,27 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;handleCompressedImage
 </UL>
 
-<P><STRONG><a name="[138]"></a>__0snprintf</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[136]"></a>__0snprintf</STRONG> (Thumb, 48 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[151]"></a>__1snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
+<P><STRONG><a name="[14f]"></a>__1snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
 
-<P><STRONG><a name="[152]"></a>__2snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
+<P><STRONG><a name="[150]"></a>__2snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
 
-<P><STRONG><a name="[153]"></a>__c89snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
+<P><STRONG><a name="[151]"></a>__c89snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf), UNUSED)
 
-<P><STRONG><a name="[120]"></a>snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf))
+<P><STRONG><a name="[11e]"></a>snprintf</STRONG> (Thumb, 0 bytes, Stack size 40 bytes, printfa.o(i.__0snprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = snprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
 
-<P><STRONG><a name="[154]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[152]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[155]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[153]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[156]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[154]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 <P>
 <H3>
 Local Symbols
@@ -1735,10 +1721,10 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_TIM4_Init
 </UL>
 
-<P><STRONG><a name="[116]"></a>stringCopy</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, lcd.o(.text.stringCopy))
+<P><STRONG><a name="[114]"></a>stringCopy</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, lcd.o(.text.stringCopy))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = stringCopy
 </UL>
-<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
+<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcdPrintS
 </UL>
 
 <P><STRONG><a name="[da]"></a>SystemClock_Config</STRONG> (Thumb, 184 bytes, Stack size 88 bytes, init.o(.text.SystemClock_Config))
@@ -1749,15 +1735,15 @@ Local Symbols
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_PWREx_EnableOverDrive
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Error_Handler
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
-<P><STRONG><a name="[10d]"></a>initGPIOs</STRONG> (Thumb, 320 bytes, Stack size 64 bytes, init.o(.text.initGPIOs))
+<P><STRONG><a name="[10b]"></a>initGPIOs</STRONG> (Thumb, 320 bytes, Stack size 64 bytes, init.o(.text.initGPIOs))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = initGPIOs &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
+<BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initITSboard
 </UL>
 
 <P><STRONG><a name="[68]"></a>USARTx_GetVersion</STRONG> (Thumb, 18 bytes, Stack size 4 bytes, USART_STM32F4xx.o(.text.USARTx_GetVersion))
@@ -1995,228 +1981,228 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
+<BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readHeaders
 </UL>
 
-<P><STRONG><a name="[111]"></a>usbUartDMAInt</STRONG> (Thumb, 188 bytes, Stack size 24 bytes, input.o(.text.usbUartDMAInt))
+<P><STRONG><a name="[10f]"></a>usbUartDMAInt</STRONG> (Thumb, 188 bytes, Stack size 24 bytes, input.o(.text.usbUartDMAInt))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = usbUartDMAInt &rArr; LL_DMA_SetDataLength
 </UL>
-<BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_EnableStream
-<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_EnableDMAReq_RX
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetDataLength
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMemoryAddress
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetPeriphAddress
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_DMA_GetRegAddr
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_DisableFifoMode
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMemorySize
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetPeriphSize
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMemoryIncMode
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetPeriphIncMode
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMode
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetStreamPriorityLevel
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetDataTransferDirection
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetChannelSelection
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_AHB1_GRP1_EnableClock
+<BR>[Calls]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_EnableStream
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_EnableDMAReq_RX
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetDataLength
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMemoryAddress
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetPeriphAddress
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_DMA_GetRegAddr
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_DisableFifoMode
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMemorySize
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetPeriphSize
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMemoryIncMode
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetPeriphIncMode
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetMode
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetStreamPriorityLevel
+<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetDataTransferDirection
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_SetChannelSelection
+<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_AHB1_GRP1_EnableClock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
+<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
 </UL>
 
-<P><STRONG><a name="[112]"></a>readChar</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, input.o(.text.readChar))
+<P><STRONG><a name="[110]"></a>readChar</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, input.o(.text.readChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = readChar &rArr; usbUartRead &rArr; LL_DMA_GetDataLength
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartRead
+<BR>[Calls]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nextChar
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
-<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
 </UL>
 
-<P><STRONG><a name="[113]"></a>writeChar</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, input.o(.text.writeChar))
+<P><STRONG><a name="[111]"></a>writeChar</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, input.o(.text.writeChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = writeChar &rArr; usbUartWrite &rArr; LL_USART_TransmitData8
 </UL>
-<BR>[Calls]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
+<BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
 </UL>
-<BR>[Called By]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
-<LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
+<BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initInput
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startNextByteBurst
 </UL>
 
-<P><STRONG><a name="[123]"></a>LL_AHB1_GRP1_EnableClock</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, input.o(.text.LL_AHB1_GRP1_EnableClock))
+<P><STRONG><a name="[121]"></a>LL_AHB1_GRP1_EnableClock</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, input.o(.text.LL_AHB1_GRP1_EnableClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_AHB1_GRP1_EnableClock
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[124]"></a>LL_DMA_SetChannelSelection</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetChannelSelection))
+<P><STRONG><a name="[122]"></a>LL_DMA_SetChannelSelection</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetChannelSelection))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetChannelSelection
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[125]"></a>LL_DMA_SetDataTransferDirection</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetDataTransferDirection))
+<P><STRONG><a name="[123]"></a>LL_DMA_SetDataTransferDirection</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetDataTransferDirection))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetDataTransferDirection
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[126]"></a>LL_DMA_SetStreamPriorityLevel</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetStreamPriorityLevel))
+<P><STRONG><a name="[124]"></a>LL_DMA_SetStreamPriorityLevel</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetStreamPriorityLevel))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetStreamPriorityLevel
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[127]"></a>LL_DMA_SetMode</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMode))
+<P><STRONG><a name="[125]"></a>LL_DMA_SetMode</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetMode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[128]"></a>LL_DMA_SetPeriphIncMode</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetPeriphIncMode))
+<P><STRONG><a name="[126]"></a>LL_DMA_SetPeriphIncMode</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetPeriphIncMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetPeriphIncMode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[129]"></a>LL_DMA_SetMemoryIncMode</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMemoryIncMode))
+<P><STRONG><a name="[127]"></a>LL_DMA_SetMemoryIncMode</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMemoryIncMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetMemoryIncMode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[12a]"></a>LL_DMA_SetPeriphSize</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetPeriphSize))
+<P><STRONG><a name="[128]"></a>LL_DMA_SetPeriphSize</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetPeriphSize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetPeriphSize
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[12b]"></a>LL_DMA_SetMemorySize</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMemorySize))
+<P><STRONG><a name="[129]"></a>LL_DMA_SetMemorySize</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMemorySize))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetMemorySize
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[12c]"></a>LL_DMA_DisableFifoMode</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, input.o(.text.LL_DMA_DisableFifoMode))
+<P><STRONG><a name="[12a]"></a>LL_DMA_DisableFifoMode</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, input.o(.text.LL_DMA_DisableFifoMode))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_DMA_DisableFifoMode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[12d]"></a>LL_USART_DMA_GetRegAddr</STRONG> (Thumb, 12 bytes, Stack size 4 bytes, input.o(.text.LL_USART_DMA_GetRegAddr))
+<P><STRONG><a name="[12b]"></a>LL_USART_DMA_GetRegAddr</STRONG> (Thumb, 12 bytes, Stack size 4 bytes, input.o(.text.LL_USART_DMA_GetRegAddr))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LL_USART_DMA_GetRegAddr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[12e]"></a>LL_DMA_SetPeriphAddress</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetPeriphAddress))
+<P><STRONG><a name="[12c]"></a>LL_DMA_SetPeriphAddress</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetPeriphAddress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetPeriphAddress
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[12f]"></a>LL_DMA_SetMemoryAddress</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMemoryAddress))
+<P><STRONG><a name="[12d]"></a>LL_DMA_SetMemoryAddress</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetMemoryAddress))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetMemoryAddress
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[130]"></a>LL_DMA_SetDataLength</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetDataLength))
+<P><STRONG><a name="[12e]"></a>LL_DMA_SetDataLength</STRONG> (Thumb, 50 bytes, Stack size 12 bytes, input.o(.text.LL_DMA_SetDataLength))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = LL_DMA_SetDataLength
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[131]"></a>LL_USART_EnableDMAReq_RX</STRONG> (Thumb, 18 bytes, Stack size 4 bytes, input.o(.text.LL_USART_EnableDMAReq_RX))
+<P><STRONG><a name="[12f]"></a>LL_USART_EnableDMAReq_RX</STRONG> (Thumb, 18 bytes, Stack size 4 bytes, input.o(.text.LL_USART_EnableDMAReq_RX))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LL_USART_EnableDMAReq_RX
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[132]"></a>LL_DMA_EnableStream</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, input.o(.text.LL_DMA_EnableStream))
+<P><STRONG><a name="[130]"></a>LL_DMA_EnableStream</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, input.o(.text.LL_DMA_EnableStream))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_DMA_EnableStream
 </UL>
-<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
+<BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartDMAInt
 </UL>
 
-<P><STRONG><a name="[11f]"></a>usbUartRead</STRONG> (Thumb, 148 bytes, Stack size 32 bytes, input.o(.text.usbUartRead))
+<P><STRONG><a name="[11d]"></a>usbUartRead</STRONG> (Thumb, 148 bytes, Stack size 32 bytes, input.o(.text.usbUartRead))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = usbUartRead &rArr; LL_DMA_GetDataLength
 </UL>
-<BR>[Calls]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_GetDataLength
+<BR>[Calls]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_DMA_GetDataLength
 </UL>
-<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openNextFile
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openNextFile
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
 </UL>
 
-<P><STRONG><a name="[134]"></a>usbUartWrite</STRONG> (Thumb, 96 bytes, Stack size 24 bytes, input.o(.text.usbUartWrite))
+<P><STRONG><a name="[132]"></a>usbUartWrite</STRONG> (Thumb, 96 bytes, Stack size 24 bytes, input.o(.text.usbUartWrite))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = usbUartWrite &rArr; LL_USART_TransmitData8
 </UL>
-<BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_IsActiveFlag_TC
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_IsActiveFlag_TXE
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_TransmitData8
+<BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_IsActiveFlag_TC
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_IsActiveFlag_TXE
+<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_USART_TransmitData8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeChar
+<BR>[Called By]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeChar
 </UL>
 
-<P><STRONG><a name="[11e]"></a>startNextByteBurst</STRONG> (Thumb, 142 bytes, Stack size 32 bytes, input.o(.text.startNextByteBurst))
+<P><STRONG><a name="[11c]"></a>startNextByteBurst</STRONG> (Thumb, 142 bytes, Stack size 32 bytes, input.o(.text.startNextByteBurst))
 <BR><BR>[Stack]<UL><LI>Max Depth = 448<LI>Call Chain = startNextByteBurst &rArr; printError &rArr; lcdPrintS &rArr; GUI_disStr &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeChar
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
+<BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;writeChar
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;readChar
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;printError
 </UL>
-<BR>[Called By]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openNextFile
+<BR>[Called By]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;openNextFile
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nextChar
 </UL>
 
-<P><STRONG><a name="[133]"></a>LL_DMA_GetDataLength</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, input.o(.text.LL_DMA_GetDataLength))
+<P><STRONG><a name="[131]"></a>LL_DMA_GetDataLength</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, input.o(.text.LL_DMA_GetDataLength))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_DMA_GetDataLength
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartRead
+<BR>[Called By]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartRead
 </UL>
 
-<P><STRONG><a name="[135]"></a>LL_USART_TransmitData8</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, input.o(.text.LL_USART_TransmitData8))
+<P><STRONG><a name="[133]"></a>LL_USART_TransmitData8</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, input.o(.text.LL_USART_TransmitData8))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LL_USART_TransmitData8
 </UL>
-<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
 </UL>
 
-<P><STRONG><a name="[136]"></a>LL_USART_IsActiveFlag_TXE</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, input.o(.text.LL_USART_IsActiveFlag_TXE))
+<P><STRONG><a name="[134]"></a>LL_USART_IsActiveFlag_TXE</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, input.o(.text.LL_USART_IsActiveFlag_TXE))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LL_USART_IsActiveFlag_TXE
 </UL>
-<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
 </UL>
 
-<P><STRONG><a name="[137]"></a>LL_USART_IsActiveFlag_TC</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, input.o(.text.LL_USART_IsActiveFlag_TC))
+<P><STRONG><a name="[135]"></a>LL_USART_IsActiveFlag_TC</STRONG> (Thumb, 16 bytes, Stack size 4 bytes, input.o(.text.LL_USART_IsActiveFlag_TC))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = LL_USART_IsActiveFlag_TC
 </UL>
-<BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
+<BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usbUartWrite
 </UL>
 
-<P><STRONG><a name="[13a]"></a>_fp_digits</STRONG> (Thumb, 366 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
+<P><STRONG><a name="[138]"></a>_fp_digits</STRONG> (Thumb, 366 bytes, Stack size 64 bytes, printfa.o(i._fp_digits), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[139]"></a>_printf_core</STRONG> (Thumb, 1744 bytes, Stack size 136 bytes, printfa.o(i._printf_core), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
-<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
+<P><STRONG><a name="[137]"></a>_printf_core</STRONG> (Thumb, 1744 bytes, Stack size 136 bytes, printfa.o(i._printf_core), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uidivmod
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fp_digits
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
-<BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0snprintf
+<BR>[Called By]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__0snprintf
 </UL>
 
-<P><STRONG><a name="[13d]"></a>_printf_post_padding</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, printfa.o(i._printf_post_padding), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[13b]"></a>_printf_post_padding</STRONG> (Thumb, 36 bytes, Stack size 24 bytes, printfa.o(i._printf_post_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[13c]"></a>_printf_pre_padding</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printfa.o(i._printf_pre_padding), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
+<P><STRONG><a name="[13a]"></a>_printf_pre_padding</STRONG> (Thumb, 46 bytes, Stack size 24 bytes, printfa.o(i._printf_pre_padding), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
 <P><STRONG><a name="[67]"></a>_snputc</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, printfa.o(i._snputc))

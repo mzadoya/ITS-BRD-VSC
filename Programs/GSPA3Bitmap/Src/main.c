@@ -53,7 +53,7 @@ int main(void) {
         readPalette(palette, passport.biClrUsed);
         skipTrash(fileHeader.bfOffBits);
         initCoords(passport.biWidth, passport.biHeight);
-        while (imageHandler( &passport, palette) != STATUS_END_OF_FILE) {	   }
+        imageHandler( &passport, palette);
         }
 		nextFileReady = false;
       }
