@@ -176,9 +176,13 @@ project:
         - file: Inc/onewire.h
         - file: Inc/timing.h
         - file: Inc/errCodes.h
-        - file: Inc/sensor.h
+        - file: Inc/sensorDS18B20.h
+        - file: Inc/sensorDS18S20.h
         - file: Inc/global.h
+        - file: Inc/ds18x20Common.h 
+        - file: Inc/errorStatus.h
         - file: Inc/math.h
+        - file: Inc/display.h
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
       files:
@@ -186,7 +190,11 @@ project:
         - file: Src/crc.c
         - file: Src/onewire.c
         - file: Src/timing.c
-        - file: Src/sensor.c
+        - file: Src/sensorDS18B20.c
+        - file: Src/sensorDS18S20.c
         - file: Src/math.c
+        - file: Src/ds18x20Common.c 
+        - file: Src/errorStatus.c 
+        - file: Src/display.c 
   components:
     - component: ARM::CMSIS:CORE

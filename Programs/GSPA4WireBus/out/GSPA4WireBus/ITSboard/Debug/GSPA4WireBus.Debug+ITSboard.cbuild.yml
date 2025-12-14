@@ -333,11 +333,19 @@ build:
           category: header
         - file: ../../../../Inc/errCodes.h
           category: header
-        - file: ../../../../Inc/sensor.h
+        - file: ../../../../Inc/sensorDS18B20.h
+          category: header
+        - file: ../../../../Inc/sensorDS18S20.h
           category: header
         - file: ../../../../Inc/global.h
           category: header
+        - file: ../../../../Inc/ds18x20Common.h
+          category: header
+        - file: ../../../../Inc/errorStatus.h
+          category: header
         - file: ../../../../Inc/math.h
+          category: header
+        - file: ../../../../Inc/display.h
           category: header
     - group: Program/User/Src
       files:
@@ -349,9 +357,17 @@ build:
           category: sourceC
         - file: ../../../../Src/timing.c
           category: sourceC
-        - file: ../../../../Src/sensor.c
+        - file: ../../../../Src/sensorDS18B20.c
+          category: sourceC
+        - file: ../../../../Src/sensorDS18S20.c
           category: sourceC
         - file: ../../../../Src/math.c
+          category: sourceC
+        - file: ../../../../Src/ds18x20Common.c
+          category: sourceC
+        - file: ../../../../Src/errorStatus.c
+          category: sourceC
+        - file: ../../../../Src/display.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h

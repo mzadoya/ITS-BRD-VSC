@@ -6,16 +6,16 @@
 
 
 int oneWireReset() {
-    GPIOD->OTYPER &= ~(PD1_MASK);
-    GPIOD->BSRR = PD1_MASK;
+    GPIOD->OTYPER &= ~(PD1_MASK); //open drain 
+    GPIOD->BSRR = PD1_MASK; //open drain high 
 
-    GPIOD->OTYPER |= PD0_MASK;
-    GPIOD->BSRR = PD0_MASK << 16;
+    GPIOD->OTYPER |= PD0_MASK; //push pull 
+    GPIOD->BSRR = PD0_MASK << 16; // push pull port auf low
     wait (480);
-    GPIOD->BSRR = PD0_MASK;
+    GPIOD->BSRR = PD0_MASK; //push pull auf high (bus low)
     wait (70);
     if ((GPIOD->IDR & PD0_MASK) != DEFAULT) {
-        //fehlerbehandlung
+        return ERR_NO_SENSOR;
     }
     wait(410);
     return OK;
@@ -25,15 +25,15 @@ int oneWireWriteBit(int bit) {
    switch (bit)
    {
    case 0x00:
-   GPIOD->BSRR = PD0_MASK << 16;
+   GPIOD->BSRR = PD0_MASK << 16; //push pull auf high (bus low)
    wait(60);
-   GPIOD->BSRR = PD0_MASK;
+   GPIOD->BSRR = PD0_MASK; //push pull auf low (bus high)
    wait(10);
     break;
    case 0x01:
-   GPIOD->BSRR = PD0_MASK << 16;
+   GPIOD->BSRR = PD0_MASK << 16; //push pull auf high (bus low)
    wait(6);
-   GPIOD->BSRR = PD0_MASK;
+   GPIOD->BSRR = PD0_MASK; //push pull auf low (bus high)
    wait(64);
    break;
    default:
@@ -44,11 +44,11 @@ int oneWireWriteBit(int bit) {
 }
 
 int oneWireReadBit(int *bit) {
-   GPIOD -> BSRR = PD0_MASK << 16;
+   GPIOD -> BSRR = PD0_MASK << 16; //push pull auf high (bus low)
    wait(6);
-   GPIOD->BSRR = PD0_MASK;
+   GPIOD->BSRR = PD0_MASK; //push pull auf low (bus high)
    wait (9);
-   if((GPIOD->IDR & PD0_MASK) != DEFAULT) {
+   if((GPIOD->IDR & PD0_MASK) != DEFAULT) { 
     (*bit) = 0x01U;
    }
    else {
@@ -61,7 +61,7 @@ int oneWireReadBit(int *bit) {
 int oneWireWriteByte(uint8_t byte) {
     int rc = OK;
     for (int i = 0; i < 8; i++) {
-        rc = oneWireWriteBit((byte >> i) & BASE);
+        rc = oneWireWriteBit((byte >> i) & BASE); 
         if (rc!=OK) {
             return rc;
         }
@@ -78,7 +78,7 @@ int oneWireReadByte(uint8_t *byte) {
         if (rc != OK) {
             return rc;
         }
-        (*byte) = (*byte) | (bit << i);
-   }
+       (*byte) |= (bit << i); 
+    }
    return rc;
 }

@@ -1,6 +1,6 @@
 # ninja log v6
 51	68	1763624805528032245	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-patch	27d5feafa79864e1
-1	55	1765049636316392218	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
+0	49	1765736398245424465	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
 1	18	1763624805478683055	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-mkdir	5beb20a9422f525e
 19	35	1763624805495118368	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-download	db2cf785622e9b59
 2913	2933	1763624808393177111	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-executes	90d661944c627edc
@@ -21,8 +21,8 @@
 804	830	1764175424043965000	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/CMakeFiles/GSPA2Drehgeber.Debug+ITSboard-complete	ac73db5560ad2371
 51	68	1763624805528032245	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-patch	27d5feafa79864e1
 1	708	1764175423215422393	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/out/GSPA2Drehgeber/ITSboard/Debug/GSPA2Drehgeber.axf	fa07d2cb4698d40c
-1	55	1765049636316392218	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
+0	49	1765736398245424465	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
 783	804	1764175424018566000	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-test	86bb0527da705701
 804	830	1764175424043965000	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-done	ac73db5560ad2371
-1	58	1765052234692493828	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
-1	58	1765052234692493828	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
+1	60	1765737691475944896	GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
+1	60	1765737691475944896	/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/GSPA2Drehgeber.Debug+ITSboard/src/GSPA2Drehgeber.Debug+ITSboard-stamp/GSPA2Drehgeber.Debug+ITSboard-database	65c06aace903982b
