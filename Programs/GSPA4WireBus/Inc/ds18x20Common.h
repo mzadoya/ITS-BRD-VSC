@@ -9,5 +9,6 @@
 
 void sensorFullThrottle();
 int sensorSelect(uint64_t targetID);
+int scanOneWireBus(uint64_t *deviceIDs, int *devicesCount);
 
 #endif

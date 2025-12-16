@@ -24,5 +24,6 @@ typedef struct temp {
 int sensorDS18B20ReadRom();
 int sensorDS18B20GetTemperature();
 int sensorDS18B20ReadRom();
+int sensorDS18B20SearchRom();
 
 #endif

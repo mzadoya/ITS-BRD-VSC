@@ -32,7 +32,7 @@ int main(void) {
   initTimer();
   initDisplay();
   int rc = OK;
-  rc = sensorDS18B20ReadRom();
+  rc = sensorDS18B20SearchRom();
 	if (rc!=OK) {
       indicateError(rc);
   }

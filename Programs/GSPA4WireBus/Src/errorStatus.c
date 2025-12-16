@@ -23,8 +23,9 @@ void indicateError(int rc) {
         break;
     }
     while (1) {
+        wait(1000000);
         GPIOE->BSRR = led;
-        wait(10000);
+        wait(1000000);
         GPIOE->BSRR = led << 16;
     }
 }
