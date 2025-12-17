@@ -1,4 +1,5 @@
 #include "ds18x20Common.h"
+#include "crc.h"
 #include "display.h"
 #include <locale.h>
 #include <stdbool.h>
@@ -14,6 +15,7 @@ int lastDiscrepancy = -1;
 int newDiscrepancy = -1;
 bool lastDeviceFlag = 0;
 bool checkImProzess = false; 
+unsigned char crcPack[8];
 
 void sensorFullThrottle() {
     GPIOD->OTYPER &= ~PD0_MASK;
@@ -34,6 +36,14 @@ int sensorSelect(uint64_t targetID) {
     }
     return OK;
 
+}
+int prepareForCrcCheck() {
+    int rc = OK;
+    for (int i = 0; i < 8; i++) {
+        crcPack[i] = registration >> 8 * i;
+    }
+    rc = checkCRC(8, crcPack);
+    return rc;
 }
 
 int scanOneWireBus(uint64_t *deviceIDs, int* devicesCount){
@@ -98,10 +108,14 @@ int scanOneWireBus(uint64_t *deviceIDs, int* devicesCount){
             if (lastDiscrepancy == -1) {
                 lastDeviceFlag = true;
             }
-            
+           
+            if (rc != OK) {
+                return rc;
+            }
     }
 
     while (!lastDeviceFlag);
     
     return OK;
 }
+

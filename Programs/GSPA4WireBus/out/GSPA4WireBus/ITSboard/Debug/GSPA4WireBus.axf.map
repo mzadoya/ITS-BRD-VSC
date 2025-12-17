@@ -1453,6 +1453,7 @@ Section Cross References
     sensorDS18B20.o(.text.sensorDS18B20ReadData) refers to crc.o(.text.checkCRC) for checkCRC
     sensorDS18B20.o(.text.sensorDS18B20ReadData) refers to sensorDS18B20.o(.text.sensorDS18B20ParseData) for sensorDS18B20ParseData
     sensorDS18B20.o(.ARM.exidx.text.sensorDS18B20ReadData) refers to sensorDS18B20.o(.text.sensorDS18B20ReadData) for [Anonymous Symbol]
+    sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to sensorDS18B20.o(.bss.tempReaded) for tempReaded
     sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to onewire.o(.text.oneWireReset) for oneWireReset
     sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to onewire.o(.text.oneWireWriteByte) for oneWireWriteByte
     sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to ds18x20Common.o(.text.sensorFullThrottle) for sensorFullThrottle
@@ -1461,7 +1462,8 @@ Section Cross References
     sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to ds18x20Common.o(.text.sensorSelect) for sensorSelect
     sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to sensorDS18B20.o(.text.sensorDS18B20ReadData) for sensorDS18B20ReadData
     sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to math.o(.text.tempCalcCelciusDS18B20) for tempCalcCelciusDS18B20
-    sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to display.o(.text.drawTemperature) for drawTemperature
+    sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to display.o(.text.convertAllValuesToDisplay) for convertAllValuesToDisplay
+    sensorDS18B20.o(.text.sensorDS18B20GetTemperature) refers to display.o(.text.drawTemperatureDS18B20) for drawTemperatureDS18B20
     sensorDS18B20.o(.ARM.exidx.text.sensorDS18B20GetTemperature) refers to sensorDS18B20.o(.text.sensorDS18B20GetTemperature) for [Anonymous Symbol]
     sensorDS18S20.o(.text.sensorReadRom) refers to sensorDS18S20.o(.bss.DS18S20) for DS18S20
     sensorDS18S20.o(.text.sensorReadRom) refers to onewire.o(.text.oneWireReset) for oneWireReset
@@ -1497,6 +1499,10 @@ Section Cross References
     ds18x20Common.o(.text.sensorSelect) refers to onewire.o(.text.oneWireReset) for oneWireReset
     ds18x20Common.o(.text.sensorSelect) refers to onewire.o(.text.oneWireWriteByte) for oneWireWriteByte
     ds18x20Common.o(.ARM.exidx.text.sensorSelect) refers to ds18x20Common.o(.text.sensorSelect) for [Anonymous Symbol]
+    ds18x20Common.o(.text.prepareForCrcCheck) refers to ds18x20Common.o(.bss.registration) for registration
+    ds18x20Common.o(.text.prepareForCrcCheck) refers to ds18x20Common.o(.bss.crcPack) for crcPack
+    ds18x20Common.o(.text.prepareForCrcCheck) refers to crc.o(.text.checkCRC) for checkCRC
+    ds18x20Common.o(.ARM.exidx.text.prepareForCrcCheck) refers to ds18x20Common.o(.text.prepareForCrcCheck) for [Anonymous Symbol]
     ds18x20Common.o(.text.scanOneWireBus) refers to ds18x20Common.o(.bss.lastDeviceFlag) for lastDeviceFlag
     ds18x20Common.o(.text.scanOneWireBus) refers to ds18x20Common.o(.bss.oldRegistration) for oldRegistration
     ds18x20Common.o(.text.scanOneWireBus) refers to ds18x20Common.o(.bss.registration) for registration
@@ -1518,13 +1524,19 @@ Section Cross References
     display.o(.text.drawInfo) refers to display.o(.rodata.str1.1) for .L.str.3
     display.o(.text.drawInfo) refers to printfa.o(i.__0snprintf) for snprintf
     display.o(.ARM.exidx.text.drawInfo) refers to display.o(.text.drawInfo) for [Anonymous Symbol]
-    display.o(.ARM.exidx.text.lcdPrintLong) refers to display.o(.text.lcdPrintLong) for [Anonymous Symbol]
-    display.o(.text.drawTemperature) refers to lcd.o(.text.lcdGotoXY) for lcdGotoXY
-    display.o(.text.drawTemperature) refers to f2d.o(.text) for __aeabi_f2d
-    display.o(.text.drawTemperature) refers to display.o(.rodata.str1.1) for .L.str.4
-    display.o(.text.drawTemperature) refers to printfa.o(i.__0snprintf) for snprintf
-    display.o(.text.drawTemperature) refers to lcd.o(.text.lcdPrintS) for lcdPrintS
-    display.o(.ARM.exidx.text.drawTemperature) refers to display.o(.text.drawTemperature) for [Anonymous Symbol]
+    display.o(.text.convertAllValuesToDisplay) refers to display.o(.bss.valuesToDisplay) for valuesToDisplay
+    display.o(.text.convertAllValuesToDisplay) refers to f2d.o(.text) for __aeabi_f2d
+    display.o(.text.convertAllValuesToDisplay) refers to display.o(.rodata.str1.1) for .L.str.4
+    display.o(.text.convertAllValuesToDisplay) refers to printfa.o(i.__0snprintf) for snprintf
+    display.o(.ARM.exidx.text.convertAllValuesToDisplay) refers to display.o(.text.convertAllValuesToDisplay) for [Anonymous Symbol]
+    display.o(.text.drawTemperatureDS18B20) refers to display.o(.bss.drawTemperatureDS18B20.currentPos) for drawTemperatureDS18B20.currentPos
+    display.o(.text.drawTemperatureDS18B20) refers to display.o(.bss.valuesToDisplay) for valuesToDisplay
+    display.o(.text.drawTemperatureDS18B20) refers to strlen.o(.text) for strlen
+    display.o(.text.drawTemperatureDS18B20) refers to display.o(.bss.prevValuesToDisplay) for prevValuesToDisplay
+    display.o(.text.drawTemperatureDS18B20) refers to display.o(.data.drawTemperatureDS18B20.x) for drawTemperatureDS18B20.x
+    display.o(.text.drawTemperatureDS18B20) refers to lcd.o(.text.lcdGotoXY) for lcdGotoXY
+    display.o(.text.drawTemperatureDS18B20) refers to lcd.o(.text.lcdPrintC) for lcdPrintC
+    display.o(.ARM.exidx.text.drawTemperatureDS18B20) refers to display.o(.text.drawTemperatureDS18B20) for [Anonymous Symbol]
     sqrt.o(i.__hardfp_sqrt) refers (Special) to iusefp.o(.text) for __I$use$fp
     sqrt.o(i.__hardfp_sqrt) refers to dsqrt.o(.text) for _dsqrt
     sqrt.o(i.__hardfp_sqrt) refers to errno.o(i.__set_errno) for __set_errno
@@ -2644,7 +2656,6 @@ Removing Unused input sections from the image.
     Removing lcd.o(.ARM.exidx.text.lcdPrintInt), (8 bytes).
     Removing lcd.o(.text.lcdPrintlnS), (84 bytes).
     Removing lcd.o(.ARM.exidx.text.lcdPrintlnS), (8 bytes).
-    Removing lcd.o(.text.lcdPrintC), (222 bytes).
     Removing lcd.o(.ARM.exidx.text.lcdPrintC), (8 bytes).
     Removing lcd.o(.text.lcdSetFont), (232 bytes).
     Removing lcd.o(.ARM.exidx.text.lcdSetFont), (8 bytes).
@@ -2778,21 +2789,23 @@ Removing Unused input sections from the image.
     Removing ds18x20Common.o(.text), (0 bytes).
     Removing ds18x20Common.o(.ARM.exidx.text.sensorFullThrottle), (8 bytes).
     Removing ds18x20Common.o(.ARM.exidx.text.sensorSelect), (8 bytes).
+    Removing ds18x20Common.o(.text.prepareForCrcCheck), (112 bytes).
+    Removing ds18x20Common.o(.ARM.exidx.text.prepareForCrcCheck), (8 bytes).
     Removing ds18x20Common.o(.ARM.exidx.text.scanOneWireBus), (8 bytes).
     Removing ds18x20Common.o(.bss.checkImProzess), (1 bytes).
+    Removing ds18x20Common.o(.bss.crcPack), (8 bytes).
     Removing errorStatus.o(.text), (0 bytes).
     Removing errorStatus.o(.ARM.exidx.text.indicateError), (8 bytes).
     Removing display.o(.text), (0 bytes).
     Removing display.o(.ARM.exidx.text.initDisplay), (8 bytes).
     Removing display.o(.ARM.exidx.text.drawInfo), (8 bytes).
-    Removing display.o(.text.lcdPrintLong), (10 bytes).
-    Removing display.o(.ARM.exidx.text.lcdPrintLong), (8 bytes).
-    Removing display.o(.ARM.exidx.text.drawTemperature), (8 bytes).
+    Removing display.o(.ARM.exidx.text.convertAllValuesToDisplay), (8 bytes).
+    Removing display.o(.ARM.exidx.text.drawTemperatureDS18B20), (8 bytes).
     Removing dfltui.o(.text), (26 bytes).
     Removing dfixi.o(.text), (62 bytes).
     Removing dsqrt.o(.text), (162 bytes).
 
-1157 unused section(s) (total 786209 bytes) removed from the image.
+1158 unused section(s) (total 786105 bytes) removed from the image.
 
 ==============================================================================
 
@@ -3128,100 +3141,106 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08005b30   Section        0  crc.o(.text.checkCRC)
     check_SPI_SR                             0x08005c01   Thumb Code    72  LCD_SPI.o(.text.check_SPI_SR)
     [Anonymous Symbol]                       0x08005c00   Section        0  LCD_SPI.o(.text.check_SPI_SR)
-    [Anonymous Symbol]                       0x08005c48   Section        0  display.o(.text.drawInfo)
-    [Anonymous Symbol]                       0x08005c9c   Section        0  display.o(.text.drawTemperature)
-    [Anonymous Symbol]                       0x08005ce4   Section        0  errorStatus.o(.text.indicateError)
-    [Anonymous Symbol]                       0x08005d4c   Section        0  display.o(.text.initDisplay)
-    initGPIOs                                0x08005d95   Thumb Code   320  init.o(.text.initGPIOs)
-    [Anonymous Symbol]                       0x08005d94   Section        0  init.o(.text.initGPIOs)
-    [Anonymous Symbol]                       0x08005ed4   Section        0  init.o(.text.initITSboard)
-    [Anonymous Symbol]                       0x08005ee8   Section        0  timer.o(.text.initTimer)
-    [Anonymous Symbol]                       0x08005f2c   Section        0  LCD_Tools.o(.text.itoa)
-    [Anonymous Symbol]                       0x08005fe0   Section        0  lcd.o(.text.lcdGotoXY)
-    [Anonymous Symbol]                       0x0800601c   Section        0  lcd.o(.text.lcdPrintS)
-    [Anonymous Symbol]                       0x080061f0   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x08006244   Section        0  onewire.o(.text.oneWireReadBit)
-    [Anonymous Symbol]                       0x08006298   Section        0  onewire.o(.text.oneWireReadByte)
-    [Anonymous Symbol]                       0x080062f0   Section        0  onewire.o(.text.oneWireReset)
-    [Anonymous Symbol]                       0x08006360   Section        0  onewire.o(.text.oneWireWriteBit)
-    [Anonymous Symbol]                       0x080063d4   Section        0  onewire.o(.text.oneWireWriteByte)
-    [Anonymous Symbol]                       0x08006420   Section        0  LCD_Debug.o(.text.printDebugMsg)
-    save_restore_AltFn_SPI1_MOSI_Pin         0x080064d5   Thumb Code    48  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
-    [Anonymous Symbol]                       0x080064d4   Section        0  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
-    [Anonymous Symbol]                       0x08006504   Section        0  ds18x20Common.o(.text.scanOneWireBus)
-    [Anonymous Symbol]                       0x08006774   Section        0  sensorDS18B20.o(.text.sensorDS18B20GetTemperature)
-    [Anonymous Symbol]                       0x08006830   Section        0  sensorDS18B20.o(.text.sensorDS18B20ParseData)
-    [Anonymous Symbol]                       0x080068c0   Section        0  sensorDS18B20.o(.text.sensorDS18B20ReadData)
-    [Anonymous Symbol]                       0x08006944   Section        0  sensorDS18B20.o(.text.sensorDS18B20SearchRom)
-    [Anonymous Symbol]                       0x080069e8   Section        0  ds18x20Common.o(.text.sensorFullThrottle)
-    [Anonymous Symbol]                       0x08006a24   Section        0  ds18x20Common.o(.text.sensorSelect)
-    [Anonymous Symbol]                       0x08006aa0   Section        0  stdinout_USART.o(.text.stdinout_init)
-    stringCopy                               0x08006b51   Thumb Code    70  lcd.o(.text.stringCopy)
-    [Anonymous Symbol]                       0x08006b50   Section        0  lcd.o(.text.stringCopy)
-    [Anonymous Symbol]                       0x08006b98   Section        0  math.o(.text.tempCalcCelciusDS18B20)
-    [Anonymous Symbol]                       0x08006bf0   Section        0  timing.o(.text.wait)
-    i.__0snprintf                            0x08006c24   Section        0  printfa.o(i.__0snprintf)
-    i.__scatterload_copy                     0x08006c58   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08006c66   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08006c68   Section       14  handlers.o(i.__scatterload_zeroinit)
-    _fp_digits                               0x08006c79   Thumb Code   366  printfa.o(i._fp_digits)
-    i._fp_digits                             0x08006c78   Section        0  printfa.o(i._fp_digits)
-    _printf_core                             0x08006dfd   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_core                           0x08006dfc   Section        0  printfa.o(i._printf_core)
-    _printf_post_padding                     0x080074d9   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_post_padding                   0x080074d8   Section        0  printfa.o(i._printf_post_padding)
-    _printf_pre_padding                      0x080074fd   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._printf_pre_padding                    0x080074fc   Section        0  printfa.o(i._printf_pre_padding)
-    _snputc                                  0x0800752b   Thumb Code    22  printfa.o(i._snputc)
-    i._snputc                                0x0800752a   Section        0  printfa.o(i._snputc)
-    USART3_Resources                         0x08007590   Data          52  USART_STM32F4xx.o(.rodata.USART3_Resources)
-    [Anonymous Symbol]                       0x08007590   Section        0  USART_STM32F4xx.o(.rodata.USART3_Resources)
-    USART3_rx                                0x080075c4   Data          12  USART_STM32F4xx.o(.rodata.USART3_rx)
-    [Anonymous Symbol]                       0x080075c4   Section        0  USART_STM32F4xx.o(.rodata.USART3_rx)
-    USART3_tx                                0x080075d0   Data          12  USART_STM32F4xx.o(.rodata.USART3_tx)
-    [Anonymous Symbol]                       0x080075d0   Section        0  USART_STM32F4xx.o(.rodata.USART3_tx)
-    .L.str                                   0x08007643   Data          82  LCD_GUI.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007643   Section        0  LCD_GUI.o(.rodata.str1.1)
-    .L.str                                   0x08007695   Data          82  LCD_SPI.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007695   Section        0  LCD_SPI.o(.rodata.str1.1)
-    .L.str                                   0x080076e7   Data          82  LCD_TIM.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x080076e7   Section        0  LCD_TIM.o(.rodata.str1.1)
-    .L.str.1                                 0x08007739   Data           6  LCD_Debug.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007739   Section        0  LCD_Debug.o(.rodata.str1.1)
-    .L.str                                   0x0800773f   Data          22  LCD_Debug.o(.rodata.str1.1)
-    .L.str                                   0x08007755   Data           8  sensorDS18B20.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08007755   Section        0  sensorDS18B20.o(.rodata.str1.1)
-    .L.str.1                                 0x0800775d   Data           6  display.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x0800775d   Section        0  display.o(.rodata.str1.1)
-    .L.str.3                                 0x08007763   Data           7  display.o(.rodata.str1.1)
-    .L.str.2                                 0x0800776a   Data          10  display.o(.rodata.str1.1)
-    .L.str.4                                 0x08007774   Data           5  display.o(.rodata.str1.1)
-    .L.str                                   0x08007779   Data           7  display.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08005c48   Section        0  display.o(.text.convertAllValuesToDisplay)
+    [Anonymous Symbol]                       0x08005cb4   Section        0  display.o(.text.drawInfo)
+    [Anonymous Symbol]                       0x08005d08   Section        0  display.o(.text.drawTemperatureDS18B20)
+    [Anonymous Symbol]                       0x08005e18   Section        0  errorStatus.o(.text.indicateError)
+    [Anonymous Symbol]                       0x08005e80   Section        0  display.o(.text.initDisplay)
+    initGPIOs                                0x08005ec9   Thumb Code   320  init.o(.text.initGPIOs)
+    [Anonymous Symbol]                       0x08005ec8   Section        0  init.o(.text.initGPIOs)
+    [Anonymous Symbol]                       0x08006008   Section        0  init.o(.text.initITSboard)
+    [Anonymous Symbol]                       0x0800601c   Section        0  timer.o(.text.initTimer)
+    [Anonymous Symbol]                       0x08006060   Section        0  LCD_Tools.o(.text.itoa)
+    [Anonymous Symbol]                       0x08006114   Section        0  lcd.o(.text.lcdGotoXY)
+    [Anonymous Symbol]                       0x08006150   Section        0  lcd.o(.text.lcdPrintC)
+    [Anonymous Symbol]                       0x08006230   Section        0  lcd.o(.text.lcdPrintS)
+    [Anonymous Symbol]                       0x08006404   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x08006458   Section        0  onewire.o(.text.oneWireReadBit)
+    [Anonymous Symbol]                       0x080064ac   Section        0  onewire.o(.text.oneWireReadByte)
+    [Anonymous Symbol]                       0x08006504   Section        0  onewire.o(.text.oneWireReset)
+    [Anonymous Symbol]                       0x08006574   Section        0  onewire.o(.text.oneWireWriteBit)
+    [Anonymous Symbol]                       0x080065e8   Section        0  onewire.o(.text.oneWireWriteByte)
+    [Anonymous Symbol]                       0x08006634   Section        0  LCD_Debug.o(.text.printDebugMsg)
+    save_restore_AltFn_SPI1_MOSI_Pin         0x080066e9   Thumb Code    48  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
+    [Anonymous Symbol]                       0x080066e8   Section        0  LCD_SPI.o(.text.save_restore_AltFn_SPI1_MOSI_Pin)
+    [Anonymous Symbol]                       0x08006718   Section        0  ds18x20Common.o(.text.scanOneWireBus)
+    [Anonymous Symbol]                       0x08006994   Section        0  sensorDS18B20.o(.text.sensorDS18B20GetTemperature)
+    [Anonymous Symbol]                       0x08006a9c   Section        0  sensorDS18B20.o(.text.sensorDS18B20ParseData)
+    [Anonymous Symbol]                       0x08006b2c   Section        0  sensorDS18B20.o(.text.sensorDS18B20ReadData)
+    [Anonymous Symbol]                       0x08006bb0   Section        0  sensorDS18B20.o(.text.sensorDS18B20SearchRom)
+    [Anonymous Symbol]                       0x08006c54   Section        0  ds18x20Common.o(.text.sensorFullThrottle)
+    [Anonymous Symbol]                       0x08006c90   Section        0  ds18x20Common.o(.text.sensorSelect)
+    [Anonymous Symbol]                       0x08006d0c   Section        0  stdinout_USART.o(.text.stdinout_init)
+    stringCopy                               0x08006dbd   Thumb Code    70  lcd.o(.text.stringCopy)
+    [Anonymous Symbol]                       0x08006dbc   Section        0  lcd.o(.text.stringCopy)
+    [Anonymous Symbol]                       0x08006e08   Section        0  math.o(.text.tempCalcCelciusDS18B20)
+    [Anonymous Symbol]                       0x08006e80   Section        0  timing.o(.text.wait)
+    i.__0snprintf                            0x08006eb4   Section        0  printfa.o(i.__0snprintf)
+    i.__scatterload_copy                     0x08006ee8   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08006ef6   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08006ef8   Section       14  handlers.o(i.__scatterload_zeroinit)
+    _fp_digits                               0x08006f09   Thumb Code   366  printfa.o(i._fp_digits)
+    i._fp_digits                             0x08006f08   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x0800708d   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_core                           0x0800708c   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x08007769   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x08007768   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x0800778d   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x0800778c   Section        0  printfa.o(i._printf_pre_padding)
+    _snputc                                  0x080077bb   Thumb Code    22  printfa.o(i._snputc)
+    i._snputc                                0x080077ba   Section        0  printfa.o(i._snputc)
+    USART3_Resources                         0x08007820   Data          52  USART_STM32F4xx.o(.rodata.USART3_Resources)
+    [Anonymous Symbol]                       0x08007820   Section        0  USART_STM32F4xx.o(.rodata.USART3_Resources)
+    USART3_rx                                0x08007854   Data          12  USART_STM32F4xx.o(.rodata.USART3_rx)
+    [Anonymous Symbol]                       0x08007854   Section        0  USART_STM32F4xx.o(.rodata.USART3_rx)
+    USART3_tx                                0x08007860   Data          12  USART_STM32F4xx.o(.rodata.USART3_tx)
+    [Anonymous Symbol]                       0x08007860   Section        0  USART_STM32F4xx.o(.rodata.USART3_tx)
+    .L.str                                   0x080078d3   Data          82  LCD_GUI.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080078d3   Section        0  LCD_GUI.o(.rodata.str1.1)
+    .L.str                                   0x08007925   Data          82  LCD_SPI.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007925   Section        0  LCD_SPI.o(.rodata.str1.1)
+    .L.str                                   0x08007977   Data          82  LCD_TIM.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08007977   Section        0  LCD_TIM.o(.rodata.str1.1)
+    .L.str.1                                 0x080079c9   Data           6  LCD_Debug.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080079c9   Section        0  LCD_Debug.o(.rodata.str1.1)
+    .L.str                                   0x080079cf   Data          22  LCD_Debug.o(.rodata.str1.1)
+    .L.str                                   0x080079e5   Data           8  sensorDS18B20.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080079e5   Section        0  sensorDS18B20.o(.rodata.str1.1)
+    .L.str.1                                 0x080079ed   Data           6  display.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x080079ed   Section        0  display.o(.rodata.str1.1)
+    .L.str.3                                 0x080079f3   Data           7  display.o(.rodata.str1.1)
+    .L.str.2                                 0x080079fa   Data          10  display.o(.rodata.str1.1)
+    .L.str.4                                 0x08007a04   Data           5  display.o(.rodata.str1.1)
+    .L.str                                   0x08007a09   Data           7  display.o(.rodata.str1.1)
     crd                                      0x2000000c   Data           4  lcd.o(.data.crd)
     [Anonymous Symbol]                       0x2000000c   Section        0  lcd.o(.data.crd)
-    fontHeight                               0x20000010   Data           4  lcd.o(.data.fontHeight)
-    [Anonymous Symbol]                       0x20000010   Section        0  lcd.o(.data.fontHeight)
-    fontWidth                                0x20000014   Data           4  lcd.o(.data.fontWidth)
-    [Anonymous Symbol]                       0x20000014   Section        0  lcd.o(.data.fontWidth)
-    lcdFont                                  0x2000001c   Data           4  lcd.o(.data.lcdFont)
-    [Anonymous Symbol]                       0x2000001c   Section        0  lcd.o(.data.lcdFont)
-    lcdmaxx                                  0x20000020   Data           4  lcd.o(.data.lcdmaxx)
-    [Anonymous Symbol]                       0x20000020   Section        0  lcd.o(.data.lcdmaxx)
-    lcdmaxy                                  0x20000024   Data           4  lcd.o(.data.lcdmaxy)
-    [Anonymous Symbol]                       0x20000024   Section        0  lcd.o(.data.lcdmaxy)
-    save_restore_AltFn_SPI1_MOSI_Pin.saved_AF 0x2000002c   Data           4  LCD_SPI.o(.data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF)
-    [Anonymous Symbol]                       0x2000002c   Section        0  LCD_SPI.o(.data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF)
-    USART3_Info                              0x20000154   Data          20  USART_STM32F4xx.o(.bss.USART3_Info)
-    [Anonymous Symbol]                       0x20000154   Section        0  USART_STM32F4xx.o(.bss.USART3_Info)
-    USART3_TransferInfo                      0x20000168   Data          36  USART_STM32F4xx.o(.bss.USART3_TransferInfo)
-    [Anonymous Symbol]                       0x20000168   Section        0  USART_STM32F4xx.o(.bss.USART3_TransferInfo)
-    htim4                                    0x200001e4   Data          64  LCD_TIM.o(.bss.htim4)
-    [Anonymous Symbol]                       0x200001e4   Section        0  LCD_TIM.o(.bss.htim4)
-    lcdColor                                 0x20000226   Data           2  lcd.o(.bss.lcdColor)
-    [Anonymous Symbol]                       0x20000226   Section        0  lcd.o(.bss.lcdColor)
-    sTP_DEV                                  0x20000238   Data          24  LCD_Touch.o(.bss.sTP_DEV)
-    [Anonymous Symbol]                       0x20000238   Section        0  LCD_Touch.o(.bss.sTP_DEV)
-    STACK                                    0x20000260   Section     1024  startup_stm32f429xx.o(STACK)
+    drawTemperatureDS18B20.x                 0x20000010   Data           4  display.o(.data.drawTemperatureDS18B20.x)
+    [Anonymous Symbol]                       0x20000010   Section        0  display.o(.data.drawTemperatureDS18B20.x)
+    fontHeight                               0x20000014   Data           4  lcd.o(.data.fontHeight)
+    [Anonymous Symbol]                       0x20000014   Section        0  lcd.o(.data.fontHeight)
+    fontWidth                                0x20000018   Data           4  lcd.o(.data.fontWidth)
+    [Anonymous Symbol]                       0x20000018   Section        0  lcd.o(.data.fontWidth)
+    lcdFont                                  0x20000020   Data           4  lcd.o(.data.lcdFont)
+    [Anonymous Symbol]                       0x20000020   Section        0  lcd.o(.data.lcdFont)
+    lcdmaxx                                  0x20000024   Data           4  lcd.o(.data.lcdmaxx)
+    [Anonymous Symbol]                       0x20000024   Section        0  lcd.o(.data.lcdmaxx)
+    lcdmaxy                                  0x20000028   Data           4  lcd.o(.data.lcdmaxy)
+    [Anonymous Symbol]                       0x20000028   Section        0  lcd.o(.data.lcdmaxy)
+    save_restore_AltFn_SPI1_MOSI_Pin.saved_AF 0x20000030   Data           4  LCD_SPI.o(.data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF)
+    [Anonymous Symbol]                       0x20000030   Section        0  LCD_SPI.o(.data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF)
+    USART3_Info                              0x2000015c   Data          20  USART_STM32F4xx.o(.bss.USART3_Info)
+    [Anonymous Symbol]                       0x2000015c   Section        0  USART_STM32F4xx.o(.bss.USART3_Info)
+    USART3_TransferInfo                      0x20000170   Data          36  USART_STM32F4xx.o(.bss.USART3_TransferInfo)
+    [Anonymous Symbol]                       0x20000170   Section        0  USART_STM32F4xx.o(.bss.USART3_TransferInfo)
+    drawTemperatureDS18B20.currentPos        0x200001ec   Data           4  display.o(.bss.drawTemperatureDS18B20.currentPos)
+    [Anonymous Symbol]                       0x200001ec   Section        0  display.o(.bss.drawTemperatureDS18B20.currentPos)
+    htim4                                    0x200001f0   Data          64  LCD_TIM.o(.bss.htim4)
+    [Anonymous Symbol]                       0x200001f0   Section        0  LCD_TIM.o(.bss.htim4)
+    lcdColor                                 0x20000232   Data           2  lcd.o(.bss.lcdColor)
+    [Anonymous Symbol]                       0x20000232   Section        0  lcd.o(.bss.lcdColor)
+    sTP_DEV                                  0x200002a8   Data          24  LCD_Touch.o(.bss.sTP_DEV)
+    [Anonymous Symbol]                       0x200002a8   Section        0  LCD_Touch.o(.bss.sTP_DEV)
+    STACK                                    0x20000330   Section     1024  startup_stm32f429xx.o(STACK)
 
     Global Symbols
 
@@ -3435,62 +3454,67 @@ Image Symbol Table
     USART_IRQHandler                         0x08004a89   Thumb Code  1026  USART_STM32F4xx.o(.text.USART_IRQHandler)
     UsageFault_Handler                       0x08005a05   Thumb Code     4  stm32f4xx_it.o(.text.UsageFault_Handler)
     checkCRC                                 0x08005b31   Thumb Code   206  crc.o(.text.checkCRC)
-    drawInfo                                 0x08005c49   Thumb Code    84  display.o(.text.drawInfo)
-    drawTemperature                          0x08005c9d   Thumb Code    72  display.o(.text.drawTemperature)
-    indicateError                            0x08005ce5   Thumb Code   102  errorStatus.o(.text.indicateError)
-    initDisplay                              0x08005d4d   Thumb Code    70  display.o(.text.initDisplay)
-    initITSboard                             0x08005ed5   Thumb Code    20  init.o(.text.initITSboard)
-    initTimer                                0x08005ee9   Thumb Code    66  timer.o(.text.initTimer)
-    itoa                                     0x08005f2d   Thumb Code   180  LCD_Tools.o(.text.itoa)
-    lcdGotoXY                                0x08005fe1   Thumb Code    58  lcd.o(.text.lcdGotoXY)
-    lcdPrintS                                0x0800601d   Thumb Code   466  lcd.o(.text.lcdPrintS)
-    main                                     0x080061f1   Thumb Code    82  main.o(.text.main)
-    oneWireReadBit                           0x08006245   Thumb Code    84  onewire.o(.text.oneWireReadBit)
-    oneWireReadByte                          0x08006299   Thumb Code    86  onewire.o(.text.oneWireReadByte)
-    oneWireReset                             0x080062f1   Thumb Code   112  onewire.o(.text.oneWireReset)
-    oneWireWriteBit                          0x08006361   Thumb Code   114  onewire.o(.text.oneWireWriteBit)
-    oneWireWriteByte                         0x080063d5   Thumb Code    76  onewire.o(.text.oneWireWriteByte)
-    printDebugMsg                            0x08006421   Thumb Code   178  LCD_Debug.o(.text.printDebugMsg)
-    scanOneWireBus                           0x08006505   Thumb Code   624  ds18x20Common.o(.text.scanOneWireBus)
-    sensorDS18B20GetTemperature              0x08006775   Thumb Code   186  sensorDS18B20.o(.text.sensorDS18B20GetTemperature)
-    sensorDS18B20ParseData                   0x08006831   Thumb Code   142  sensorDS18B20.o(.text.sensorDS18B20ParseData)
-    sensorDS18B20ReadData                    0x080068c1   Thumb Code   130  sensorDS18B20.o(.text.sensorDS18B20ReadData)
-    sensorDS18B20SearchRom                   0x08006945   Thumb Code   164  sensorDS18B20.o(.text.sensorDS18B20SearchRom)
-    sensorFullThrottle                       0x080069e9   Thumb Code    60  ds18x20Common.o(.text.sensorFullThrottle)
-    sensorSelect                             0x08006a25   Thumb Code   122  ds18x20Common.o(.text.sensorSelect)
-    stdinout_init                            0x08006aa1   Thumb Code   174  stdinout_USART.o(.text.stdinout_init)
-    tempCalcCelciusDS18B20                   0x08006b99   Thumb Code    80  math.o(.text.tempCalcCelciusDS18B20)
-    wait                                     0x08006bf1   Thumb Code    52  timing.o(.text.wait)
-    __0snprintf                              0x08006c25   Thumb Code    48  printfa.o(i.__0snprintf)
-    __1snprintf                              0x08006c25   Thumb Code     0  printfa.o(i.__0snprintf)
-    __2snprintf                              0x08006c25   Thumb Code     0  printfa.o(i.__0snprintf)
-    __c89snprintf                            0x08006c25   Thumb Code     0  printfa.o(i.__0snprintf)
-    snprintf                                 0x08006c25   Thumb Code     0  printfa.o(i.__0snprintf)
-    __scatterload_copy                       0x08006c59   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08006c67   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08006c69   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    AHBPrescTable                            0x08007540   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08007550   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
-    Driver_USART3                            0x08007558   Data          56  USART_STM32F4xx.o(.rodata.Driver_USART3)
-    initCmds                                 0x080075dc   Data         103  LCD_Driver.o(.rodata.initCmds)
-    Region$$Table$$Base                      0x08007780   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080077a0   Number         0  anon$$obj.o(Region$$Table)
+    convertAllValuesToDisplay                0x08005c49   Thumb Code   106  display.o(.text.convertAllValuesToDisplay)
+    drawInfo                                 0x08005cb5   Thumb Code    84  display.o(.text.drawInfo)
+    drawTemperatureDS18B20                   0x08005d09   Thumb Code   270  display.o(.text.drawTemperatureDS18B20)
+    indicateError                            0x08005e19   Thumb Code   102  errorStatus.o(.text.indicateError)
+    initDisplay                              0x08005e81   Thumb Code    70  display.o(.text.initDisplay)
+    initITSboard                             0x08006009   Thumb Code    20  init.o(.text.initITSboard)
+    initTimer                                0x0800601d   Thumb Code    66  timer.o(.text.initTimer)
+    itoa                                     0x08006061   Thumb Code   180  LCD_Tools.o(.text.itoa)
+    lcdGotoXY                                0x08006115   Thumb Code    58  lcd.o(.text.lcdGotoXY)
+    lcdPrintC                                0x08006151   Thumb Code   222  lcd.o(.text.lcdPrintC)
+    lcdPrintS                                0x08006231   Thumb Code   466  lcd.o(.text.lcdPrintS)
+    main                                     0x08006405   Thumb Code    82  main.o(.text.main)
+    oneWireReadBit                           0x08006459   Thumb Code    84  onewire.o(.text.oneWireReadBit)
+    oneWireReadByte                          0x080064ad   Thumb Code    86  onewire.o(.text.oneWireReadByte)
+    oneWireReset                             0x08006505   Thumb Code   112  onewire.o(.text.oneWireReset)
+    oneWireWriteBit                          0x08006575   Thumb Code   114  onewire.o(.text.oneWireWriteBit)
+    oneWireWriteByte                         0x080065e9   Thumb Code    76  onewire.o(.text.oneWireWriteByte)
+    printDebugMsg                            0x08006635   Thumb Code   178  LCD_Debug.o(.text.printDebugMsg)
+    scanOneWireBus                           0x08006719   Thumb Code   636  ds18x20Common.o(.text.scanOneWireBus)
+    sensorDS18B20GetTemperature              0x08006995   Thumb Code   264  sensorDS18B20.o(.text.sensorDS18B20GetTemperature)
+    sensorDS18B20ParseData                   0x08006a9d   Thumb Code   142  sensorDS18B20.o(.text.sensorDS18B20ParseData)
+    sensorDS18B20ReadData                    0x08006b2d   Thumb Code   130  sensorDS18B20.o(.text.sensorDS18B20ReadData)
+    sensorDS18B20SearchRom                   0x08006bb1   Thumb Code   164  sensorDS18B20.o(.text.sensorDS18B20SearchRom)
+    sensorFullThrottle                       0x08006c55   Thumb Code    60  ds18x20Common.o(.text.sensorFullThrottle)
+    sensorSelect                             0x08006c91   Thumb Code   122  ds18x20Common.o(.text.sensorSelect)
+    stdinout_init                            0x08006d0d   Thumb Code   174  stdinout_USART.o(.text.stdinout_init)
+    tempCalcCelciusDS18B20                   0x08006e09   Thumb Code   112  math.o(.text.tempCalcCelciusDS18B20)
+    wait                                     0x08006e81   Thumb Code    52  timing.o(.text.wait)
+    __0snprintf                              0x08006eb5   Thumb Code    48  printfa.o(i.__0snprintf)
+    __1snprintf                              0x08006eb5   Thumb Code     0  printfa.o(i.__0snprintf)
+    __2snprintf                              0x08006eb5   Thumb Code     0  printfa.o(i.__0snprintf)
+    __c89snprintf                            0x08006eb5   Thumb Code     0  printfa.o(i.__0snprintf)
+    snprintf                                 0x08006eb5   Thumb Code     0  printfa.o(i.__0snprintf)
+    __scatterload_copy                       0x08006ee9   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08006ef7   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08006ef9   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    AHBPrescTable                            0x080077d0   Data          16  system_stm32f4xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x080077e0   Data           8  system_stm32f4xx.o(.rodata.APBPrescTable)
+    Driver_USART3                            0x080077e8   Data          56  USART_STM32F4xx.o(.rodata.Driver_USART3)
+    initCmds                                 0x0800786c   Data         103  LCD_Driver.o(.rodata.initCmds)
+    Region$$Table$$Base                      0x08007a10   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08007a30   Number         0  anon$$obj.o(Region$$Table)
     Font16FLASH                              0x20000000   Data           8  fontsFLASH.o(.data.Font16FLASH)
     SystemCoreClock                          0x20000008   Data           4  system_stm32f4xx.o(.data.SystemCoreClock)
-    lastDiscrepancy                          0x20000018   Data           4  ds18x20Common.o(.data.lastDiscrepancy)
-    newDiscrepancy                           0x20000028   Data           4  ds18x20Common.o(.data.newDiscrepancy)
-    uwTickFreq                               0x20000030   Data           1  stm32f4xx_hal.o(.data.uwTickFreq)
-    uwTickPrio                               0x20000034   Data           4  stm32f4xx_hal.o(.data.uwTickPrio)
-    DS18B20                                  0x20000038   Data         210  sensorDS18B20.o(.bss.DS18B20)
-    EthHandle                                0x2000010c   Data          72  stm32f4xx_it.o(.bss.EthHandle)
-    deviceIDs                                0x20000190   Data          80  sensorDS18B20.o(.bss.deviceIDs)
-    devicesCount                             0x200001e0   Data           4  sensorDS18B20.o(.bss.devicesCount)
-    lastDeviceFlag                           0x20000224   Data           1  ds18x20Common.o(.bss.lastDeviceFlag)
-    oldRegistration                          0x20000228   Data           8  ds18x20Common.o(.bss.oldRegistration)
-    registration                             0x20000230   Data           8  ds18x20Common.o(.bss.registration)
-    tempDataDS18B20                          0x20000250   Data           9  sensorDS18B20.o(.bss.tempDataDS18B20)
-    uwTick                                   0x2000025c   Data           4  stm32f4xx_hal.o(.bss.uwTick)
-    __initial_sp                             0x20000660   Data           0  startup_stm32f429xx.o(STACK)
+    lastDiscrepancy                          0x2000001c   Data           4  ds18x20Common.o(.data.lastDiscrepancy)
+    newDiscrepancy                           0x2000002c   Data           4  ds18x20Common.o(.data.newDiscrepancy)
+    uwTickFreq                               0x20000034   Data           1  stm32f4xx_hal.o(.data.uwTickFreq)
+    uwTickPrio                               0x20000038   Data           4  stm32f4xx_hal.o(.data.uwTickPrio)
+    DS18B20                                  0x20000040   Data         210  sensorDS18B20.o(.bss.DS18B20)
+    EthHandle                                0x20000114   Data          72  stm32f4xx_it.o(.bss.EthHandle)
+    deviceIDs                                0x20000198   Data          80  sensorDS18B20.o(.bss.deviceIDs)
+    devicesCount                             0x200001e8   Data           4  sensorDS18B20.o(.bss.devicesCount)
+    lastDeviceFlag                           0x20000230   Data           1  ds18x20Common.o(.bss.lastDeviceFlag)
+    oldRegistration                          0x20000238   Data           8  ds18x20Common.o(.bss.oldRegistration)
+    prevValuesToDisplay                      0x20000240   Data          90  display.o(.bss.prevValuesToDisplay)
+    registration                             0x200002a0   Data           8  ds18x20Common.o(.bss.registration)
+    tempDataDS18B20                          0x200002c0   Data           9  sensorDS18B20.o(.bss.tempDataDS18B20)
+    tempReaded                               0x200002c9   Data           1  sensorDS18B20.o(.bss.tempReaded)
+    uwTick                                   0x200002cc   Data           4  stm32f4xx_hal.o(.bss.uwTick)
+    valuesToDisplay                          0x200002d0   Data          90  display.o(.bss.valuesToDisplay)
+    __initial_sp                             0x20000730   Data           0  startup_stm32f429xx.o(STACK)
 
 
 
@@ -3500,43 +3524,43 @@ Memory Map of the image
 
   Image Entry point : 0x080001c1
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000077d8, Max: 0x00200000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00007a70, Max: 0x00200000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000077a0, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00007a30, Max: 0x00200000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000001ac   Data   RO           63    RESET               startup_stm32f429xx.o
-    0x080001ac   0x080001ac   0x00000000   Code   RO         1715  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001ac   0x080001ac   0x00000004   Code   RO         1764    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001b0   0x080001b0   0x00000004   Code   RO         1767    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1769    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001b4   0x080001b4   0x00000000   Code   RO         1771    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001b4   0x080001b4   0x00000008   Code   RO         1772    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1774    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001bc   0x080001bc   0x00000000   Code   RO         1776    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001bc   0x080001bc   0x00000004   Code   RO         1765    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001ac   0x080001ac   0x00000000   Code   RO         1723  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001ac   0x080001ac   0x00000004   Code   RO         1772    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001b0   0x080001b0   0x00000004   Code   RO         1775    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1777    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001b4   0x080001b4   0x00000000   Code   RO         1779    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001b4   0x080001b4   0x00000008   Code   RO         1780    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1782    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001bc   0x080001bc   0x00000000   Code   RO         1784    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001bc   0x080001bc   0x00000004   Code   RO         1773    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x080001c0   0x080001c0   0x00000024   Code   RO           64  * .text               startup_stm32f429xx.o
-    0x080001e4   0x080001e4   0x00000062   Code   RO         1718    .text               mc_w.l(uldiv.o)
-    0x08000246   0x08000246   0x00000062   Code   RO         1720    .text               mc_w.l(ldiv.o)
-    0x080002a8   0x080002a8   0x00000024   Code   RO         1722    .text               mc_w.l(memseta.o)
-    0x080002cc   0x080002cc   0x0000000e   Code   RO         1724    .text               mc_w.l(strlen.o)
-    0x080002da   0x080002da   0x000000e4   Code   RO         1754    .text               mf_w.l(dmul.o)
-    0x080003be   0x080003be   0x00000026   Code   RO         1760    .text               mf_w.l(f2d.o)
-    0x080003e4   0x080003e4   0x00000038   Code   RO         1762    .text               mf_w.l(d2f.o)
-    0x0800041c   0x0800041c   0x0000002c   Code   RO         1792    .text               mc_w.l(uidiv.o)
-    0x08000448   0x08000448   0x0000001e   Code   RO         1794    .text               mc_w.l(llshl.o)
-    0x08000466   0x08000466   0x00000020   Code   RO         1796    .text               mc_w.l(llushr.o)
-    0x08000486   0x08000486   0x00000000   Code   RO         1805    .text               mc_w.l(iusefp.o)
-    0x08000486   0x08000486   0x0000006e   Code   RO         1806    .text               mf_w.l(fepilogue.o)
-    0x080004f4   0x080004f4   0x000000ba   Code   RO         1808    .text               mf_w.l(depilogue.o)
-    0x080005ae   0x080005ae   0x0000014e   Code   RO         1810    .text               mf_w.l(dadd.o)
-    0x080006fc   0x080006fc   0x000000de   Code   RO         1812    .text               mf_w.l(ddiv.o)
-    0x080007da   0x080007da   0x00000030   Code   RO         1816    .text               mf_w.l(dfixul.o)
+    0x080001e4   0x080001e4   0x00000062   Code   RO         1726    .text               mc_w.l(uldiv.o)
+    0x08000246   0x08000246   0x00000062   Code   RO         1728    .text               mc_w.l(ldiv.o)
+    0x080002a8   0x080002a8   0x00000024   Code   RO         1730    .text               mc_w.l(memseta.o)
+    0x080002cc   0x080002cc   0x0000000e   Code   RO         1732    .text               mc_w.l(strlen.o)
+    0x080002da   0x080002da   0x000000e4   Code   RO         1762    .text               mf_w.l(dmul.o)
+    0x080003be   0x080003be   0x00000026   Code   RO         1768    .text               mf_w.l(f2d.o)
+    0x080003e4   0x080003e4   0x00000038   Code   RO         1770    .text               mf_w.l(d2f.o)
+    0x0800041c   0x0800041c   0x0000002c   Code   RO         1800    .text               mc_w.l(uidiv.o)
+    0x08000448   0x08000448   0x0000001e   Code   RO         1802    .text               mc_w.l(llshl.o)
+    0x08000466   0x08000466   0x00000020   Code   RO         1804    .text               mc_w.l(llushr.o)
+    0x08000486   0x08000486   0x00000000   Code   RO         1813    .text               mc_w.l(iusefp.o)
+    0x08000486   0x08000486   0x0000006e   Code   RO         1814    .text               mf_w.l(fepilogue.o)
+    0x080004f4   0x080004f4   0x000000ba   Code   RO         1816    .text               mf_w.l(depilogue.o)
+    0x080005ae   0x080005ae   0x0000014e   Code   RO         1818    .text               mf_w.l(dadd.o)
+    0x080006fc   0x080006fc   0x000000de   Code   RO         1820    .text               mf_w.l(ddiv.o)
+    0x080007da   0x080007da   0x00000030   Code   RO         1824    .text               mf_w.l(dfixul.o)
     0x0800080a   0x0800080a   0x00000002   PAD
-    0x0800080c   0x0800080c   0x00000030   Code   RO         1818    .text               mf_w.l(cdrcmple.o)
-    0x0800083c   0x0800083c   0x00000030   Code   RO         1820    .text               mc_w.l(init.o)
-    0x0800086c   0x0800086c   0x00000024   Code   RO         1823    .text               mc_w.l(llsshr.o)
+    0x0800080c   0x0800080c   0x00000030   Code   RO         1826    .text               mf_w.l(cdrcmple.o)
+    0x0800083c   0x0800083c   0x00000030   Code   RO         1828    .text               mc_w.l(init.o)
+    0x0800086c   0x0800086c   0x00000024   Code   RO         1831    .text               mc_w.l(llsshr.o)
     0x08000890   0x08000890   0x00000004   Code   RO           91    .text.BusFault_Handler  stm32f4xx_it.o
     0x08000894   0x08000894   0x00000002   Code   RO           97    .text.DebugMon_Handler  stm32f4xx_it.o
     0x08000896   0x08000896   0x00000002   PAD
@@ -3714,113 +3738,126 @@ Memory Map of the image
     0x08005b30   0x08005b30   0x000000ce   Code   RO         1584    .text.checkCRC      crc.o
     0x08005bfe   0x08005bfe   0x00000002   PAD
     0x08005c00   0x08005c00   0x00000048   Code   RO         1250    .text.check_SPI_SR  LCD_SPI.o
-    0x08005c48   0x08005c48   0x00000054   Code   RO         1696    .text.drawInfo      display.o
-    0x08005c9c   0x08005c9c   0x00000048   Code   RO         1700    .text.drawTemperature  display.o
-    0x08005ce4   0x08005ce4   0x00000066   Code   RO         1686    .text.indicateError  errorStatus.o
-    0x08005d4a   0x08005d4a   0x00000002   PAD
-    0x08005d4c   0x08005d4c   0x00000046   Code   RO         1694    .text.initDisplay   display.o
-    0x08005d92   0x08005d92   0x00000002   PAD
-    0x08005d94   0x08005d94   0x00000140   Code   RO         1403    .text.initGPIOs     init.o
-    0x08005ed4   0x08005ed4   0x00000014   Code   RO         1399    .text.initITSboard  init.o
-    0x08005ee8   0x08005ee8   0x00000042   Code   RO         1474    .text.initTimer     timer.o
-    0x08005f2a   0x08005f2a   0x00000002   PAD
-    0x08005f2c   0x08005f2c   0x000000b4   Code   RO         1301    .text.itoa          LCD_Tools.o
-    0x08005fe0   0x08005fe0   0x0000003a   Code   RO         1381    .text.lcdGotoXY     lcd.o
-    0x0800601a   0x0800601a   0x00000002   PAD
-    0x0800601c   0x0800601c   0x000001d2   Code   RO         1367    .text.lcdPrintS     lcd.o
-    0x080061ee   0x080061ee   0x00000002   PAD
-    0x080061f0   0x080061f0   0x00000052   Code   RO         1575    .text.main          main.o
-    0x08006242   0x08006242   0x00000002   PAD
-    0x08006244   0x08006244   0x00000054   Code   RO         1596    .text.oneWireReadBit  onewire.o
-    0x08006298   0x08006298   0x00000056   Code   RO         1600    .text.oneWireReadByte  onewire.o
-    0x080062ee   0x080062ee   0x00000002   PAD
-    0x080062f0   0x080062f0   0x00000070   Code   RO         1592    .text.oneWireReset  onewire.o
-    0x08006360   0x08006360   0x00000072   Code   RO         1594    .text.oneWireWriteBit  onewire.o
-    0x080063d2   0x080063d2   0x00000002   PAD
-    0x080063d4   0x080063d4   0x0000004c   Code   RO         1598    .text.oneWireWriteByte  onewire.o
-    0x08006420   0x08006420   0x000000b2   Code   RO         1333    .text.printDebugMsg  LCD_Debug.o
-    0x080064d2   0x080064d2   0x00000002   PAD
-    0x080064d4   0x080064d4   0x00000030   Code   RO         1248    .text.save_restore_AltFn_SPI1_MOSI_Pin  LCD_SPI.o
-    0x08006504   0x08006504   0x00000270   Code   RO         1671    .text.scanOneWireBus  ds18x20Common.o
-    0x08006774   0x08006774   0x000000ba   Code   RO         1623    .text.sensorDS18B20GetTemperature  sensorDS18B20.o
-    0x0800682e   0x0800682e   0x00000002   PAD
-    0x08006830   0x08006830   0x0000008e   Code   RO         1619    .text.sensorDS18B20ParseData  sensorDS18B20.o
-    0x080068be   0x080068be   0x00000002   PAD
-    0x080068c0   0x080068c0   0x00000082   Code   RO         1621    .text.sensorDS18B20ReadData  sensorDS18B20.o
-    0x08006942   0x08006942   0x00000002   PAD
-    0x08006944   0x08006944   0x000000a4   Code   RO         1617    .text.sensorDS18B20SearchRom  sensorDS18B20.o
-    0x080069e8   0x080069e8   0x0000003c   Code   RO         1667    .text.sensorFullThrottle  ds18x20Common.o
-    0x08006a24   0x08006a24   0x0000007a   Code   RO         1669    .text.sensorSelect  ds18x20Common.o
-    0x08006a9e   0x08006a9e   0x00000002   PAD
-    0x08006aa0   0x08006aa0   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
-    0x08006b4e   0x08006b4e   0x00000002   PAD
-    0x08006b50   0x08006b50   0x00000046   Code   RO         1369    .text.stringCopy    lcd.o
-    0x08006b96   0x08006b96   0x00000002   PAD
-    0x08006b98   0x08006b98   0x00000058   Code   RO         1658    .text.tempCalcCelciusDS18B20  math.o
-    0x08006bf0   0x08006bf0   0x00000034   Code   RO         1609    .text.wait          timing.o
-    0x08006c24   0x08006c24   0x00000034   Code   RO         1728    i.__0snprintf       mc_w.l(printfa.o)
-    0x08006c58   0x08006c58   0x0000000e   Code   RO         1828    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08006c66   0x08006c66   0x00000002   Code   RO         1829    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08006c68   0x08006c68   0x0000000e   Code   RO         1830    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08006c76   0x08006c76   0x00000002   PAD
-    0x08006c78   0x08006c78   0x00000184   Code   RO         1734    i._fp_digits        mc_w.l(printfa.o)
-    0x08006dfc   0x08006dfc   0x000006dc   Code   RO         1735    i._printf_core      mc_w.l(printfa.o)
-    0x080074d8   0x080074d8   0x00000024   Code   RO         1736    i._printf_post_padding  mc_w.l(printfa.o)
-    0x080074fc   0x080074fc   0x0000002e   Code   RO         1737    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x0800752a   0x0800752a   0x00000016   Code   RO         1738    i._snputc           mc_w.l(printfa.o)
-    0x08007540   0x08007540   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
-    0x08007550   0x08007550   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
-    0x08007558   0x08007558   0x00000038   Data   RO         1548    .rodata.Driver_USART3  USART_STM32F4xx.o
-    0x08007590   0x08007590   0x00000034   Data   RO         1553    .rodata.USART3_Resources  USART_STM32F4xx.o
-    0x080075c4   0x080075c4   0x0000000c   Data   RO         1550    .rodata.USART3_rx   USART_STM32F4xx.o
-    0x080075d0   0x080075d0   0x0000000c   Data   RO         1549    .rodata.USART3_tx   USART_STM32F4xx.o
-    0x080075dc   0x080075dc   0x00000067   Data   RO         1158    .rodata.initCmds    LCD_Driver.o
-    0x08007643   0x08007643   0x00000052   Data   RO         1190    .rodata.str1.1      LCD_GUI.o
-    0x08007695   0x08007695   0x00000052   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
-    0x080076e7   0x080076e7   0x00000052   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
-    0x08007739   0x08007739   0x0000001c   Data   RO         1336    .rodata.str1.1      LCD_Debug.o
-    0x08007755   0x08007755   0x00000008   Data   RO         1628    .rodata.str1.1      sensorDS18B20.o
-    0x0800775d   0x0800775d   0x00000023   Data   RO         1702    .rodata.str1.1      display.o
-    0x08007780   0x08007780   0x00000020   Data   RO         1827    Region$$Table       anon$$obj.o
+    0x08005c48   0x08005c48   0x0000006a   Code   RO         1702    .text.convertAllValuesToDisplay  display.o
+    0x08005cb2   0x08005cb2   0x00000002   PAD
+    0x08005cb4   0x08005cb4   0x00000054   Code   RO         1700    .text.drawInfo      display.o
+    0x08005d08   0x08005d08   0x0000010e   Code   RO         1704    .text.drawTemperatureDS18B20  display.o
+    0x08005e16   0x08005e16   0x00000002   PAD
+    0x08005e18   0x08005e18   0x00000066   Code   RO         1690    .text.indicateError  errorStatus.o
+    0x08005e7e   0x08005e7e   0x00000002   PAD
+    0x08005e80   0x08005e80   0x00000046   Code   RO         1698    .text.initDisplay   display.o
+    0x08005ec6   0x08005ec6   0x00000002   PAD
+    0x08005ec8   0x08005ec8   0x00000140   Code   RO         1403    .text.initGPIOs     init.o
+    0x08006008   0x08006008   0x00000014   Code   RO         1399    .text.initITSboard  init.o
+    0x0800601c   0x0800601c   0x00000042   Code   RO         1474    .text.initTimer     timer.o
+    0x0800605e   0x0800605e   0x00000002   PAD
+    0x08006060   0x08006060   0x000000b4   Code   RO         1301    .text.itoa          LCD_Tools.o
+    0x08006114   0x08006114   0x0000003a   Code   RO         1381    .text.lcdGotoXY     lcd.o
+    0x0800614e   0x0800614e   0x00000002   PAD
+    0x08006150   0x08006150   0x000000de   Code   RO         1377    .text.lcdPrintC     lcd.o
+    0x0800622e   0x0800622e   0x00000002   PAD
+    0x08006230   0x08006230   0x000001d2   Code   RO         1367    .text.lcdPrintS     lcd.o
+    0x08006402   0x08006402   0x00000002   PAD
+    0x08006404   0x08006404   0x00000052   Code   RO         1575    .text.main          main.o
+    0x08006456   0x08006456   0x00000002   PAD
+    0x08006458   0x08006458   0x00000054   Code   RO         1596    .text.oneWireReadBit  onewire.o
+    0x080064ac   0x080064ac   0x00000056   Code   RO         1600    .text.oneWireReadByte  onewire.o
+    0x08006502   0x08006502   0x00000002   PAD
+    0x08006504   0x08006504   0x00000070   Code   RO         1592    .text.oneWireReset  onewire.o
+    0x08006574   0x08006574   0x00000072   Code   RO         1594    .text.oneWireWriteBit  onewire.o
+    0x080065e6   0x080065e6   0x00000002   PAD
+    0x080065e8   0x080065e8   0x0000004c   Code   RO         1598    .text.oneWireWriteByte  onewire.o
+    0x08006634   0x08006634   0x000000b2   Code   RO         1333    .text.printDebugMsg  LCD_Debug.o
+    0x080066e6   0x080066e6   0x00000002   PAD
+    0x080066e8   0x080066e8   0x00000030   Code   RO         1248    .text.save_restore_AltFn_SPI1_MOSI_Pin  LCD_SPI.o
+    0x08006718   0x08006718   0x0000027c   Code   RO         1674    .text.scanOneWireBus  ds18x20Common.o
+    0x08006994   0x08006994   0x00000108   Code   RO         1623    .text.sensorDS18B20GetTemperature  sensorDS18B20.o
+    0x08006a9c   0x08006a9c   0x0000008e   Code   RO         1619    .text.sensorDS18B20ParseData  sensorDS18B20.o
+    0x08006b2a   0x08006b2a   0x00000002   PAD
+    0x08006b2c   0x08006b2c   0x00000082   Code   RO         1621    .text.sensorDS18B20ReadData  sensorDS18B20.o
+    0x08006bae   0x08006bae   0x00000002   PAD
+    0x08006bb0   0x08006bb0   0x000000a4   Code   RO         1617    .text.sensorDS18B20SearchRom  sensorDS18B20.o
+    0x08006c54   0x08006c54   0x0000003c   Code   RO         1668    .text.sensorFullThrottle  ds18x20Common.o
+    0x08006c90   0x08006c90   0x0000007a   Code   RO         1670    .text.sensorSelect  ds18x20Common.o
+    0x08006d0a   0x08006d0a   0x00000002   PAD
+    0x08006d0c   0x08006d0c   0x000000ae   Code   RO         1562    .text.stdinout_init  stdinout_USART.o
+    0x08006dba   0x08006dba   0x00000002   PAD
+    0x08006dbc   0x08006dbc   0x00000046   Code   RO         1369    .text.stringCopy    lcd.o
+    0x08006e02   0x08006e02   0x00000006   PAD
+    0x08006e08   0x08006e08   0x00000078   Code   RO         1659    .text.tempCalcCelciusDS18B20  math.o
+    0x08006e80   0x08006e80   0x00000034   Code   RO         1609    .text.wait          timing.o
+    0x08006eb4   0x08006eb4   0x00000034   Code   RO         1736    i.__0snprintf       mc_w.l(printfa.o)
+    0x08006ee8   0x08006ee8   0x0000000e   Code   RO         1836    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08006ef6   0x08006ef6   0x00000002   Code   RO         1837    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08006ef8   0x08006ef8   0x0000000e   Code   RO         1838    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08006f06   0x08006f06   0x00000002   PAD
+    0x08006f08   0x08006f08   0x00000184   Code   RO         1742    i._fp_digits        mc_w.l(printfa.o)
+    0x0800708c   0x0800708c   0x000006dc   Code   RO         1743    i._printf_core      mc_w.l(printfa.o)
+    0x08007768   0x08007768   0x00000024   Code   RO         1744    i._printf_post_padding  mc_w.l(printfa.o)
+    0x0800778c   0x0800778c   0x0000002e   Code   RO         1745    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x080077ba   0x080077ba   0x00000016   Code   RO         1746    i._snputc           mc_w.l(printfa.o)
+    0x080077d0   0x080077d0   0x00000010   Data   RO           76    .rodata.AHBPrescTable  system_stm32f4xx.o
+    0x080077e0   0x080077e0   0x00000008   Data   RO           77    .rodata.APBPrescTable  system_stm32f4xx.o
+    0x080077e8   0x080077e8   0x00000038   Data   RO         1548    .rodata.Driver_USART3  USART_STM32F4xx.o
+    0x08007820   0x08007820   0x00000034   Data   RO         1553    .rodata.USART3_Resources  USART_STM32F4xx.o
+    0x08007854   0x08007854   0x0000000c   Data   RO         1550    .rodata.USART3_rx   USART_STM32F4xx.o
+    0x08007860   0x08007860   0x0000000c   Data   RO         1549    .rodata.USART3_tx   USART_STM32F4xx.o
+    0x0800786c   0x0800786c   0x00000067   Data   RO         1158    .rodata.initCmds    LCD_Driver.o
+    0x080078d3   0x080078d3   0x00000052   Data   RO         1190    .rodata.str1.1      LCD_GUI.o
+    0x08007925   0x08007925   0x00000052   Data   RO         1254    .rodata.str1.1      LCD_SPI.o
+    0x08007977   0x08007977   0x00000052   Data   RO         1287    .rodata.str1.1      LCD_TIM.o
+    0x080079c9   0x080079c9   0x0000001c   Data   RO         1336    .rodata.str1.1      LCD_Debug.o
+    0x080079e5   0x080079e5   0x00000008   Data   RO         1629    .rodata.str1.1      sensorDS18B20.o
+    0x080079ed   0x080079ed   0x00000023   Data   RO         1706    .rodata.str1.1      display.o
+    0x08007a10   0x08007a10   0x00000020   Data   RO         1835    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080077a0, Size: 0x00000660, Max: 0x00030000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08007a30, Size: 0x00000730, Max: 0x00030000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080077a0   0x00000008   Data   RW         1102    .data.Font16FLASH   fontsFLASH.o
-    0x20000008   0x080077a8   0x00000004   Data   RW           75    .data.SystemCoreClock  system_stm32f4xx.o
-    0x2000000c   0x080077ac   0x00000004   Data   RW         1385    .data.crd           lcd.o
-    0x20000010   0x080077b0   0x00000004   Data   RW         1386    .data.fontHeight    lcd.o
-    0x20000014   0x080077b4   0x00000004   Data   RW         1384    .data.fontWidth     lcd.o
-    0x20000018   0x080077b8   0x00000004   Data   RW         1675    .data.lastDiscrepancy  ds18x20Common.o
-    0x2000001c   0x080077bc   0x00000004   Data   RW         1387    .data.lcdFont       lcd.o
-    0x20000020   0x080077c0   0x00000004   Data   RW         1383    .data.lcdmaxx       lcd.o
-    0x20000024   0x080077c4   0x00000004   Data   RW         1389    .data.lcdmaxy       lcd.o
-    0x20000028   0x080077c8   0x00000004   Data   RW         1676    .data.newDiscrepancy  ds18x20Common.o
-    0x2000002c   0x080077cc   0x00000004   Data   RW         1255    .data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF  LCD_SPI.o
-    0x20000030   0x080077d0   0x00000001   Data   RW          332    .data.uwTickFreq    stm32f4xx_hal.o
-    0x20000031   0x080077d1   0x00000003   PAD
-    0x20000034   0x080077d4   0x00000004   Data   RW          331    .data.uwTickPrio    stm32f4xx_hal.o
-    0x20000038        -       0x000000d2   Zero   RW         1627    .bss.DS18B20        sensorDS18B20.o
-    0x2000010a   0x080077d8   0x00000002   PAD
-    0x2000010c        -       0x00000048   Zero   RW          105    .bss.EthHandle      stm32f4xx_it.o
-    0x20000154        -       0x00000014   Zero   RW         1551    .bss.USART3_Info    USART_STM32F4xx.o
-    0x20000168        -       0x00000024   Zero   RW         1552    .bss.USART3_TransferInfo  USART_STM32F4xx.o
-    0x2000018c   0x080077d8   0x00000004   PAD
-    0x20000190        -       0x00000050   Zero   RW         1626    .bss.deviceIDs      sensorDS18B20.o
-    0x200001e0        -       0x00000004   Zero   RW         1625    .bss.devicesCount   sensorDS18B20.o
-    0x200001e4        -       0x00000040   Zero   RW         1286    .bss.htim4          LCD_TIM.o
-    0x20000224        -       0x00000001   Zero   RW         1677    .bss.lastDeviceFlag  ds18x20Common.o
-    0x20000225   0x080077d8   0x00000001   PAD
-    0x20000226        -       0x00000002   Zero   RW         1388    .bss.lcdColor       lcd.o
-    0x20000228        -       0x00000008   Zero   RW         1673    .bss.oldRegistration  ds18x20Common.o
-    0x20000230        -       0x00000008   Zero   RW         1674    .bss.registration   ds18x20Common.o
-    0x20000238        -       0x00000018   Zero   RW         1227    .bss.sTP_DEV        LCD_Touch.o
-    0x20000250        -       0x00000009   Zero   RW         1629    .bss.tempDataDS18B20  sensorDS18B20.o
-    0x20000259   0x080077d8   0x00000003   PAD
-    0x2000025c        -       0x00000004   Zero   RW          333    .bss.uwTick         stm32f4xx_hal.o
-    0x20000260        -       0x00000400   Zero   RW           61    STACK               startup_stm32f429xx.o
+    0x20000000   0x08007a30   0x00000008   Data   RW         1102    .data.Font16FLASH   fontsFLASH.o
+    0x20000008   0x08007a38   0x00000004   Data   RW           75    .data.SystemCoreClock  system_stm32f4xx.o
+    0x2000000c   0x08007a3c   0x00000004   Data   RW         1385    .data.crd           lcd.o
+    0x20000010   0x08007a40   0x00000004   Data   RW         1709    .data.drawTemperatureDS18B20.x  display.o
+    0x20000014   0x08007a44   0x00000004   Data   RW         1386    .data.fontHeight    lcd.o
+    0x20000018   0x08007a48   0x00000004   Data   RW         1384    .data.fontWidth     lcd.o
+    0x2000001c   0x08007a4c   0x00000004   Data   RW         1678    .data.lastDiscrepancy  ds18x20Common.o
+    0x20000020   0x08007a50   0x00000004   Data   RW         1387    .data.lcdFont       lcd.o
+    0x20000024   0x08007a54   0x00000004   Data   RW         1383    .data.lcdmaxx       lcd.o
+    0x20000028   0x08007a58   0x00000004   Data   RW         1389    .data.lcdmaxy       lcd.o
+    0x2000002c   0x08007a5c   0x00000004   Data   RW         1679    .data.newDiscrepancy  ds18x20Common.o
+    0x20000030   0x08007a60   0x00000004   Data   RW         1255    .data.save_restore_AltFn_SPI1_MOSI_Pin.saved_AF  LCD_SPI.o
+    0x20000034   0x08007a64   0x00000001   Data   RW          332    .data.uwTickFreq    stm32f4xx_hal.o
+    0x20000035   0x08007a65   0x00000003   PAD
+    0x20000038   0x08007a68   0x00000004   Data   RW          331    .data.uwTickPrio    stm32f4xx_hal.o
+    0x2000003c   0x08007a6c   0x00000004   PAD
+    0x20000040        -       0x000000d2   Zero   RW         1628    .bss.DS18B20        sensorDS18B20.o
+    0x20000112   0x08007a6c   0x00000002   PAD
+    0x20000114        -       0x00000048   Zero   RW          105    .bss.EthHandle      stm32f4xx_it.o
+    0x2000015c        -       0x00000014   Zero   RW         1551    .bss.USART3_Info    USART_STM32F4xx.o
+    0x20000170        -       0x00000024   Zero   RW         1552    .bss.USART3_TransferInfo  USART_STM32F4xx.o
+    0x20000194   0x08007a6c   0x00000004   PAD
+    0x20000198        -       0x00000050   Zero   RW         1627    .bss.deviceIDs      sensorDS18B20.o
+    0x200001e8        -       0x00000004   Zero   RW         1625    .bss.devicesCount   sensorDS18B20.o
+    0x200001ec        -       0x00000004   Zero   RW         1708    .bss.drawTemperatureDS18B20.currentPos  display.o
+    0x200001f0        -       0x00000040   Zero   RW         1286    .bss.htim4          LCD_TIM.o
+    0x20000230        -       0x00000001   Zero   RW         1680    .bss.lastDeviceFlag  ds18x20Common.o
+    0x20000231   0x08007a6c   0x00000001   PAD
+    0x20000232        -       0x00000002   Zero   RW         1388    .bss.lcdColor       lcd.o
+    0x20000234   0x08007a6c   0x00000004   PAD
+    0x20000238        -       0x00000008   Zero   RW         1676    .bss.oldRegistration  ds18x20Common.o
+    0x20000240        -       0x0000005a   Zero   RW         1710    .bss.prevValuesToDisplay  display.o
+    0x2000029a   0x08007a6c   0x00000006   PAD
+    0x200002a0        -       0x00000008   Zero   RW         1677    .bss.registration   ds18x20Common.o
+    0x200002a8        -       0x00000018   Zero   RW         1227    .bss.sTP_DEV        LCD_Touch.o
+    0x200002c0        -       0x00000009   Zero   RW         1630    .bss.tempDataDS18B20  sensorDS18B20.o
+    0x200002c9        -       0x00000001   Zero   RW         1626    .bss.tempReaded     sensorDS18B20.o
+    0x200002ca   0x08007a6c   0x00000002   PAD
+    0x200002cc        -       0x00000004   Zero   RW          333    .bss.uwTick         stm32f4xx_hal.o
+    0x200002d0        -       0x0000005a   Zero   RW         1707    .bss.valuesToDisplay  display.o
+    0x2000032a   0x08007a6c   0x00000006   PAD
+    0x20000330        -       0x00000400   Zero   RW           61    STACK               startup_stm32f429xx.o
 
 
 ==============================================================================
@@ -3840,17 +3877,17 @@ Image component sizes
         92          0          0          0         24       6456   LCD_Touch.o
       8678         52        132          0         56      22517   USART_STM32F4xx.o
        206          0          0          0          0       1134   crc.o
-       226          0         35          0          0       1524   display.o
-       806          0          0          8         17       2473   ds18x20Common.o
+       530          0         35          4        184       2464   display.o
+       818          0          0          8         17       2745   ds18x20Common.o
        232          0          0          0          0       2440   error.o
        102          0          0          0          0       1264   errorStatus.o
          0          0          0          8          0       1902   fontsFLASH.o
        524          0          0          0          0       3899   init.o
-       594          0          0         24          2       3889   lcd.o
+       816          0          0         24          2       3889   lcd.o
         82          0          0          0          0        641   main.o
-        88          8          0          0          0       1692   math.o
+       120          8          0          0          0       1806   math.o
        472          0          0          0          0       2108   onewire.o
-       622          0          8          0        303       2567   sensorDS18B20.o
+       700          0          8          0        304       2645   sensorDS18B20.o
         36          8        428          0       1024       1016   startup_stm32f429xx.o
        174          0          0          0          0       1569   stdinout_USART.o
        264          0          0          5          4       7922   stm32f4xx_hal.o
@@ -3868,9 +3905,9 @@ Image component sizes
         52          0          0          0          0       1353   timing.o
 
     ----------------------------------------------------------------------
-     25528         82       1036         56       1576     204744   Object Totals
+     26184         82       1036         60       1780     206148   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-       138          0          0          3         10          0   (incl. Padding)
+       146          0          0          3         29          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -3927,15 +3964,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     29588        184       1036         56       1576     205404   Grand Totals
-     29588        184       1036         56       1576     205404   ELF Image Totals
-     29588        184       1036         56          0          0   ROM Totals
+     30244        184       1036         60       1780     206808   Grand Totals
+     30244        184       1036         60       1780     206808   ELF Image Totals
+     30244        184       1036         60          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                30624 (  29.91kB)
-    Total RW  Size (RW Data + ZI Data)              1632 (   1.59kB)
-    Total ROM Size (Code + RO Data + RW Data)      30680 (  29.96kB)
+    Total RO  Size (Code + RO Data)                31280 (  30.55kB)
+    Total RW  Size (RW Data + ZI Data)              1840 (   1.80kB)
+    Total ROM Size (Code + RO Data + RW Data)      31340 (  30.61kB)
 
 ==============================================================================
 
