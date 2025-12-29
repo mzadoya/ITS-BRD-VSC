@@ -210,7 +210,6 @@ add_library(Group_Program_User_Src OBJECT
   "${SOLUTION_ROOT}/Src/led.c"
   "${SOLUTION_ROOT}/Src/display.c"
   "${SOLUTION_ROOT}/Src/buttons.c"
-  "${SOLUTION_ROOT}/Src/converter.c"
 )
 target_include_directories(Group_Program_User_Src PUBLIC
   $<TARGET_PROPERTY:${CONTEXT},INTERFACE_INCLUDE_DIRECTORIES>

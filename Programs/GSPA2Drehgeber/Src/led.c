@@ -1,7 +1,24 @@
-#include "led.h"
+/**
+ ******************************************************************************
+ * @file    led.c
+ * @author  Maksym Zadoya
+ * @brief   Steuerung der Status-LEDs des ITS-Boards.
+            Stellt Drehrichtung, Phasenanzahl und Fehlerzustände über LEDs dar.
+ * @date    2025/11/20
+ * @version 1.1 vom 2025/11/20
+ ******************************************************************************
+ */
+/* Includes ------------------------------------------------------------------*/
+
+// Standard C Libs
 #include <stdint.h>
-#include "global.h"
+
+// Board Libs
 #include "stm32f4xx_hal.h"
+
+// App modules
+#include "global.h"
+#include "led.h"
 
 #define MASK_LED_FORWARD  (0x01U << 7)
 #define MASK_LED_BACKWARD (0x01U << 6)
@@ -39,11 +56,16 @@ void ledStatusClear(void) {
     GPIOE->BSRR = ((MASK_LED_ERROR << 16) |  (MASK_LED_BACKWARD << 16) |  (MASK_LED_FORWARD << 16));
 }
 
-void ledPhaseCountClear(void) {
+/**
+ * @brief Loescht die Phasen LEDs 
+ */
+static void ledPhaseCountClear(void) {
      GPIOD->BSRR = MASK_INIT << 16;
 }
 
-void ledSetPhaseCount(uint32_t phasenCounter) { //TODO sinnvole Name
+void ledPhaseValue(uint32_t phasenCounter) { 
     ledPhaseCountClear();
     GPIOD->BSRR = (MASK_LED_PHASE & phasenCounter);
 }
+
+// EOF

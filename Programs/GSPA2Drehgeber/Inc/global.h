@@ -6,7 +6,7 @@
 #define PHASE_C 0b11
 #define PHASE_D 0b01
 
-#define FORWARD 2
+#define FORWARD 2 
 #define BACKWARD 1
 #define IDLE 0
 

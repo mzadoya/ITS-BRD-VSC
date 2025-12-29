@@ -1,5 +1,5 @@
 build:
-  generated-by: csolution version 2.11.0
+  generated-by: csolution version 2.12.0+p41-gfeadfc5e
   solution: ../../../../GSPA2Drehgeber.csolution.yml
   project: ../../../../GSPA2Drehgeber.cproject.yml
   context: GSPA2Drehgeber.Debug+ITSboard
@@ -337,8 +337,6 @@ build:
           category: header
         - file: ../../../../Inc/display.h
           category: header
-        - file: ../../../../Inc/converter.h
-          category: header
     - group: Program/User/Src
       files:
         - file: ../../../../Src/main.c
@@ -350,8 +348,6 @@ build:
         - file: ../../../../Src/display.c
           category: sourceC
         - file: ../../../../Src/buttons.c
-          category: sourceC
-        - file: ../../../../Src/converter.c
           category: sourceC
   constructed-files:
     - file: ../../../../RTE/_Debug_ITSboard/RTE_Components.h
