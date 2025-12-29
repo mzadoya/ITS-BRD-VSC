@@ -34,13 +34,13 @@
 #include "rotary_decoder.h"
 #include "timer.h"
 
-static int tst = 0;
 static bool fehler = false;
 static uint16_t direction = 0;
-static uint32_t timeDiff = 0;
 static bool isReadyToPrint = false;
 static double lastPrintedAngle = 0.0;
 static double angleToPrint = 0.0;
+static double speed = 0.0;
+static double angle = 0.0;
 
 int main(void) {
   initITSboard();
@@ -59,7 +59,7 @@ int main(void) {
     int rcButton = readButtons(eingabe, &fehler);
 
     if (fehler != true) {
-      int rcRotary = encoderUpdate(eingabe, &direction, timer2);
+      int rcRotary = encoderUpdate(eingabe, &direction, timer2, &angle, &speed);
       if (rcRotary == ENCODER_ERROR) {
         fehler = true;
 

@@ -3,9 +3,9 @@
 <title>Static Call Graph - [/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/out/GSPA2Drehgeber/ITSboard/Debug/GSPA2Drehgeber.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/out/GSPA2Drehgeber/ITSboard/Debug/GSPA2Drehgeber.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Mon Dec 29 14:40:49 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Tue Dec 30 00:11:39 2025
 <BR><P>
-<H3>Maximum Stack Usage =        496 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        504 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; displayPrintHandler &rArr; lcdValuePrinter &rArr; convertValue &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 <P>
@@ -1124,8 +1124,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[f3]"></a>encoderUpdate</STRONG> (Thumb, 512 bytes, Stack size 48 bytes, rotary_decoder.o(.text.encoderUpdate))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = encoderUpdate &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
+<P><STRONG><a name="[f3]"></a>encoderUpdate</STRONG> (Thumb, 504 bytes, Stack size 56 bytes, rotary_decoder.o(.text.encoderUpdate))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = encoderUpdate &rArr; __aeabi_dmul &rArr; _double_epilogue &rArr; _double_round
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
@@ -1233,8 +1233,8 @@ Global Symbols
 <LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ledSetDirection
 </UL>
 
-<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 378 bytes, Stack size 32 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 496<LI>Call Chain = main &rArr; displayPrintHandler &rArr; lcdValuePrinter &rArr; convertValue &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
+<P><STRONG><a name="[64]"></a>main</STRONG> (Thumb, 398 bytes, Stack size 40 bytes, main.o(.text.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 504<LI>Call Chain = main &rArr; displayPrintHandler &rArr; lcdValuePrinter &rArr; convertValue &rArr; lcdPrintC &rArr; GUI_disChar &rArr; LCD_fillRectangleBW &rArr; LCD_setWindow &rArr; LCD_WriteParam &rArr; LCD_WriteParameters &rArr; SPI4W_Write_Byte &rArr; check_SPI_SR &rArr; LCDErrHandler &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ledSetError
 <LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayPrintHandler

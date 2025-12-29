@@ -6,6 +6,6 @@
 -- Check for working C compiler: /Users/maximzadoya/.vcpkg/artifacts/2139c4c6/compilers.arm.armclang/6.24.0/bin//armclang - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (0.9s)
+-- Configuring done (1.1s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA2Drehgeber/tmp/1

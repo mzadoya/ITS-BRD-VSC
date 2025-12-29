@@ -34,8 +34,6 @@ static uint32_t time1 = 0;
 static uint32_t lastActivity = 0;
 static uint32_t currentTransition = 0;
 int32_t transitionCount = 0;
-double speed = 0.0;
-double angle = 0.0;
 
 void initDecoder() {
   lastPhase = GPIOF->IDR & MASK_PIN01F;
@@ -116,7 +114,7 @@ static int getPhase(uint16_t *direction, uint16_t phase) {
   return ENCODER_CHANGED;
 }
 
-int encoderUpdate(uint16_t gpioState, uint16_t *direction, uint32_t time2) {
+int encoderUpdate(uint16_t gpioState, uint16_t *direction, uint32_t time2, double *angle, double *speed) {
   uint8_t phase = gpioState & MASK_PIN01F;
   int rc = ENCODER_NO_CHANGE;
   if (phase != lastPhase) {
@@ -127,7 +125,7 @@ int encoderUpdate(uint16_t gpioState, uint16_t *direction, uint32_t time2) {
     } else if (*direction == FORWARD) {
       transitionCount++;
     }
-    angle = transitionCount * 0.3;
+    (*angle) = transitionCount * 0.3;
 
     lastPhase = phase;
 
@@ -137,14 +135,14 @@ int encoderUpdate(uint16_t gpioState, uint16_t *direction, uint32_t time2) {
       if (timeSec == 0) {
         return ENCODER_ERROR;
       }
-      speed = localAngle / timeSec;
+      (*speed) = localAngle / timeSec;
       time1 = time2;
       currentTransition = 0;
       return ENCODER_TIME_UPDATED;
     }
   }
   else if (time2 - time1 >= INACTIVITY_TIMEOUT * 1000 * TICKS_PER_US && phase == lastPhase) {
-      speed = 0;
+      (*speed) = 0;
       time1 = time2;
       currentTransition = 0;
       return ENCODER_TIME_UPDATED;

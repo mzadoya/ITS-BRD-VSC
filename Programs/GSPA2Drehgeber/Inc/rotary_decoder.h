@@ -25,8 +25,7 @@ void initDecoder(void);
  *         ENCODER_TIME_UPDATED  wenn Winkelgeschwindigkeit neu berechnet wurde,
  *         ENCODER_ERROR         im Fehlerfall
  */
-int encoderUpdate(uint16_t gpioState, uint16_t *direction, uint32_t time2);
-extern double speed ;
-extern double angle;
+int encoderUpdate(uint16_t gpioState, uint16_t *direction, uint32_t time2, double *angle, double *speed);
+
 
 #endif
