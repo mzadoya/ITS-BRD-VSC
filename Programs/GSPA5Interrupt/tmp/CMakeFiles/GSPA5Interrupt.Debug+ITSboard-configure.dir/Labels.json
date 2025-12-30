@@ -1,0 +1,34 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/CMakeFiles/GSPA5Interrupt.Debug+ITSboard-configure"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/CMakeFiles/GSPA5Interrupt.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/GSPA5Interrupt.Debug+ITSboard/src/GSPA5Interrupt.Debug+ITSboard-stamp/GSPA5Interrupt.Debug+ITSboard-configure.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/GSPA5Interrupt.Debug+ITSboard/src/GSPA5Interrupt.Debug+ITSboard-stamp/GSPA5Interrupt.Debug+ITSboard-patch.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/GSPA5Interrupt.Debug+ITSboard/src/GSPA5Interrupt.Debug+ITSboard-stamp/GSPA5Interrupt.Debug+ITSboard-update.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/GSPA5Interrupt.Debug+ITSboard/src/GSPA5Interrupt.Debug+ITSboard-stamp/GSPA5Interrupt.Debug+ITSboard-download.rule"
+		},
+		{
+			"file" : "/Users/maximzadoya/Desktop/gsItsBoard2/ITS-BRD-VSC/Programs/GSPA5Interrupt/tmp/GSPA5Interrupt.Debug+ITSboard/src/GSPA5Interrupt.Debug+ITSboard-stamp/GSPA5Interrupt.Debug+ITSboard-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"GSPA5Interrupt.Debug+ITSboard"
+		],
+		"name" : "GSPA5Interrupt.Debug+ITSboard-configure"
+	}
+}

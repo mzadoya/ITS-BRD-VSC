@@ -1,0 +1,20 @@
+build-idx:
+  generated-by: csolution version 2.12.0+p41-gfeadfc5e
+  cdefault: ${CMSIS_COMPILER_ROOT}/cdefault.yml
+  csolution: GSPA5Interrupt.csolution.yml
+  cbuild-run: out/GSPA5Interrupt+ITSboard.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: GSPA5Interrupt.cproject.yml
+  cbuilds:
+    - cbuild: out/GSPA5Interrupt/ITSboard/Debug/GSPA5Interrupt.Debug+ITSboard.cbuild.yml
+      project: GSPA5Interrupt
+      configuration: .Debug+ITSboard
+      messages:
+        info:
+          - GSPA5Interrupt.cbuild-pack.yml - file is already up-to-date
+          - GSPA5Interrupt+ITSboard.cbuild-run.yml - file is already up-to-date
+          - GSPA5Interrupt.Debug+ITSboard.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.16.2
+        - pack: ARM::CMSIS-NN@7.0.0
