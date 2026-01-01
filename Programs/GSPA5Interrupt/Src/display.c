@@ -2,11 +2,12 @@
  ******************************************************************************
  * @file    display.c
  * @author  Maksym Zadoya
- * @brief   Ausgabe von Messwerten auf dem LCD-Display.
+ * @brief   Ausgabe von Messwerten und Fehlermeldungen auf dem LCD-Display.
  *          Initialisiert das Display und gibt Drehwinkel sowie
  *          Winkelgeschwindigkeit zeichenweise aus.
- * @date    2025/11/20
- * @version 1.2 vom 2025/12/29
+ *          
+ * @date    2025/12/30
+ * @version 1.0 vom 2025/12/29
  ******************************************************************************
  */
 /* Includes ------------------------------------------------------------------*/
@@ -122,3 +123,11 @@ void displayPrintError(char* errorMsg) {
     lcdPrintS("S6 druecken zum Bestaetigen");
 }
 //EOF
+
+void debugLowSpeed(uint32_t lEC, uint32_t encoderPos) {
+     char buffer[50]; 
+     lcdGotoXY(1, 9);
+     lcdPrintInt(lEC);
+     lcdGotoXY(1,  12);
+     lcdPrintInt(encoderPos);
+}

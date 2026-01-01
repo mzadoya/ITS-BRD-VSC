@@ -4,8 +4,8 @@
  * @author  Maksym Zadoya
  * @brief   Steuerung der Status-LEDs des ITS-Boards.
             Stellt Drehrichtung, Phasenanzahl und Fehlerzustände über LEDs dar.
- * @date    2025/11/20
- * @version 1.1 vom 2025/11/20
+ * @date    2025/12/30
+ * @version 1.0 vom 2025/12/30
  ******************************************************************************
  */
 /* Includes ------------------------------------------------------------------*/

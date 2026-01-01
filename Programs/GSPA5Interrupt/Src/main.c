@@ -4,10 +4,9 @@
  * @author  Maksym Zadoya
  * @brief   Bestimmt mit einem inkrementellen Drehgeber die Drehrichtung,
  *          den Drehwinkel und die Winkelgeschwindigkeit eines rotierenden
- *			    System.
+ *			    System mittels Interrupt.
  * @date    2025/12/30
  * @version 1.0 vom 2025/12/30
-* @bug Bei langsamer Fahrt (unter 85 °/s) springt die Anzeige zwischen 0 und dem echten Wert.
  ******************************************************************************
  */
 /* Includes ------------------------------------------------------------------*/
@@ -36,7 +35,7 @@
 #include "encoder_interrupt.h"
 
 static bool fehler = false;
-static uint16_t direction = 0;
+static uint8_t direction = 0;
 static bool isReadyToPrint = false;
 static double lastPrintedAngle = 0.0;
 static double angleToPrint = 0.0;
@@ -54,7 +53,7 @@ int main(void) {
   initInterrupt();
   while (1) {
 
-    int rc = encoderUpdater(&angle, &speed);
+    int rc = encoderUpdater(&angle, &speed, &direction);
     if (rc == ENCODER_TIME_INVALID || rc == ENCODER_DATA_INCOSISTENT) {
       errorState(rc);
     }

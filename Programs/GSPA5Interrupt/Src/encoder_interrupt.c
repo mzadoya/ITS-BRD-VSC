@@ -2,7 +2,7 @@
  ******************************************************************************
  * @file    encoder_interrupt.c
  * @author  Maksym Zadoya
- * @brief   Auswertung eines inkrementellen Drehgebers.
+ * @brief   Auswertung eines inkrementellen Drehgebers mittels Interrupt.
  *          Ermittelt Drehrichtung, Drehwinkel und Winkelgeschwindigkeit
  *          anhand der Phasenwechsel und Zeitmessung.
  * @date    2025/12/30
@@ -20,6 +20,7 @@
 #include "global.h"
 #include "timer.h"
 #include <stdint.h>
+#include "display.h"
 
 #define MODER_MASK_PIN_0 (0x03U << (2 * 0))
 #define MODER_MASK_PIN_1 (0x03U << (2 * 1))
@@ -28,6 +29,7 @@
 #define INACTIVITY_TIMEOUT 500
 #define TIMER_FREQUENCY 90000000.0
 
+volatile static uint32_t lastEncoderCounter;
 volatile static uint16_t lastUpdate;
 volatile static uint32_t startTime;
 static uint32_t currentTime;
@@ -43,6 +45,7 @@ void resetEncoder(void) {
   lastUpdate = GPIOF->IDR & MASK_PIN01F;
   startTime = TIM2->CNT;
   currentTime = startTime;
+  lastEncoderCounter = 0;
 }
 
 /**
@@ -186,11 +189,25 @@ static int checkConsistency(EncoderData *snapConfirmed) {
     return FAIL;
 }
 
-int encoderUpdater(double *angle, double *speed) {
+static void getDirection(uint8_t *direction, uint32_t ledTransitionCounter) {
+  static int32_t lastLedTransitionCounter = 0;
+
+  if (ledTransitionCounter > lastLedTransitionCounter) {
+    (*direction) = FORWARD;
+  }
+  else if (ledTransitionCounter < lastLedTransitionCounter) {
+    (*direction) = BACKWARD;
+  }
+  else {
+    (*direction) = IDLE;
+  }
+  lastLedTransitionCounter = ledTransitionCounter;
+}
+
+int encoderUpdater(double *angle, double *speed, uint8_t *direction) {
    if (data.error == true) {
     return ENCODER_DATA_INCOSISTENT;
   }
-  static uint32_t lastEncoderCounter = 0;
   int i = 0;
   int rc = OK;
  
@@ -204,10 +221,11 @@ int encoderUpdater(double *angle, double *speed) {
     i++;
   }
   while (rc == FAIL && i < 10);
-  
+  getDirection(&(*direction), snapConfirmed.ledTransitionCounter);
   (*angle) = snapConfirmed.ledTransitionCounter * 0.3;
+  
   if (snapConfirmed.timestamp >= TIME_WINDOW_MS * 1000 * TICKS_PER_US) {
-    double localAngle = (int32_t) (snapConfirmed.encoderPosition - lastEncoderCounter)* 0.3;
+    double localAngle = (int32_t) (snapConfirmed.encoderPosition - lastEncoderCounter) * 0.3;
     double timeSec = snapConfirmed.timestamp/ TIMER_FREQUENCY;
     if (timeSec == 0) {
       return ENCODER_TIME_INVALID;
@@ -215,9 +233,9 @@ int encoderUpdater(double *angle, double *speed) {
     
     (*speed) = localAngle / timeSec;
     startTime = currentTime;
-
+    
     lastEncoderCounter = snapConfirmed.encoderPosition;
-
+    data.timestamp = 0;
     return ENCODER_TIME_UPDATED;
   } else if (snapConfirmed.timestamp>= INACTIVITY_TIMEOUT * 1000 * TICKS_PER_US && currentPhase == lastUpdate) { 
     (*speed) = 0;

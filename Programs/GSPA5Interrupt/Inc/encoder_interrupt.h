@@ -20,12 +20,13 @@ typedef struct encoderData
  * 
  * @param angle Zeiger auf angle
  * @param speed Zeiger auf speed 
+ * @param direction Zeiger auf Richtung der Drehung  
  * 
  * @return ENCODER_DATA_INCOSISTENT   wenn die Daten nicht eindeutig bestimmt werden koennen
  *         ENCODER_TIME_INVALID       bei der fehlerhaften Berechnung der Zeit
  *         ENCODER_TIME_UPDATED       wenn Winkelgeschwindigkeit neu berechnet wurde,
  */
-int encoderUpdater(double *angle, double *speed);
+int encoderUpdater(double *angle, double *speed, uint8_t *direction);
 
 /**
  * @brief Initialisiert und konfiguriert die Hardware-Interrupts für den Encoder.

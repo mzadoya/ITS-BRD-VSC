@@ -19,4 +19,5 @@ void initDisplay(void);
 int displayPrintHandler(double angle, double speed);
 void displayPrintError(char *errorMsg);
 void displayClear(void);
+void debugLowSpeed(uint32_t lEC, uint32_t encoderPos);
 #endif
